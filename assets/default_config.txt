@@ -1,0 +1,15 @@
+# GestureMouse — конфігурація за замовчуванням
+# Формат: ключ=значення
+
+# --- Камера ---
+camera.index=0
+
+# --- Жести ---
+gesture.confidence=0.6
+
+# --- Миша ---
+mouse.smoothing=0.3
+
+# --- Інтерфейс ---
+debug.show_window=false
+tray.start_minimized=true
