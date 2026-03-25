@@ -59,7 +59,7 @@ gesture_mouse/
 
 ### Клонування репозиторію
 ```bash
-git clone https://github.com/YOUR_USERNAME/gesture-mouse.git
+git clone https://github.com/CillianMorphine/gesture-mouse.git
 cd gesture-mouse
 ```
 
