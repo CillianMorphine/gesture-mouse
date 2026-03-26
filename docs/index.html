@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ═══════════════════════════════════════════
+       PRIMARY META / SEO
+  ════════════════════════════════════════════ -->
+  <title>GestureMouse — Системна утиліта керування курсором жестами | Бакалаврська робота</title>
+  <meta name="description"
+        content="Бакалаврська робота: системна утиліта для керування курсором миші за допомогою жестів рук у реальному часі. Мова C++, OpenCV, комп'ютерний зір." />
+  <meta name="keywords"
+        content="gesture control, mouse control, hand tracking, computer vision, OpenCV, C++, бакалаврська робота, жести руки, керування курсором" />
+  <meta name="author" content="Журавльов Ілля" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cillianmorphine.github.io/gesture-mouse/" />
+
+  <!-- ═══════════════════════════════════════════
+       OPEN GRAPH (Facebook / LinkedIn / Telegram)
+  ════════════════════════════════════════════ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cillianmorphine.github.io/gesture-mouse/" />
+  <meta property="og:title"       content="GestureMouse — Керування курсором жестами рук" />
+  <meta property="og:description" content="Системна утиліта на C++ з OpenCV для безконтактного керування курсором у реальному часі." />
+  <meta property="og:image"       content="https://cillianmorphine.github.io/gesture-mouse/assets/images/og-preview.png" />
+  <meta property="og:locale"      content="uk_UA" />
+  <meta property="og:site_name"   content="GestureMouse" />
+
+  <!-- ═══════════════════════════════════════════
+       TWITTER CARD
+  ════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="GestureMouse — Керування курсором жестами" />
+  <meta name="twitter:description" content="Бакалаврська робота: C++ + OpenCV утиліта безконтактного керування мишею." />
+  <meta name="twitter:image"       content="https://cillianmorphine.github.io/gesture-mouse/assets/images/og-preview.png" />
+
+  <!-- ═══════════════════════════════════════════
+       FAVICONS (multi-size)
+  ════════════════════════════════════════════ -->
+  <link rel="icon"             type="image/svg+xml"  href="assets/icons/favicon.svg" />
+  <link rel="icon"             type="image/png" sizes="32x32" href="assets/icons/favicon-32.png" />
+  <link rel="icon"             type="image/png" sizes="16x16" href="assets/icons/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180"        href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest"                                 href="site.webmanifest" />
+  <meta name="theme-color" content="#0a0f1e" />
+
+  <!-- ═══════════════════════════════════════════
+       SCHEMA.ORG — Structured Data
+  ════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Системна утиліта для управління курсором миші за допомогою жестів",
+    "alternativeHeadline": "GestureMouse: A System Utility for Gesture-Based Mouse Control",
+    "description": "Бакалаврська робота присвячена розробці системної утиліти на C++ з використанням OpenCV для керування курсором миші за допомогою жестів рук у режимі реального часу.",
+    "author": {
+      "@type": "Person",
+      "name": "Журавльов Ілля",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Назва університету"
+      }
+    },
+    "educationalLevel": "Bachelor",
+    "keywords": ["gesture control", "computer vision", "C++", "OpenCV", "mouse control"],
+    "inLanguage": "uk",
+    "url": "https://cillianmorphine.github.io/gesture-mouse/",
+    "datePublished": "2026"
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════
+       FONTS
+  ════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- ═══════════════════════════════════════════
+       STYLES
+  ════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════
+       SKIP LINK (accessibility)
+  ═══════════════════════════════════════════ -->
+  <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
+
+  <!-- ══════════════════════════════════════════
+       HEADER / NAV
+  ═══════════════════════════════════════════ -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Головна навігація">
+      <a class="nav__logo" href="#hero" aria-label="GestureMouse — на початок">
+        <svg class="nav__logo-icon" width="32" height="32" viewBox="0 0 32 32"
+             aria-hidden="true" focusable="false">
+          <circle cx="16" cy="16" r="14" stroke="var(--accent)" stroke-width="2" fill="none"/>
+          <path d="M10 22 L16 10 L22 22" stroke="var(--accent)" stroke-width="2"
+                fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="16" cy="10" r="2" fill="var(--accent)"/>
+        </svg>
+        <span>GestureMouse</span>
+      </a>
+
+      <button class="nav__toggle" aria-controls="nav-menu" aria-expanded="false"
+              aria-label="Відкрити меню навігації">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <ul class="nav__list" id="nav-menu" role="list">
+        <li><a class="nav__link" href="#about">Про роботу</a></li>
+        <li><a class="nav__link" href="#goals">Мета</a></li>
+        <li><a class="nav__link" href="#method">Методологія</a></li>
+        <li><a class="nav__link" href="#results">Результати</a></li>
+        <li><a class="nav__link" href="#contact">Контакти</a></li>
+        <li>
+          <a class="nav__link nav__link--cta" href="https://github.com/CillianMorphine/gesture-mouse"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Переглянути вихідний код на GitHub (відкриється в новій вкладці)">
+            GitHub ↗
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════ -->
+  <main id="main-content" tabindex="-1">
+
+    <!-- HERO ─────────────────────────────── -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__label" aria-hidden="true">Бакалаврська робота · 2026</p>
+
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__title-line hero__title-line--uk">
+            Системна утиліта для<br/>керування курсором<br/>
+            <em>жестами рук</em>
+          </span>
+        </h1>
+
+        <p class="hero__title-en" lang="en" aria-label="Назва англійською">
+          GestureMouse: A System Utility for<br/>Gesture-Based Mouse Control
+        </p>
+
+        <p class="hero__desc">
+          Безконтактне керування комп'ютером у реальному часі —
+          алгоритми комп'ютерного зору, мова C++ та OpenCV.
+        </p>
+
+        <div class="hero__tags" role="list" aria-label="Ключові слова">
+          <span class="tag" role="listitem">C++17</span>
+          <span class="tag" role="listitem">OpenCV 4</span>
+          <span class="tag" role="listitem">Computer Vision</span>
+          <span class="tag" role="listitem">Win / Linux</span>
+          <span class="tag" role="listitem">Real-time</span>
+        </div>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#about">Дізнатися більше</a>
+          <a class="btn btn--outline"
+             href="https://github.com/CillianMorphine/gesture-mouse"
+             target="_blank" rel="noopener noreferrer">
+            Вихідний код
+          </a>
+        </div>
+      </div>
+
+      <!-- Animated hand illustration -->
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hand-demo">
+          <svg class="hand-svg" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Palm -->
+            <ellipse cx="110" cy="180" rx="60" ry="55" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/>
+            <!-- Fingers -->
+            <rect x="56"  y="105" width="22" height="80" rx="11" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5" class="finger finger--1"/>
+            <rect x="83"  y="82"  width="22" height="90" rx="11" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5" class="finger finger--2"/>
+            <rect x="110" y="78"  width="22" height="92" rx="11" fill="var(--surface-2)" stroke="var(--accent-2)" stroke-width="1.5" class="finger finger--3"/>
+            <rect x="137" y="86"  width="22" height="86" rx="11" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5" class="finger finger--4"/>
+            <!-- Thumb -->
+            <rect x="28"  y="140" width="20" height="65" rx="10" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"
+                  transform="rotate(-25 38 172)"/>
+            <!-- Landmark dots -->
+            <circle cx="67"  cy="108" r="4" fill="var(--accent)" class="landmark"/>
+            <circle cx="94"  cy="84"  r="4" fill="var(--accent)" class="landmark"/>
+            <circle cx="121" cy="80"  r="5" fill="var(--accent-2)" class="landmark landmark--active"/>
+            <circle cx="148" cy="88"  r="4" fill="var(--accent)" class="landmark"/>
+            <!-- Cursor arrow -->
+            <g class="cursor-arrow" transform="translate(145,55)">
+              <polygon points="0,0 0,28 8,20 14,34 18,32 12,18 22,18"
+                       fill="var(--accent-2)" stroke="var(--bg)" stroke-width="1.5"/>
+            </g>
+            <!-- Connection lines -->
+            <line x1="121" y1="80"  x2="155" y2="62" stroke="var(--accent-2)" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+          </svg>
+
+          <div class="gesture-label">
+            <span class="gesture-label__dot"></span>
+            Жест розпізнано: <strong>LEFT_CLICK</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ─────────────────────────────── -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__num" aria-hidden="true">01</span>
+          <h2 class="section__title" id="about-title">Про роботу</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-grid__text">
+            <p class="lead">
+              Проєкт присвячений розробці системної утиліти, яка дозволяє керувати
+              курсором миші <strong>без фізичного контакту</strong> — лише за допомогою
+              жестів руки перед веб-камерою.
+            </p>
+            <p>
+              Актуальність теми обумовлена зростаючим попитом на безконтактні інтерфейси:
+              від медицини та реабілітації до доступності для людей з обмеженими
+              можливостями та промислової автоматизації.
+            </p>
+            <p>
+              Утиліта реалізована на <strong>C++17</strong> з використанням бібліотеки
+              <strong>OpenCV 4</strong> для обробки відеопотоку в режимі реального часу
+              та платформо-залежного API (Win32 / X11) для симуляції введення.
+            </p>
+          </div>
+
+          <aside class="about-grid__stats" aria-label="Ключові характеристики проекту">
+            <dl class="stats">
+              <div class="stats__item">
+                <dt class="stats__label">Мова розробки</dt>
+                <dd class="stats__value">C++17</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">Бібліотека CV</dt>
+                <dd class="stats__value">OpenCV 4.x</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">Частота обробки</dt>
+                <dd class="stats__value">≥ 30 FPS</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">Затримка</dt>
+                <dd class="stats__value">&lt; 100 мс</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">Платформи</dt>
+                <dd class="stats__value">Windows · Linux</dd>
+              </div>
+              <div class="stats__item">
+                <dt class="stats__label">Жестів розпізнається</dt>
+                <dd class="stats__value">6 типів</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- GOALS ─────────────────────────────── -->
+    <section class="section section--alt" id="goals" aria-labelledby="goals-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__num" aria-hidden="true">02</span>
+          <h2 class="section__title" id="goals-title">Мета та завдання</h2>
+        </header>
+
+        <p class="section__intro">
+          <strong>Мета роботи</strong> — розробити кросплатформну системну утиліту,
+          що забезпечує інтуїтивне та точне керування курсором миші через розпізнавання
+          жестів рук у режимі реального часу.
+        </p>
+
+        <ol class="tasks-list" aria-label="Завдання дослідження">
+          <li class="tasks-list__item">
+            <span class="tasks-list__num" aria-hidden="true">01</span>
+            <div>
+              <h3 class="tasks-list__title">Аналіз існуючих рішень</h3>
+              <p>Огляд методів комп'ютерного зору для виявлення руки: аналіз тілесного кольору, детектори особливих точок, нейромережеві підходи (MediaPipe).</p>
+            </div>
+          </li>
+          <li class="tasks-list__item">
+            <span class="tasks-list__num" aria-hidden="true">02</span>
+            <div>
+              <h3 class="tasks-list__title">Проєктування архітектури</h3>
+              <p>Розробка шаруватої архітектури системи з модулями: розпізнавання жестів, керування курсором, конфігурації та інтерфейсу.</p>
+            </div>
+          </li>
+          <li class="tasks-list__item">
+            <span class="tasks-list__num" aria-hidden="true">03</span>
+            <div>
+              <h3 class="tasks-list__title">Реалізація алгоритмів</h3>
+              <p>Імплементація HSV-сегментації, аналізу опуклої оболонки та EMA-фільтру для плавного переміщення курсору.</p>
+            </div>
+          </li>
+          <li class="tasks-list__item">
+            <span class="tasks-list__num" aria-hidden="true">04</span>
+            <div>
+              <h3 class="tasks-list__title">Тестування та валідація</h3>
+              <p>Написання модульних тестів (Google Test), вимірювання затримки, точності та стабільності за різних умов освітлення.</p>
+            </div>
+          </li>
+          <li class="tasks-list__item">
+            <span class="tasks-list__num" aria-hidden="true">05</span>
+            <div>
+              <h3 class="tasks-list__title">Оцінка результатів</h3>
+              <p>Порівняння з аналогами, аналіз обмежень методу тілесного кольору, окреслення напрямів подальшого розвитку.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY ───────────────────────── -->
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__num" aria-hidden="true">03</span>
+          <h2 class="section__title" id="method-title">Методологія</h2>
+        </header>
+
+        <div class="pipeline" role="list" aria-label="Конвеєр обробки жесту">
+          <article class="pipeline__step" role="listitem">
+            <div class="pipeline__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36"><rect x="4" y="4" width="28" height="22" rx="3" stroke="var(--accent)" stroke-width="1.8" fill="none"/><circle cx="18" cy="30" r="2" fill="var(--accent)"/><line x1="18" y1="26" x2="18" y2="28" stroke="var(--accent)" stroke-width="1.8"/></svg>
+            </div>
+            <h3 class="pipeline__title">1. Захват кадру</h3>
+            <p>Отримання відеопотоку з веб-камери через <code>cv::VideoCapture</code> з частотою ≥ 30 FPS.</p>
+          </article>
+          <div class="pipeline__arrow" aria-hidden="true">→</div>
+
+          <article class="pipeline__step" role="listitem">
+            <div class="pipeline__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="12" stroke="var(--accent)" stroke-width="1.8" fill="none"/><path d="M12 18 Q18 10 24 18 Q18 26 12 18Z" fill="var(--accent)" opacity="0.3"/></svg>
+            </div>
+            <h3 class="pipeline__title">2. HSV-сегментація</h3>
+            <p>Перетворення BGR→HSV, виділення тілесного кольору за діапазоном, морфологічна обробка маски.</p>
+          </article>
+          <div class="pipeline__arrow" aria-hidden="true">→</div>
+
+          <article class="pipeline__step" role="listitem">
+            <div class="pipeline__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36"><polygon points="18,4 32,28 4,28" stroke="var(--accent-2)" stroke-width="1.8" fill="none"/><circle cx="18" cy="4" r="2.5" fill="var(--accent-2)"/></svg>
+            </div>
+            <h3 class="pipeline__title">3. Виявлення руки</h3>
+            <p>Пошук контурів, вибір найбільшого, аналіз опуклої оболонки, обчислення центру мас.</p>
+          </article>
+          <div class="pipeline__arrow" aria-hidden="true">→</div>
+
+          <article class="pipeline__step" role="listitem">
+            <div class="pipeline__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36"><rect x="6" y="6" width="10" height="24" rx="5" stroke="var(--accent)" stroke-width="1.8" fill="none"/><rect x="20" y="10" width="10" height="20" rx="5" stroke="var(--accent)" stroke-width="1.8" fill="none"/></svg>
+            </div>
+            <h3 class="pipeline__title">4. Класифікація жесту</h3>
+            <p>Підрахунок підйнятих пальців евристичним методом → визначення типу жесту з впевненістю &gt; 0.6.</p>
+          </article>
+          <div class="pipeline__arrow" aria-hidden="true">→</div>
+
+          <article class="pipeline__step" role="listitem">
+            <div class="pipeline__icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36"><path d="M8 28 L8 8 L28 20 L16 20 L20 30 L16 32 L12 22 Z" stroke="var(--accent-2)" stroke-width="1.8" fill="none" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="pipeline__title">5. Керування мишею</h3>
+            <p>EMA-згладжування координат → відправка події через <code>SendInput</code> (Win32) або <code>XTest</code> (X11).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GESTURES ───────────────────────────── -->
+    <section class="section section--alt" id="gestures" aria-labelledby="gestures-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__num" aria-hidden="true">04</span>
+          <h2 class="section__title" id="gestures-title">Жести системи</h2>
+        </header>
+
+        <div class="gestures-grid" role="list" aria-label="Таблиця жестів">
+
+          <article class="gesture-card" role="listitem" aria-label="Жест: переміщення">
+            <div class="gesture-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80"><ellipse cx="40" cy="55" rx="22" ry="18" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="16" y="26" width="9" height="30" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="28" y="18" width="9" height="34" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="40" y="16" width="9" height="36" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="52" y="20" width="9" height="32" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="gesture-card__name">Відкрита долоня</h3>
+            <p class="gesture-card__action">Переміщення курсору</p>
+            <code class="gesture-card__code">MOVE</code>
+          </article>
+
+          <article class="gesture-card" role="listitem" aria-label="Жест: лівий клік">
+            <div class="gesture-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80"><ellipse cx="40" cy="55" rx="22" ry="18" fill="var(--surface-2)" stroke="var(--accent-2)" stroke-width="1.5"/><rect x="35" y="16" width="9" height="36" rx="4.5" fill="var(--surface-2)" stroke="var(--accent-2)" stroke-width="2"/><circle cx="39.5" cy="16" r="3.5" fill="var(--accent-2)"/></svg>
+            </div>
+            <h3 class="gesture-card__name">Вказівний палець</h3>
+            <p class="gesture-card__action">Клік лівою кнопкою</p>
+            <code class="gesture-card__code">LEFT_CLICK</code>
+          </article>
+
+          <article class="gesture-card" role="listitem" aria-label="Жест: правий клік">
+            <div class="gesture-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80"><ellipse cx="40" cy="55" rx="22" ry="18" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="28" y="16" width="9" height="36" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.8"/><rect x="42" y="16" width="9" height="36" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.8"/><circle cx="32.5" cy="16" r="3" fill="var(--accent)"/><circle cx="46.5" cy="16" r="3" fill="var(--accent)"/></svg>
+            </div>
+            <h3 class="gesture-card__name">Два пальці (V)</h3>
+            <p class="gesture-card__action">Клік правою кнопкою</p>
+            <code class="gesture-card__code">RIGHT_CLICK</code>
+          </article>
+
+          <article class="gesture-card" role="listitem" aria-label="Жест: прокрутка вгору">
+            <div class="gesture-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80"><ellipse cx="40" cy="58" rx="22" ry="15" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="16" y="28" width="9" height="30" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="28" y="20" width="9" height="34" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="40" y="18" width="9" height="36" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="52" y="22" width="9" height="32" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><path d="M40 12 L34 20 L46 20 Z" fill="var(--accent-2)"/></svg>
+            </div>
+            <h3 class="gesture-card__name">Долоня вгору</h3>
+            <p class="gesture-card__action">Прокрутка вгору</p>
+            <code class="gesture-card__code">SCROLL_UP</code>
+          </article>
+
+          <article class="gesture-card" role="listitem" aria-label="Жест: прокрутка вниз">
+            <div class="gesture-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80"><ellipse cx="40" cy="28" rx="22" ry="15" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="16" y="28" width="9" height="28" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="28" y="28" width="9" height="32" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="40" y="28" width="9" height="34" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><rect x="52" y="28" width="9" height="30" rx="4.5" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><path d="M40 70 L34 62 L46 62 Z" fill="var(--accent-2)"/></svg>
+            </div>
+            <h3 class="gesture-card__name">Долоня вниз</h3>
+            <p class="gesture-card__action">Прокрутка вниз</p>
+            <code class="gesture-card__code">SCROLL_DOWN</code>
+          </article>
+
+          <article class="gesture-card" role="listitem" aria-label="Жест: перетягування">
+            <div class="gesture-card__visual" aria-hidden="true">
+              <svg viewBox="0 0 80 80"><ellipse cx="40" cy="50" rx="20" ry="18" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><ellipse cx="40" cy="42" rx="14" ry="12" fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/><ellipse cx="40" cy="36" rx="9"  ry="8"  fill="var(--surface-2)" stroke="var(--accent)" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="gesture-card__name">Стиснутий кулак</h3>
+            <p class="gesture-card__action">Перетягування (drag)</p>
+            <code class="gesture-card__code">DRAG</code>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS ────────────────────────────── -->
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__num" aria-hidden="true">05</span>
+          <h2 class="section__title" id="results-title">Очікувані результати</h2>
+        </header>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <div class="result-card__icon" aria-hidden="true">⚡</div>
+            <h3 class="result-card__title">Висока продуктивність</h3>
+            <p>Обробка відео ≥ 30 FPS на звичайному ПК без виділеної GPU, затримка реакції &lt; 100 мс.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__icon" aria-hidden="true">🎯</div>
+            <h3 class="result-card__title">Точне керування</h3>
+            <p>Відхилення курсору ≤ 5 пікселів, EMA-фільтр усуває тремтіння без втрати чуйності.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__icon" aria-hidden="true">🖥️</div>
+            <h3 class="result-card__title">Кросплатформність</h3>
+            <p>Єдина кодова база для Windows 10/11 та Ubuntu 20.04+, збірка через CMake.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__icon" aria-hidden="true">🧩</div>
+            <h3 class="result-card__title">Модульна архітектура</h3>
+            <p>Чіткий поділ на незалежні модулі спрощує заміну алгоритму розпізнавання на ML-модель.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__icon" aria-hidden="true">♿</div>
+            <h3 class="result-card__title">Доступність</h3>
+            <p>Практичне застосування для людей з порушеннями опорно-рухового апарату як допоміжна технологія.</p>
+          </article>
+          <article class="result-card">
+            <div class="result-card__icon" aria-hidden="true">📖</div>
+            <h3 class="result-card__title">Відкритий код</h3>
+            <p>Публічний репозиторій на GitHub з документацією, тестами та інструкцією зі збірки.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT ────────────────────────────── -->
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="container container--narrow">
+        <header class="section__header section__header--center">
+          <span class="section__num" aria-hidden="true">06</span>
+          <h2 class="section__title" id="contact-title">Контакти</h2>
+        </header>
+
+        <address class="contact-block">
+          <div class="contact-block__info">
+            <p class="contact-block__name">Журавльов Ілля</p>
+            <p class="contact-block__role">Студент бакалаврату · Кафедра комп'ютерних наук</p>
+            <p class="contact-block__uni">Сумський державний університет, 2026</p>
+          </div>
+
+          <ul class="contact-links" role="list">
+            <li>
+              <a class="contact-link" href="mailto:email@gmail.com"
+                 aria-label="Написати email">
+                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="5" width="16" height="11" rx="2" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M2 7 L10 12 L18 7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>
+                email@gmail.com
+              </a>
+            </li>
+            <li>
+              <a class="contact-link"
+                 href="https://github.com/CillianMorphine/gesture-mouse"
+                 target="_blank" rel="noopener noreferrer"
+                 aria-label="Репозиторій GitHub (відкриється в новій вкладці)">
+                <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2C5.58 2 2 5.67 2 10.2c0 3.62 2.29 6.69 5.47 7.77.4.08.55-.18.55-.39v-1.37c-2.22.5-2.69-1.1-2.69-1.1-.36-.95-.89-1.2-.89-1.2-.73-.51.05-.5.05-.5.8.06 1.23.85 1.23.85.71 1.26 1.87.9 2.33.69.07-.53.28-.9.51-1.1-1.77-.21-3.63-.91-3.63-4.06 0-.9.31-1.63.82-2.2-.08-.21-.36-1.04.08-2.17 0 0 .67-.22 2.2.84A7.4 7.4 0 0110 6.84c.68 0 1.36.1 2 .28 1.52-1.06 2.19-.84 2.19-.84.44 1.13.16 1.96.08 2.17.51.57.82 1.3.82 2.2 0 3.16-1.87 3.85-3.65 4.05.29.26.54.76.54 1.52v2.26c0 .22.14.48.55.39C15.72 16.89 18 13.82 18 10.2 18 5.67 14.42 2 10 2z" fill="currentColor"/></svg>
+                CillianMorphine/gesture-mouse
+              </a>
+            </li>
+          </ul>
+        </address>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="site-footer__text">
+        © 2026
+        <a href="https://github.com/CillianMorphine/gesture-mouse"
+           target="_blank" rel="noopener noreferrer">GitHub</a>
+        · Ліцензія MIT
+      </p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
