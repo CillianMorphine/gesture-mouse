@@ -1,0 +1,14 @@
+{
+  "name": "GestureMouse — Бакалаврська робота",
+  "short_name": "GestureMouse",
+  "description": "Системна утиліта для керування курсором миші за допомогою жестів рук",
+  "start_url": "/gesture-mouse/",
+  "display": "standalone",
+  "background_color": "#080d1a",
+  "theme_color": "#0a0f1e",
+  "icons": [
+    { "src": "assets/icons/favicon-16.png",       "sizes": "16x16",   "type": "image/png" },
+    { "src": "assets/icons/favicon-32.png",       "sizes": "32x32",   "type": "image/png" },
+    { "src": "assets/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

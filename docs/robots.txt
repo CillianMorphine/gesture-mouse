@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cillianmorphine.github.io/gesture-mouse/sitemap.xml
