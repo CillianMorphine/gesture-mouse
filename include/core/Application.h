@@ -1,25 +1,35 @@
 #pragma once
-#include <memory>
+// ============================================================
+// Application.h
+// Fix 1: <atomic> included in header (was missing)
+// Fix 2: Rule of 5 — deleted copy/move
+// Fix 3: [[nodiscard]] on run()
+// Fix 4: noexcept on stop()
+// ============================================================
 #include <atomic>
+#include <memory>
 
 class GestureRecognizer;
 class MouseController;
 class ConfigManager;
 class TrayIcon;
 
-/**
- * @brief Головний клас програми. Керує життєвим циклом усіх компонентів.
- */
 class Application {
 public:
-    Application(int argc, char* argv[]);
+    Application(int argc, char** argv);  // Fix 5: char** not char*[]
     ~Application();
 
-    /// Запуск головного циклу програми
-    int run();
+    // Fix 2: rule of 5
+    Application(const Application&)            = delete;
+    Application& operator=(const Application&) = delete;
+    Application(Application&&)                 = delete;
+    Application& operator=(Application&&)      = delete;
 
-    /// Запит на зупинку програми
-    void stop();
+    // Fix 3: caller must check return code
+    [[nodiscard]] int run();
+
+    // Fix 4: stop() cannot throw
+    void stop() noexcept;
 
 private:
     void initialize();
@@ -32,6 +42,8 @@ private:
     std::unique_ptr<TrayIcon>          m_tray;
 
     std::atomic<bool> m_running{false};
-    int m_argc;
-    char** m_argv;
+
+    // Fix 6: store argc/argv as members safely
+    int    m_argc{0};
+    char** m_argv{nullptr};
 };
