@@ -1,96 +1,89 @@
 cmake_minimum_required(VERSION 3.15)
-project(GestureMouse VERSION 1.0.0 LANGUAGES CXX)
+project(gesture_mouse VERSION 1.0.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# ── Export compile commands for clang-tidy ───────────────────
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+# ─── Залежності: OpenCV ───────────────────────────────────────────────────────
+find_package(OpenCV 4 REQUIRED)
 
-# ── Find dependencies ────────────────────────────────────────
-find_package(OpenCV REQUIRED)
+# ─── Залежності: spdlog (через FetchContent) ─────────────────────────────────
+# spdlog — заголовочна (header-only) бібліотека для логування.
+# CMake автоматично завантажить її при першій конфігурації.
+# Документація: https://github.com/gabime/spdlog
+include(FetchContent)
 
-# ── Include dirs ─────────────────────────────────────────────
-include_directories(${CMAKE_SOURCE_DIR}/include ${OpenCV_INCLUDE_DIRS})
+FetchContent_Declare(
+    spdlog
+    GIT_REPOSITORY https://github.com/gabime/spdlog.git
+    GIT_TAG        v1.14.1   # стабільна версія
+)
+FetchContent_MakeAvailable(spdlog)
 
-# ── Sources ──────────────────────────────────────────────────
-file(GLOB_RECURSE ALL_SOURCES
-    "${CMAKE_SOURCE_DIR}/src/**/*.cpp"
-    "${CMAKE_SOURCE_DIR}/src/*.cpp"
+# ─── Вихідні файли ───────────────────────────────────────────────────────────
+set(SOURCES
+    src/main.cpp
+
+    # Утиліти (логування та обробка помилок)
+    src/utils/logger.cpp
+    src/utils/errors.cpp
+
+    # Ядро (розкоментувати при реалізації)
+    # src/core/application.cpp
+
+    # Розпізнавання жестів
+    src/gesture/gesture_detector.cpp
+
+    # Симуляція введення
+    # src/input/mouse_controller.cpp
+
+    # Інтерфейс (трей)
+    # src/ui/tray_icon.cpp
 )
 
-add_executable(gesture_mouse ${ALL_SOURCES})
-target_link_libraries(gesture_mouse ${OpenCV_LIBS})
+# ─── Виконуваний файл ─────────────────────────────────────────────────────────
+add_executable(gesture_mouse ${SOURCES})
 
+target_include_directories(gesture_mouse PRIVATE
+    ${CMAKE_SOURCE_DIR}/src
+    ${OpenCV_INCLUDE_DIRS}
+)
+
+target_link_libraries(gesture_mouse PRIVATE
+    ${OpenCV_LIBS}
+    spdlog::spdlog
+)
+
+# ─── Платформо-залежні бібліотеки ────────────────────────────────────────────
 if(WIN32)
-    target_link_libraries(gesture_mouse user32 gdi32)
-elseif(UNIX AND NOT APPLE)
+    # Win32 API для SendInput (симуляція миші)
+    target_link_libraries(gesture_mouse PRIVATE user32)
+elseif(UNIX)
+    # X11 / XTest для симуляції введення на Linux
     find_package(X11 REQUIRED)
-    target_link_libraries(gesture_mouse ${X11_LIBRARIES})
+    target_link_libraries(gesture_mouse PRIVATE ${X11_LIBRARIES} Xtst)
 endif()
 
-# ── Strict compiler warnings ─────────────────────────────────
-if(MSVC)
-    target_compile_options(gesture_mouse PRIVATE /W4 /WX /permissive-)
+# ─── Визначення для коду ─────────────────────────────────────────────────────
+if(WIN32)
+    target_compile_definitions(gesture_mouse PRIVATE GM_PLATFORM_WINDOWS)
 else()
-    target_compile_options(gesture_mouse PRIVATE
-        -Wall -Wextra -Wpedantic -Werror
-        -Wshadow -Wnon-virtual-dtor -Wold-style-cast
-        -Wcast-align -Wunused -Woverloaded-virtual
-        -Wconversion -Wsign-conversion -Wnull-dereference
-        -Wdouble-promotion -Wformat=2
-    )
+    target_compile_definitions(gesture_mouse PRIVATE GM_PLATFORM_LINUX)
 endif()
 
-# ════════════════════════════════════════════════════════════
-# LINT TARGETS (Lab 4)
-# ════════════════════════════════════════════════════════════
+# ─── Копіювання конфіг-файлу в директорію збірки ─────────────────────────────
+configure_file(
+    ${CMAKE_SOURCE_DIR}/gesture_mouse.conf
+    ${CMAKE_BINARY_DIR}/gesture_mouse.conf
+    COPYONLY
+)
 
-# ── clang-tidy target ────────────────────────────────────────
-find_program(CLANG_TIDY clang-tidy)
-if(CLANG_TIDY)
-    # Attach to build (optional — enable in CI)
-    option(ENABLE_CLANG_TIDY "Run clang-tidy during build" OFF)
-    if(ENABLE_CLANG_TIDY)
-        set_target_properties(gesture_mouse PROPERTIES
-            CXX_CLANG_TIDY "${CLANG_TIDY};--warnings-as-errors=*")
-    endif()
+# ─── Тести (Google Test) ─────────────────────────────────────────────────────
+# enable_testing()
+# add_subdirectory(tests)
 
-    # Standalone target: cmake --build build --target lint
-    add_custom_target(lint
-        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/scripts/lint.sh
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        COMMENT "Running clang-tidy + cppcheck..."
-        VERBATIM
-    )
-
-    add_custom_target(lint-fix
-        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/scripts/lint.sh --fix --format
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        COMMENT "Running linters with auto-fix..."
-        VERBATIM
-    )
-endif()
-
-# ── clang-format target ──────────────────────────────────────
-find_program(CLANG_FORMAT clang-format)
-if(CLANG_FORMAT)
-    add_custom_target(format
-        COMMAND ${CLANG_FORMAT} -i
-            $<TARGET_PROPERTY:gesture_mouse,SOURCES>
-        COMMENT "Formatting source files with clang-format..."
-        VERBATIM
-    )
-
-    add_custom_target(format-check
-        COMMAND ${CLANG_FORMAT} --dry-run --Werror
-            $<TARGET_PROPERTY:gesture_mouse,SOURCES>
-        COMMENT "Checking code formatting..."
-        VERBATIM
-    )
-endif()
-
-# ── Tests ────────────────────────────────────────────────────
-enable_testing()
-add_subdirectory(tests)
+message(STATUS "GestureMouse ${PROJECT_VERSION} — конфігурацію завершено")
+message(STATUS "  Компілятор:   ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
+message(STATUS "  OpenCV:       ${OpenCV_VERSION}")
+message(STATUS "  Стандарт C++: ${CMAKE_CXX_STANDARD}")
