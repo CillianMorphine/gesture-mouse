@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_config_manager_8h" kind="file" language="C++">
+    <compoundname>ConfigManager.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">unordered_map</includes>
+    <includedby refid="_application_8cpp" local="yes">Application.cpp</includedby>
+    <includedby refid="_config_manager_8cpp" local="yes">ConfigManager.cpp</includedby>
+    <includedby refid="_gesture_classifier_8cpp" local="yes">GestureClassifier.cpp</includedby>
+    <includedby refid="_gesture_recognizer_8cpp" local="yes">GestureRecognizer.cpp</includedby>
+    <includedby refid="_hand_tracker_8cpp" local="yes">HandTracker.cpp</includedby>
+    <includedby refid="_mouse_controller_8cpp" local="yes">MouseController.cpp</includedby>
+    <includedby refid="_settings_window_8cpp" local="yes">SettingsWindow.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>ConfigManager.h</label>
+        <link refid="_config_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>ConfigManager.h</label>
+        <link refid="_config_manager_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Application.cpp</label>
+        <link refid="_application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>ConfigManager.cpp</label>
+        <link refid="_config_manager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>GestureClassifier.cpp</label>
+        <link refid="_gesture_classifier_8cpp"/>
+      </node>
+      <node id="5">
+        <label>GestureRecognizer.cpp</label>
+        <link refid="_gesture_recognizer_8cpp"/>
+      </node>
+      <node id="6">
+        <label>HandTracker.cpp</label>
+        <link refid="_hand_tracker_8cpp"/>
+      </node>
+      <node id="7">
+        <label>MouseController.cpp</label>
+        <link refid="_mouse_controller_8cpp"/>
+      </node>
+      <node id="8">
+        <label>SettingsWindow.cpp</label>
+        <link refid="_settings_window_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_config_manager" prot="public">ConfigManager</innerclass>
+    <briefdescription>
+<para>Менеджер конфігурації у форматі key=value. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ваше Ім&apos;я </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+</para>
+<sect1 id="_config_manager_8h_1autotoc_md2_1s1"><sect2 id="_config_manager_8h_1autotoc_md2_1s2"><sect3 id="_config_manager_8h_1autotoc_md2">
+<title>Формат конфіг-файлу</title><para><programlisting filename=".ini"><codeline><highlight class="normal">#<sp/>Коментар</highlight></codeline>
+<codeline><highlight class="normal">camera.index=0</highlight></codeline>
+<codeline><highlight class="normal">mouse.smoothing=0.3</highlight></codeline>
+<codeline><highlight class="normal">debug.show_window=false</highlight></codeline>
+</programlisting></para>
+</sect3></sect2></sect1>
+<sect1 id="_config_manager_8h_1autotoc_md3_1s1"><sect2 id="_config_manager_8h_1autotoc_md3_1s2"><sect3 id="_config_manager_8h_1autotoc_md3">
+<title>Ієрархія ключів</title><para>Рекомендований формат: <computeroutput>module.parameter</computeroutput></para>
+<para><table rows="5" cols="2"><row>
+<entry thead="yes"><para>Модуль  </para>
+</entry><entry thead="yes"><para>Ключі  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>camera.*</computeroutput>  </para>
+</entry><entry thead="no"><para>index  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mouse.*</computeroutput>  </para>
+</entry><entry thead="no"><para>smoothing  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>gesture.*</computeroutput>  </para>
+</entry><entry thead="no"><para>confidence  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>debug.*</computeroutput>  </para>
+</entry><entry thead="no"><para>show_window  </para>
+</entry></row>
+</table>
+</para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@file<sp/>ConfigManager.h</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Менеджер<sp/>конфігурації<sp/>у<sp/>форматі<sp/>key=value.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@author<sp/>Ваше<sp/>Ім&apos;я</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date<sp/>2025</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>###<sp/>Формат<sp/>конфіг-файлу</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>```ini</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>#<sp/>Коментар</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>camera.index=0</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>mouse.smoothing=0.3</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>debug.show_window=false</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>###<sp/>Ієрархія<sp/>ключів</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Рекомендований<sp/>формат:<sp/>`module.parameter`</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>|<sp/>Модуль<sp/>|<sp/>Ключі<sp/>|</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>|--------|-------|</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>|<sp/>`camera.*`<sp/>|<sp/>index<sp/>|</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>|<sp/>`mouse.*`<sp/>|<sp/>smoothing<sp/>|</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>|<sp/>`gesture.*`<sp/>|<sp/>confidence<sp/>|</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>|<sp/>`debug.*`<sp/>|<sp/>show_window<sp/>|</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="31"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Зчитує<sp/>та<sp/>зберігає<sp/>налаштування<sp/>у<sp/>форматі<sp/>key=value.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>Підтримує<sp/>типізований<sp/>доступ<sp/>через<sp/>шаблонний<sp/>метод<sp/>get&lt;T&gt;().</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>При<sp/>відсутності<sp/>ключа<sp/>або<sp/>помилці<sp/>парсингу<sp/>повертає<sp/>defaultValue.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>@par<sp/>Приклад:</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>ConfigManager<sp/>cfg(&quot;config/settings.txt&quot;);</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>float<sp/>smooth<sp/>=<sp/>cfg.get&lt;float&gt;(&quot;mouse.smoothing&quot;,<sp/>0.3F);</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>int<sp/><sp/><sp/>camIdx<sp/>=<sp/>cfg.get&lt;int&gt;(&quot;camera.index&quot;,<sp/>0);</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>bool<sp/><sp/>debug<sp/><sp/>=<sp/>cfg.get&lt;bool&gt;(&quot;debug.show_window&quot;,<sp/>false);</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_config_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" kindref="member">ConfigManager</ref><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Конструктор.<sp/>Негайно<sp/>завантажує<sp/>конфіг<sp/>з<sp/>файлу.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>filePath<sp/>Шлях<sp/>до<sp/>конфіг-файлу<sp/>(відносний<sp/>або<sp/>абсолютний).</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Якщо<sp/>файл<sp/>не<sp/>існує<sp/>—<sp/>використовуються<sp/>значення<sp/>за<sp/>замовчуванням,</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>без<sp/>виключень.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" kindref="member">ConfigManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filePath);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Повертає<sp/>значення<sp/>ключа,<sp/>перетворене<sp/>до<sp/>типу<sp/>T.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@tparam<sp/>T<sp/>Цільовий<sp/>тип:<sp/>float,<sp/>int,<sp/>bool,<sp/>std::string.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>key<sp/>Ключ<sp/>у<sp/>форматі<sp/>&quot;module.parameter&quot;.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>defaultValue<sp/>Значення,<sp/>яке<sp/>повертається<sp/>при<sp/>відсутності<sp/>ключа.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>Значення<sp/>типу<sp/>T<sp/>або<sp/>defaultValue.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Спеціалізації<sp/>для<sp/>float,<sp/>int,<sp/>bool<sp/>визначені<sp/>в<sp/>.cpp.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Для<sp/>std::string<sp/>—<sp/>просто<sp/>повертає<sp/>рядок.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="68" refid="class_config_manager_1a1e085642302bf8877c1f80cb6c9c6327" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/><ref refid="class_config_manager_1a1e085642302bf8877c1f80cb6c9c6327" kindref="member">get</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>defaultValue)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Встановлює<sp/>значення<sp/>ключа<sp/>(без<sp/>збереження<sp/>на<sp/>диск).</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>key<sp/>Ключ.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>value<sp/>Нове<sp/>значення<sp/>(рядок).</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Для<sp/>збереження<sp/>викличте<sp/>save().</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="77" refid="class_config_manager_1a8eba87f60475f39e0e27b22ac9b6ffc4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_config_manager_1a8eba87f60475f39e0e27b22ac9b6ffc4" kindref="member">set</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>value);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Зберігає<sp/>поточні<sp/>налаштування<sp/>у<sp/>файл.</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Перезаписує<sp/>файл<sp/>повністю<sp/>(коментарі<sp/>не<sp/>зберігаються).</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_config_manager_1ab5a426ba88966fa7383a963d97762c52" kindref="member">save</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Перезавантажує<sp/>конфіг<sp/>з<sp/>файлу<sp/>(скидає<sp/>runtime-зміни).</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" kindref="member">load</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>m_filePath;<sp/></highlight><highlight class="comment">///&lt;<sp/>Шлях<sp/>до<sp/>конфіг-файлу</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>m_data;<sp/></highlight><highlight class="comment">///&lt;<sp/>Словник<sp/>key→value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/core/ConfigManager.h"/>
+  </compounddef>
+</doxygen>

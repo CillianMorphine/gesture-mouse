@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_97d41d4f3e4ae379f4f3cc1df9993b19" kind="dir">
+    <compoundname>ui</compoundname>
+    <innerfile refid="_settings_window_8h">SettingsWindow.h</innerfile>
+    <innerfile refid="_tray_icon_8h">TrayIcon.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/ui/"/>
+  </compounddef>
+</doxygen>

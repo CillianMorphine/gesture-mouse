@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_timer" kind="class" language="C++" prot="public">
+    <compoundname>Timer</compoundname>
+    <includes refid="_timer_8h" local="no">Timer.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_timer_1a60db4ae935547a60bb648c155f0ddb37" prot="private" static="no" mutable="no">
+        <type>std::chrono::steady_clock::time_point</type>
+        <definition>std::chrono::steady_clock::time_point Timer::m_start</definition>
+        <argsstring></argsstring>
+        <name>m_start</name>
+        <qualifiedname>Timer::m_start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Timer.h" line="26" column="43" bodyfile="include/utils/Timer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_timer_1a3a8b5272198d029779dc9302a54305a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Timer::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <qualifiedname>Timer::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Timer.h" line="9" column="10" bodyfile="include/utils/Timer.h" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_1a65fb67a7963bebbd996156d9a15bf260" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Timer::elapsedMs</definition>
+        <argsstring>() const</argsstring>
+        <name>elapsedMs</name>
+        <qualifiedname>Timer::elapsedMs</qualifiedname>
+        <briefdescription>
+<para>Повертає час у мілісекундах з моменту <ref refid="class_timer_1a3a8b5272198d029779dc9302a54305a8" kindref="member">start()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Timer.h" line="14" column="12" bodyfile="include/utils/Timer.h" bodystart="14" bodyend="17"/>
+        <referencedby refid="class_timer_1ae8da1d7bfe4f2bf80bf22f06d81c1c75" compoundref="_timer_8h" startline="20" endline="23">fps</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_1ae8da1d7bfe4f2bf80bf22f06d81c1c75" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double Timer::fps</definition>
+        <argsstring>() const</argsstring>
+        <name>fps</name>
+        <qualifiedname>Timer::fps</qualifiedname>
+        <briefdescription>
+<para>Повертає миттєвий FPS (кадр на секунду). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Timer.h" line="20" column="12" bodyfile="include/utils/Timer.h" bodystart="20" bodyend="23"/>
+        <references refid="class_timer_1a65fb67a7963bebbd996156d9a15bf260" compoundref="_timer_8h" startline="14" endline="17">elapsedMs</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Простий таймер для вимірювання часу виконання та FPS. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/utils/Timer.h" line="7" column="1" bodyfile="include/utils/Timer.h" bodystart="7" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_timer_1a65fb67a7963bebbd996156d9a15bf260" prot="public" virt="non-virtual"><scope>Timer</scope><name>elapsedMs</name></member>
+      <member refid="class_timer_1ae8da1d7bfe4f2bf80bf22f06d81c1c75" prot="public" virt="non-virtual"><scope>Timer</scope><name>fps</name></member>
+      <member refid="class_timer_1a60db4ae935547a60bb648c155f0ddb37" prot="private" virt="non-virtual"><scope>Timer</scope><name>m_start</name></member>
+      <member refid="class_timer_1a3a8b5272198d029779dc9302a54305a8" prot="public" virt="non-virtual"><scope>Timer</scope><name>start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

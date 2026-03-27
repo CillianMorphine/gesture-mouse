@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_logger_8h" kind="file" language="C++">
+    <compoundname>Logger.h</compoundname>
+    <includes local="no">chrono</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">string</includes>
+    <includedby refid="_application_8cpp" local="yes">Application.cpp</includedby>
+    <includedby refid="_config_manager_8cpp" local="yes">ConfigManager.cpp</includedby>
+    <includedby refid="_gesture_recognizer_8cpp" local="yes">GestureRecognizer.cpp</includedby>
+    <includedby refid="_hand_tracker_8cpp" local="yes">HandTracker.cpp</includedby>
+    <includedby refid="_logger_8cpp" local="yes">Logger.cpp</includedby>
+    <includedby refid="_mouse_controller_8cpp" local="yes">MouseController.cpp</includedby>
+    <includedby refid="_settings_window_8cpp" local="yes">SettingsWindow.cpp</includedby>
+    <includedby refid="_tray_icon_8cpp" local="yes">TrayIcon.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>Logger.h</label>
+        <link refid="_logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>chrono</label>
+      </node>
+      <node id="3">
+        <label>fstream</label>
+      </node>
+      <node id="4">
+        <label>iomanip</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>mutex</label>
+      </node>
+      <node id="7">
+        <label>sstream</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>Logger.h</label>
+        <link refid="_logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Application.cpp</label>
+        <link refid="_application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>ConfigManager.cpp</label>
+        <link refid="_config_manager_8cpp"/>
+      </node>
+      <node id="4">
+        <label>GestureRecognizer.cpp</label>
+        <link refid="_gesture_recognizer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>HandTracker.cpp</label>
+        <link refid="_hand_tracker_8cpp"/>
+      </node>
+      <node id="7">
+        <label>MouseController.cpp</label>
+        <link refid="_mouse_controller_8cpp"/>
+      </node>
+      <node id="10">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="8">
+        <label>SettingsWindow.cpp</label>
+        <link refid="_settings_window_8cpp"/>
+      </node>
+      <node id="9">
+        <label>TrayIcon.cpp</label>
+        <link refid="_tray_icon_8cpp"/>
+      </node>
+      <node id="6">
+        <label>Logger.cpp</label>
+        <link refid="_logger_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_logger" prot="public">Logger</innerclass>
+    <sectiondef kind="define">
+      <member refid="group___log_macros_1ga2332264037abe02c8041a498b2fa1627" kind="define"><name>LOG_DEBUG</name></member>
+      <member refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kind="define"><name>LOG_INFO</name></member>
+      <member refid="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" kind="define"><name>LOG_WARN</name></member>
+      <member refid="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" kind="define"><name>LOG_ERROR</name></member>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>LogLevel</name>
+        <enumvalue id="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86adc30ec20708ef7b0f641ef78b7880a15" prot="public">
+          <name>DEBUG</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Детальна debug-інформація (тільки для розробки). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a551b723eafd6a31d444fcb2f5920fbd3" prot="public">
+          <name>INFO</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Звичайні інформаційні повідомлення </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a32bd8a1db2275458673903bdb84cb277" prot="public">
+          <name>WARN</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Попередження про нештатні, але не критичні ситуації </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86abb1ca97ec761fc37101737ba0aa2e7c5" prot="public">
+          <name>ERROR</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Критичні помилки (зазвичай передують аварійному завершенню). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Рівень важливості повідомлення логера. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Значення впорядковані від менш до більш критичних. У майбутньому можна відфільтрувати повідомлення нижче порога. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="44" column="1" bodyfile="include/utils/Logger.h" bodystart="44" bodyend="49"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Легковажний потокобезпечний логер. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ваше Ім&apos;я </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+</para>
+<sect1 id="_logger_8h_1autotoc_md12_1s1"><sect2 id="_logger_8h_1autotoc_md12_1s2"><sect3 id="_logger_8h_1autotoc_md12">
+<title>Використання</title><para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Ініціалізація<sp/>(один<sp/>раз<sp/>у<sp/>main)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="class_logger_1aad8d1baeca78a12758392615a2785992" kindref="member">Logger::init</ref>(</highlight><highlight class="stringliteral">&quot;gesture_mouse.log&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Логування<sp/>через<sp/>макроси</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kindref="member">LOG_INFO</ref>(</highlight><highlight class="stringliteral">&quot;Application<sp/>started&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" kindref="member">LOG_WARN</ref>(</highlight><highlight class="stringliteral">&quot;Camera<sp/>index<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(idx)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>not<sp/>found,<sp/>using<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" kindref="member">LOG_ERROR</ref>(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>config:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>path);</highlight></codeline>
+</programlisting></para>
+</sect3></sect2></sect1>
+<sect1 id="_logger_8h_1autotoc_md13_1s1"><sect2 id="_logger_8h_1autotoc_md13_1s2"><sect3 id="_logger_8h_1autotoc_md13">
+<title>Формат виводу</title><para><programlisting><codeline><highlight class="normal">[2025-01-15<sp/>14:23:01]<sp/>[<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a551b723eafd6a31d444fcb2f5920fbd3" kindref="member">INFO</ref><sp/>]<sp/><ref refid="class_application" kindref="compound">Application</ref><sp/>started<sp/>(src/<ref refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>.cpp:12)</highlight></codeline>
+<codeline><highlight class="normal">[2025-01-15<sp/>14:23:01]<sp/>[<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a32bd8a1db2275458673903bdb84cb277" kindref="member">WARN</ref><sp/>]<sp/>Camera<sp/>not<sp/>found<sp/><sp/><sp/>(src/core/App.cpp:45)</highlight></codeline>
+</programlisting></para>
+</sect3></sect2></sect1>
+<sect1 id="_logger_8h_1autotoc_md14_1s1"><sect2 id="_logger_8h_1autotoc_md14_1s2"><sect3 id="_logger_8h_1autotoc_md14">
+<title>Потокобезпека</title><para>Метод log() захищений <computeroutput>std::mutex</computeroutput> — безпечний для виклику з будь-якого потоку одночасно. </para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@file<sp/>Logger.h</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Легковажний<sp/>потокобезпечний<sp/>логер.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@author<sp/>Ваше<sp/>Ім&apos;я</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date<sp/>2025</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>###<sp/>Використання</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>//<sp/>Ініціалізація<sp/>(один<sp/>раз<sp/>у<sp/>main)</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Logger::init(&quot;gesture_mouse.log&quot;);</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>//<sp/>Логування<sp/>через<sp/>макроси</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>LOG_INFO(&quot;Application<sp/>started&quot;);</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>LOG_WARN(&quot;Camera<sp/>index<sp/>&quot;<sp/>+<sp/>std::to_string(idx)<sp/>+<sp/>&quot;<sp/>not<sp/>found,<sp/>using<sp/>0&quot;);</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>LOG_ERROR(&quot;Failed<sp/>to<sp/>open<sp/>config:<sp/>&quot;<sp/>+<sp/>path);</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>###<sp/>Формат<sp/>виводу</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>[2025-01-15<sp/>14:23:01]<sp/>[INFO<sp/>]<sp/>Application<sp/>started<sp/>(src/main.cpp:12)</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>[2025-01-15<sp/>14:23:01]<sp/>[WARN<sp/>]<sp/>Camera<sp/>not<sp/>found<sp/><sp/><sp/>(src/core/App.cpp:45)</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>###<sp/>Потокобезпека</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Метод<sp/>log()<sp/>захищений<sp/>`std::mutex`<sp/>—<sp/>безпечний<sp/>для<sp/>виклику</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>з<sp/>будь-якого<sp/>потоку<sp/>одночасно.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="39"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Рівень<sp/>важливості<sp/>повідомлення<sp/>логера.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>@details<sp/>Значення<sp/>впорядковані<sp/>від<sp/>менш<sp/>до<sp/>більш<sp/>критичних.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>У<sp/>майбутньому<sp/>можна<sp/>відфільтрувати<sp/>повідомлення<sp/>нижче<sp/>порога.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" kindref="member">LogLevel</ref><sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
+<codeline lineno="45" refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86adc30ec20708ef7b0f641ef78b7880a15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86adc30ec20708ef7b0f641ef78b7880a15" kindref="member">DEBUG</ref><sp/>=<sp/>0,<sp/></highlight><highlight class="comment">///&lt;<sp/>Детальна<sp/>debug-інформація<sp/>(тільки<sp/>для<sp/>розробки)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a551b723eafd6a31d444fcb2f5920fbd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a551b723eafd6a31d444fcb2f5920fbd3" kindref="member">INFO</ref><sp/><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">///&lt;<sp/>Звичайні<sp/>інформаційні<sp/>повідомлення</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a32bd8a1db2275458673903bdb84cb277" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a32bd8a1db2275458673903bdb84cb277" kindref="member">WARN</ref><sp/><sp/>=<sp/>2,<sp/></highlight><highlight class="comment">///&lt;<sp/>Попередження<sp/>про<sp/>нештатні,<sp/>але<sp/>не<sp/>критичні<sp/>ситуації</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86abb1ca97ec761fc37101737ba0aa2e7c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">ERROR</ref><sp/>=<sp/>3,<sp/></highlight><highlight class="comment">///&lt;<sp/>Критичні<sp/>помилки<sp/>(зазвичай<sp/>передують<sp/>аварійному<sp/>завершенню)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Статичний<sp/>потокобезпечний<sp/>логер<sp/>з<sp/>виводом<sp/>у<sp/>файл<sp/>і<sp/>stdout.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Всі<sp/>методи<sp/>статичні<sp/>—<sp/>логер<sp/>є<sp/>**singleton<sp/>за<sp/>поведінкою**,</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>але<sp/>реалізований<sp/>без<sp/>патерну<sp/>Singleton<sp/>(простіше<sp/>тестувати).</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>@note<sp/>Клас<sp/>не<sp/>підлягає<sp/>інстанціюванню<sp/>(конструктор<sp/>видалений).</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_logger" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" kindref="member">Logger</ref><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62" refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" kindref="member">Logger</ref>()<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">///&lt;<sp/>Забороняємо<sp/>створення<sp/>об&apos;єктів</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="class_logger_1add0f34d4c753c86af8074840a72366b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_logger_1add0f34d4c753c86af8074840a72366b3" kindref="member">Logger</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" kindref="member">Logger</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64" refid="class_logger_1a8c0ca770cdc91ca9fc3015286568e1ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" kindref="member">Logger</ref>&amp;<sp/><ref refid="class_logger_1a8c0ca770cdc91ca9fc3015286568e1ea" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" kindref="member">Logger</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Ініціалізує<sp/>логер:<sp/>відкриває<sp/>файл<sp/>для<sp/>запису.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>filePath<sp/>Шлях<sp/>до<sp/>лог-файлу.<sp/>Якщо<sp/>файл<sp/>існує<sp/>—<sp/>дописує<sp/>(append).</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Якщо<sp/>файл<sp/>не<sp/>вдалося<sp/>відкрити<sp/>—<sp/>логер<sp/>продовжує<sp/>виводити<sp/>у<sp/>stdout.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Виклик<sp/>init()<sp/>двічі<sp/>закриває<sp/>попередній<sp/>файл<sp/>і<sp/>відкриває<sp/>новий.</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@par<sp/>Приклад:</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Logger::init(&quot;logs/gesture_mouse.log&quot;);</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_logger_1aad8d1baeca78a12758392615a2785992" kindref="member">init</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filePath);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Записує<sp/>повідомлення<sp/>з<sp/>рівнем,<sp/>часовою<sp/>міткою<sp/>та<sp/>позицією<sp/>в<sp/>коді.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Зазвичай<sp/>викликається<sp/>через<sp/>макроси<sp/>LOG_*,<sp/>які<sp/>автоматично</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>підставляють<sp/>`__FILE__`<sp/>та<sp/>`__LINE__`.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Формат<sp/>рядка:<sp/>`[TIMESTAMP]<sp/>[LEVEL]<sp/>message<sp/>(file:line)`</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>level<sp/><sp/><sp/>Рівень<sp/>важливості<sp/>(DEBUG<sp/>/<sp/>INFO<sp/>/<sp/>WARN<sp/>/<sp/>ERROR).</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>message<sp/>Текст<sp/>повідомлення<sp/>(UTF-8).</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>file<sp/><sp/><sp/><sp/>Ім&apos;я<sp/>файлу<sp/>(зазвичай<sp/>__FILE__).</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>line<sp/><sp/><sp/><sp/>Номер<sp/>рядка<sp/>(зазвичай<sp/>__LINE__).</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@thread_safety<sp/>Потокобезпечний<sp/>(захищений<sp/>std::mutex).</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kindref="member">log</ref>(<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" kindref="member">LogLevel</ref><sp/>level,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>message,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>file,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Перевіряє<sp/>чи<sp/>логер<sp/>ініціалізований<sp/>(файл<sp/>відкрито).</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>true<sp/>якщо<sp/>лог-файл<sp/>успішно<sp/>відкрито.</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="class_logger_1a21948a5f734c0c33a1a1ab79bea24a57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_logger_1a21948a5f734c0c33a1a1ab79bea24a57" kindref="member">isInitialized</ref>()<sp/>noexcept<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s_file.is_open();<sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>levelToString(<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" kindref="member">LogLevel</ref><sp/>l);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/>timestamp();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::ofstream<sp/>s_file;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::mutex<sp/><sp/><sp/><sp/>s_mutex;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="114"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@defgroup<sp/>LogMacros<sp/>Макроси<sp/>логування</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Зручні<sp/>макроси<sp/>для<sp/>виклику<sp/>Logger::log()<sp/>з<sp/>автоматичним<sp/>__FILE__/__LINE__.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>Обгортка<sp/>`do<sp/>{<sp/>...<sp/>}<sp/>while(false)`<sp/>дозволяє<sp/>безпечно<sp/>використовувати</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>макроси<sp/>в<sp/>конструкціях<sp/>`if/else`<sp/>без<sp/>фігурних<sp/>дужок:</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>if<sp/>(error)</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>LOG_ERROR(&quot;Something<sp/>went<sp/>wrong&quot;);<sp/><sp/>//<sp/>безпечно</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>else</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>LOG_INFO(&quot;All<sp/>good&quot;);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>безпечно</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>@{</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*/</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="129"><highlight class="comment">/**<sp/>@brief<sp/>Логування<sp/>debug-повідомлення.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="group___log_macros_1ga2332264037abe02c8041a498b2fa1627" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_DEBUG(msg)<sp/>do<sp/>{<sp/>Logger::log(LogLevel::DEBUG,<sp/>(msg),<sp/>__FILE__,<sp/>__LINE__);<sp/>}<sp/>while(false)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">/**<sp/>@brief<sp/>Логування<sp/>інформаційного<sp/>повідомлення.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_INFO(msg)<sp/><sp/>do<sp/>{<sp/>Logger::log(LogLevel::INFO,<sp/><sp/>(msg),<sp/>__FILE__,<sp/>__LINE__);<sp/>}<sp/>while(false)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="133"><highlight class="comment">/**<sp/>@brief<sp/>Логування<sp/>попередження.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_WARN(msg)<sp/><sp/>do<sp/>{<sp/>Logger::log(LogLevel::WARN,<sp/><sp/>(msg),<sp/>__FILE__,<sp/>__LINE__);<sp/>}<sp/>while(false)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="135"><highlight class="comment">/**<sp/>@brief<sp/>Логування<sp/>критичної<sp/>помилки.<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOG_ERROR(msg)<sp/>do<sp/>{<sp/>Logger::log(LogLevel::ERROR,<sp/>(msg),<sp/>__FILE__,<sp/>__LINE__);<sp/>}<sp/>while(false)</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment">/**<sp/>@}<sp/>*/</highlight><highlight class="preprocessor"><sp/></highlight><highlight class="comment">//<sp/>end<sp/>of<sp/>LogMacros</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="include/utils/Logger.h"/>
+  </compounddef>
+</doxygen>

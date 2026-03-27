@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_f6ebdb82e9f6c33c3c13ba777a09d438" kind="dir">
+    <compoundname>gesture</compoundname>
+    <innerfile refid="_gesture_classifier_8h">GestureClassifier.h</innerfile>
+    <innerfile refid="_gesture_recognizer_8h">GestureRecognizer.h</innerfile>
+    <innerfile refid="_hand_tracker_8h">HandTracker.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/gesture/"/>
+  </compounddef>
+</doxygen>

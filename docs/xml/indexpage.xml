@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>🖱️ GestureMouse — Системна утиліта керування курсором жестами</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="index_1md__r_e_a_d_m_e"/></para>
+<para><image type="html" name="https://img.shields.io/badge/C++-17-blue.svg" alt="C++" inline="yes"></image>
+ <image type="html" name="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey.svg" alt="Platform" inline="yes"></image>
+ <image type="html" name="https://img.shields.io/badge/License-MIT-green.svg" alt="License" inline="yes"></image>
+ <image type="html" name="https://img.shields.io/badge/Status-In%20Development-yellow.svg" alt="Status" inline="yes"></image>
+</para>
+<sect1 id="index_1autotoc_md16">
+<title>Опис проекту</title><para><bold>GestureMouse</bold> — це системна утиліта, яка дозволяє керувати курсором миші за допомогою жестів рук, розпізнаних через веб-камеру в режимі реального часу. Програма використовує алгоритми комп&apos;ютерного зору для відстеження положення руки та перетворення жестів у команди керування курсором.</para>
+<sect2 id="index_1autotoc_md17">
+<title>Основні можливості</title><para><itemizedlist>
+<listitem><para>🎯 Переміщення курсору за допомогою руки</para>
+</listitem><listitem><para>👆 Клік лівою кнопкою миші (вказівний жест)</para>
+</listitem><listitem><para>✌️ Клік правою кнопкою миші (жест двох пальців)</para>
+</listitem><listitem><para>📜 Прокрутка (жест відкритої долоні)</para>
+</listitem><listitem><para>⚙️ Налаштування чутливості та зони відстеження</para>
+</listitem><listitem><para>🖥️ Системний трей з іконкою управління</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md18">
+<title>Вимоги</title><sect2 id="index_1autotoc_md19">
+<title>Програмні вимоги</title><para><itemizedlist>
+<listitem><para>C++17 або новіший стандарт</para>
+</listitem><listitem><para>CMake 3.15+</para>
+</listitem><listitem><para>OpenCV 4.x</para>
+</listitem><listitem><para>Windows 10/11 або Ubuntu 20.04+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md20">
+<title>Апаратні вимоги</title><para><itemizedlist>
+<listitem><para>Веб-камера (мінімум 720p, 30 fps)</para>
+</listitem><listitem><para>Процесор: Intel Core i3 або еквівалент</para>
+</listitem><listitem><para>RAM: мінімум 4 ГБ</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md21">
+<title>Структура проекту</title><para><programlisting><codeline><highlight class="normal">gesture_mouse/</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>src/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Вихідний<sp/>код</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>core/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Ядро<sp/>програми<sp/>(головний<sp/>цикл,<sp/>менеджер)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>gesture/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Модуль<sp/>розпізнавання<sp/>жестів</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>input/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Модуль<sp/>симуляції<sp/>введення<sp/>(миша/клавіатура)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>ui/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Інтерфейс<sp/>користувача<sp/>(трей,<sp/>налаштування)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>utils/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Допоміжні<sp/>утиліти<sp/>(логування,<sp/>конфіг)</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>include/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Заголовкові<sp/>файли</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>tests/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Модульні<sp/>та<sp/>інтеграційні<sp/>тести</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>docs/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Документація</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>design/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Дизайн-документи,<sp/>архітектура</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>requirements/<sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Специфікація<sp/>вимог</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>diagrams/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>UML-діаграми</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>assets/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Ресурси<sp/>(іконки,<sp/>конфігурація<sp/>за<sp/>замовчуванням)</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>scripts/<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Скрипти<sp/>збірки<sp/>та<sp/>розгортання</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>CMakeLists.txt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Файл<sp/>збірки<sp/>CMake</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>.gitignore<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Виключення<sp/>Git</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>LICENSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Ліцензія<sp/>MIT</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>README.md<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#<sp/>Цей<sp/>файл</highlight></codeline>
+</programlisting></para>
+</sect1>
+<sect1 id="index_1autotoc_md22">
+<title>Збірка та запуск</title><sect2 id="index_1autotoc_md23">
+<title>Клонування репозиторію</title><para><programlisting filename=".bash"><codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/CillianMorphine/gesture-mouse.git</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>gesture-mouse</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="index_1autotoc_md24">
+<title>Збірка (Linux)</title><para><programlisting filename=".bash"><codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>-j4</highlight></codeline>
+<codeline><highlight class="normal">./gesture_mouse</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="index_1autotoc_md25">
+<title>Збірка (Windows)</title><para><programlisting filename=".bash"><codeline><highlight class="normal">mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..<sp/>-G<sp/>&quot;Visual<sp/>Studio<sp/>17<sp/>2022&quot;</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>.<sp/>--config<sp/>Release</highlight></codeline>
+<codeline><highlight class="normal">.\Release\gesture_mouse.exe</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md26">
+<title>Використання</title><para><orderedlist>
+<listitem><para>Запустіть утиліту</para>
+</listitem><listitem><para>Направте камеру так, щоб рука була у кадрі</para>
+</listitem><listitem><para>Підніміть руку — курсор почне рухатися</para>
+</listitem><listitem><para>Використовуйте жести для кліків та прокрутки</para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md27">
+<title>Архітектура</title><para>Детальний опис архітектури системи знаходиться у файлі <computeroutput>docs/design/architecture.md</computeroutput>.</para>
+</sect1>
+<sect1 id="index_1autotoc_md28">
+<title>Ліцензія</title><para>Цей проект розповсюджується під ліцензією MIT. Деталі у файлі [LICENSE](LICENSE). </para>
+</sect1>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

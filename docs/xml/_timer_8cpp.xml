@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_timer_8cpp" kind="file" language="C++">
+    <compoundname>Timer.cpp</compoundname>
+    <includes refid="_timer_8h" local="yes">utils/Timer.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>utils/Timer.h</label>
+        <link refid="_timer_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Timer.cpp</label>
+        <link refid="_timer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>chrono</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Timer<sp/>is<sp/>header-only;<sp/>this<sp/>file<sp/>is<sp/>a<sp/>placeholder<sp/>for<sp/>the<sp/>build<sp/>system.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_timer_8h" kindref="compound">utils/Timer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/utils/Timer.cpp"/>
+  </compounddef>
+</doxygen>

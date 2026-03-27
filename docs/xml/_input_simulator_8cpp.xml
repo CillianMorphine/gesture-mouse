@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_input_simulator_8cpp" kind="file" language="C++">
+    <compoundname>InputSimulator.cpp</compoundname>
+    <includes refid="_input_simulator_8h" local="yes">input/InputSimulator.h</includes>
+    <includes local="no">windows.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>input/InputSimulator.h</label>
+        <link refid="_input_simulator_8h"/>
+      </node>
+      <node id="1">
+        <label>InputSimulator.cpp</label>
+        <link refid="_input_simulator_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>windows.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="_input_simulator_8cpp_1ac7bef5d85e3dcd73eef56ad39ffc84a9" prot="public" static="no">
+        <name>WIN32_LEAN_AND_MEAN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/input/InputSimulator.cpp" line="4" column="11" bodyfile="src/input/InputSimulator.cpp" bodystart="4" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_input_simulator_8h" kindref="compound">input/InputSimulator.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="_input_simulator_8cpp_1ac7bef5d85e3dcd73eef56ad39ffc84a9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#define<sp/>WIN32_LEAN_AND_MEAN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__linux__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;X11/Xlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;X11/extensions/XTest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_input_simulator_1aac60ceafc9510a593e5e7dbf1950fac4" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1aac60ceafc9510a593e5e7dbf1950fac4" kindref="member">InputSimulator::moveMouse</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>SetCursorPos(x,<sp/>y);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__linux__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/>d<sp/>=<sp/>XOpenDisplay(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d)<sp/>{<sp/>XTestFakeMotionEvent(d,<sp/>-1,<sp/>x,<sp/>y,<sp/>CurrentTime);<sp/>XFlush(d);<sp/>XCloseDisplay(d);<sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_input_simulator_1a147b62fd5b9ec44e12738388a6a5d0eb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a147b62fd5b9ec44e12738388a6a5d0eb" kindref="member">InputSimulator::mouseButtonDown</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>button)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>INPUT<sp/>in{};<sp/>in.type<sp/>=<sp/>INPUT_MOUSE;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>in.mi.dwFlags<sp/>=<sp/>(button<sp/>==<sp/>1)<sp/>?<sp/>MOUSEEVENTF_LEFTDOWN<sp/>:<sp/>MOUSEEVENTF_RIGHTDOWN;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>SendInput(1,<sp/>&amp;in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(INPUT));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__linux__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/>d<sp/>=<sp/>XOpenDisplay(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d)<sp/>{<sp/>XTestFakeButtonEvent(d,<sp/>button,<sp/>True,<sp/>CurrentTime);<sp/>XFlush(d);<sp/>XCloseDisplay(d);<sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="class_input_simulator_1a412bff05a4a7a1219b7cf151b929105c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a412bff05a4a7a1219b7cf151b929105c" kindref="member">InputSimulator::mouseButtonUp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>button)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>INPUT<sp/>in{};<sp/>in.type<sp/>=<sp/>INPUT_MOUSE;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>in.mi.dwFlags<sp/>=<sp/>(button<sp/>==<sp/>1)<sp/>?<sp/>MOUSEEVENTF_LEFTUP<sp/>:<sp/>MOUSEEVENTF_RIGHTUP;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>SendInput(1,<sp/>&amp;in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(INPUT));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__linux__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/>d<sp/>=<sp/>XOpenDisplay(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d)<sp/>{<sp/>XTestFakeButtonEvent(d,<sp/>button,<sp/>False,<sp/>CurrentTime);<sp/>XFlush(d);<sp/>XCloseDisplay(d);<sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_input_simulator_1a4661e744a656f4dcc36fcdb845752e4b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a4661e744a656f4dcc36fcdb845752e4b" kindref="member">InputSimulator::mouseScroll</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>delta)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>INPUT<sp/>in{};<sp/>in.type<sp/>=<sp/>INPUT_MOUSE;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>in.mi.dwFlags<sp/>=<sp/>MOUSEEVENTF_WHEEL;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>in.mi.mouseData<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">DWORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(delta<sp/>*<sp/>120);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>SendInput(1,<sp/>&amp;in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(INPUT));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__linux__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>btn<sp/>=<sp/>(delta<sp/>&gt;<sp/>0)<sp/>?<sp/>4<sp/>:<sp/>5;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>Display*<sp/>d<sp/>=<sp/>XOpenDisplay(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(d)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>(delta<sp/>&lt;<sp/>0<sp/>?<sp/>-delta<sp/>:<sp/>delta);<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTestFakeButtonEvent(d,<sp/>btn,<sp/>True,<sp/><sp/>CurrentTime);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XTestFakeButtonEvent(d,<sp/>btn,<sp/>False,<sp/>CurrentTime);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XFlush(d);<sp/>XCloseDisplay(d);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_input_simulator_1a955d47de1ca26432d3e7d863424f279e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a955d47de1ca26432d3e7d863424f279e" kindref="member">InputSimulator::keyDown</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyCode)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>INPUT<sp/>in{};<sp/>in.type<sp/>=<sp/>INPUT_KEYBOARD;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>in.ki.wVk<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">WORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(keyCode);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>SendInput(1,<sp/>&amp;in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(INPUT));</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="class_input_simulator_1ad4b90069a5b4ea581c79cd7a8c50cb98" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1ad4b90069a5b4ea581c79cd7a8c50cb98" kindref="member">InputSimulator::keyUp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyCode)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>INPUT<sp/>in{};<sp/>in.type<sp/>=<sp/>INPUT_KEYBOARD;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>in.ki.wVk<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">WORD</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(keyCode);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>in.ki.dwFlags<sp/>=<sp/>KEYEVENTF_KEYUP;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>SendInput(1,<sp/>&amp;in,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(INPUT));</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/input/InputSimulator.cpp"/>
+  </compounddef>
+</doxygen>

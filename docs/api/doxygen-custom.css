@@ -1,0 +1,87 @@
+/* docs/assets/doxygen-custom.css
+   Custom dark theme matching GestureMouse landing aesthetics */
+
+:root {
+  --primary:    #4a9eff;
+  --secondary:  #00e5c3;
+  --bg:         #080d1a;
+  --bg-2:       #0d1528;
+  --surface:    #111a2e;
+  --border:     rgba(74, 158, 255, 0.15);
+  --text:       #e8edf8;
+  --text-2:     #9baacf;
+  --font:       'JetBrains Mono', 'Courier New', monospace;
+}
+
+body, div.contents, div.header {
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: var(--font) !important;
+}
+
+/* Navigation */
+#nav-tree, #side-nav {
+  background: var(--bg-2) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+#nav-tree .selected {
+  background: rgba(74, 158, 255, 0.15) !important;
+}
+
+/* Title bar */
+div.title, div.headertitle {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Code blocks */
+div.fragment, pre.fragment {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 6px !important;
+  color: var(--secondary) !important;
+}
+
+/* Links */
+a, a:visited {
+  color: var(--primary) !important;
+}
+a:hover {
+  color: var(--secondary) !important;
+}
+
+/* Tables */
+table.memberdecls {
+  background: var(--surface) !important;
+}
+tr.memitem, tr.memdesc {
+  background: var(--bg-2) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* Member headings */
+.groupheader, h2.groupheader {
+  color: var(--primary) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* Params table */
+table.params td {
+  background: var(--surface) !important;
+  color: var(--text-2) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Note / warning boxes */
+dl.note, dl.warning, dl.attention {
+  background: rgba(74, 158, 255, 0.08) !important;
+  border-left: 3px solid var(--primary) !important;
+  border-radius: 4px;
+}
+
+dl.warning {
+  border-left-color: #ff6b6b !important;
+  background: rgba(255, 107, 107, 0.08) !important;
+}

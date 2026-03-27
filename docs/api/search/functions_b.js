@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['operator_3d_0',['operator=',['../class_application.html#a4bddd891168e3adc56dfd505ac41af7f',1,'Application::operator=(const Application &amp;)=delete'],['../class_application.html#aa909176412a911bcedb36005049c7bcf',1,'Application::operator=(Application &amp;&amp;)=delete'],['../class_gesture_recognizer.html#ac9415cdc6b215e732eaf63e652e6ff53',1,'GestureRecognizer::operator=(const GestureRecognizer &amp;)=delete'],['../class_gesture_recognizer.html#a01d8f347c6037473260f52a54c870d73',1,'GestureRecognizer::operator=(GestureRecognizer &amp;&amp;)=default'],['../class_mouse_controller.html#a729d9b317a31538af2b96b88b266640c',1,'MouseController::operator=(const MouseController &amp;)=delete'],['../class_mouse_controller.html#a66cd4df60c664621a87a6530158678be',1,'MouseController::operator=(MouseController &amp;&amp;)=default'],['../class_logger.html#a8c0ca770cdc91ca9fc3015286568e1ea',1,'Logger::operator=()']]]
+];

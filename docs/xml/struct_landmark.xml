@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="struct_landmark" kind="struct" language="C++" prot="public">
+    <compoundname>Landmark</compoundname>
+    <includes refid="_hand_tracker_8h" local="no">HandTracker.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_landmark_1ac896cc0bd59f87c573e87ce75b3e4f0d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Landmark::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>Landmark::x</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Нормалізована X-координата [0..1]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="45" column="11" bodyfile="include/gesture/HandTracker.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_landmark_1aec0b094b5dee543afb0b4a362f61733d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Landmark::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>Landmark::y</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Нормалізована Y-координата [0..1]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="46" column="11" bodyfile="include/gesture/HandTracker.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_landmark_1a1ee445126e0c5be978d4db897b939ff3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Landmark::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>Landmark::z</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Глибина (зарезервовано, завжди 0). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="47" column="11" bodyfile="include/gesture/HandTracker.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Координата однієї ключової точки (landmark) руки у 3D-просторі. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>У поточній реалізації z завжди 0 (2D-трекінг). Структура сумісна з форматом MediaPipe Hand Landmarks для можливого майбутнього переходу.</para>
+<para>Координати нормалізовані: (0,0) = лівий верхній кут кадру, (1,1) = правий нижній кут. </para>
+    </detaileddescription>
+    <location file="include/gesture/HandTracker.h" line="44" column="1" bodyfile="include/gesture/HandTracker.h" bodystart="44" bodyend="48"/>
+    <listofallmembers>
+      <member refid="struct_landmark_1ac896cc0bd59f87c573e87ce75b3e4f0d" prot="public" virt="non-virtual"><scope>Landmark</scope><name>x</name></member>
+      <member refid="struct_landmark_1aec0b094b5dee543afb0b4a362f61733d" prot="public" virt="non-virtual"><scope>Landmark</scope><name>y</name></member>
+      <member refid="struct_landmark_1a1ee445126e0c5be978d4db897b939ff3" prot="public" virt="non-virtual"><scope>Landmark</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

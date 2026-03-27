@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_tray_icon_8h" kind="file" language="C++">
+    <compoundname>TrayIcon.h</compoundname>
+    <includedby refid="_application_8cpp" local="yes">Application.cpp</includedby>
+    <includedby refid="_tray_icon_8cpp" local="yes">TrayIcon.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>TrayIcon.h</label>
+        <link refid="_tray_icon_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Application.cpp</label>
+        <link refid="_application_8cpp"/>
+      </node>
+      <node id="3">
+        <label>TrayIcon.cpp</label>
+        <link refid="_tray_icon_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_tray_icon" prot="public">TrayIcon</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_application" kindref="compound">Application</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Іконка<sp/>у<sp/>системному<sp/>треї.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Надає<sp/>користувачу<sp/>доступ<sp/>до<sp/>налаштувань<sp/>та<sp/>виходу.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_tray_icon" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_tray_icon_1abdb4a255bdaedd158ab901ce849ffd5b" kindref="member">TrayIcon</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1abdb4a255bdaedd158ab901ce849ffd5b" kindref="member">TrayIcon</ref>(<ref refid="class_application" kindref="compound">Application</ref>*<sp/>app);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_tray_icon_1a4ab023074143b46c3eb9dda2a1678492" kindref="member">~TrayIcon</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1a862cf3a089f74d7fc82c7e1e33e7a4b5" kindref="member">show</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1aecdd10e0b98df27f46f3df654e170d58" kindref="member">hide</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_application" kindref="compound">Application</ref>*<sp/>m_app;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/ui/TrayIcon.h"/>
+  </compounddef>
+</doxygen>

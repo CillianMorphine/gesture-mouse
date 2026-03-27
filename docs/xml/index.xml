@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.16.1" xml:lang="en-US">
+  <compound refid="class_application" kind="class"><name>Application</name>
+    <member refid="class_application_1a274dfbba23c488081021de8f2cdac1d4" kind="variable"><name>m_recognizer</name></member>
+    <member refid="class_application_1a1f71479b1c8663e5978b4ea94aa39ef3" kind="variable"><name>m_mouseCtrl</name></member>
+    <member refid="class_application_1a27b65b0d4855ec912bd4f8f99e721796" kind="variable"><name>m_config</name></member>
+    <member refid="class_application_1a7adbe96e3818a884ae781803d8b26b54" kind="variable"><name>m_tray</name></member>
+    <member refid="class_application_1afaeec66a8591b6d88049b260133d13fc" kind="function"><name>Application</name></member>
+    <member refid="class_application_1a4bddd891168e3adc56dfd505ac41af7f" kind="function"><name>operator=</name></member>
+    <member refid="class_application_1a7b5be0a8e4df05ca7ceb2d3d7d275278" kind="function"><name>Application</name></member>
+    <member refid="class_application_1aa909176412a911bcedb36005049c7bcf" kind="function"><name>operator=</name></member>
+    <member refid="class_application_1ab9dec516142a91a463e51205306b0e9a" kind="variable"><name>m_running</name></member>
+    <member refid="class_application_1afd7de7cce221bd5a00a293401f1ab4fc" kind="variable"><name>m_argc</name></member>
+    <member refid="class_application_1a37b8e5a4d63b48ab99d4f59f721b570e" kind="variable"><name>m_argv</name></member>
+    <member refid="class_application_1a758ec0591237b4b7204ee8d87a26f834" kind="function"><name>Application</name></member>
+    <member refid="class_application_1a748bca84fefb9c12661cfaa2f623748d" kind="function"><name>~Application</name></member>
+    <member refid="class_application_1a8cf8941c8db90117d3735bce5ae1fdf4" kind="function"><name>run</name></member>
+    <member refid="class_application_1a6235fa1cc593954a1ba845d4402614b5" kind="function"><name>stop</name></member>
+    <member refid="class_application_1af431bce25717b04a78d4d0940ed6a92c" kind="function"><name>initialize</name></member>
+    <member refid="class_application_1a5be376956a17bc564595fb420cce1ba7" kind="function"><name>mainLoop</name></member>
+    <member refid="class_application_1aa9a857b3a751d9eb3cb47606c0e3c67a" kind="function"><name>cleanup</name></member>
+  </compound>
+  <compound refid="class_config_manager" kind="class"><name>ConfigManager</name>
+    <member refid="class_config_manager_1ada20508678ea4906d915193352e91241" kind="variable"><name>m_filePath</name></member>
+    <member refid="class_config_manager_1a918252b85d3888d3e1b763bb39dc22e6" kind="variable"><name>m_data</name></member>
+    <member refid="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" kind="function"><name>ConfigManager</name></member>
+    <member refid="class_config_manager_1a1e085642302bf8877c1f80cb6c9c6327" kind="function"><name>get</name></member>
+    <member refid="class_config_manager_1a8eba87f60475f39e0e27b22ac9b6ffc4" kind="function"><name>set</name></member>
+    <member refid="class_config_manager_1ab5a426ba88966fa7383a963d97762c52" kind="function"><name>save</name></member>
+    <member refid="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" kind="function"><name>load</name></member>
+    <member refid="class_config_manager_1abe819460027991afa440c5f63c7d9be5" kind="function"><name>get</name></member>
+    <member refid="class_config_manager_1ae55bae714c4c5712468e52f71b3f9de4" kind="function"><name>get</name></member>
+    <member refid="class_config_manager_1a889d792dbadc14ce4edab3fa63691e06" kind="function"><name>get</name></member>
+  </compound>
+  <compound refid="class_gesture_classifier" kind="class"><name>GestureClassifier</name>
+    <member refid="class_gesture_classifier_1afba83135936a9a711b7d8993f708d091" kind="variable"><name>m_confidenceThreshold</name></member>
+    <member refid="class_gesture_classifier_1a50f700f5945bb8abe2ea3f094cfcb1e1" kind="function"><name>GestureClassifier</name></member>
+    <member refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" kind="function"><name>classify</name></member>
+    <member refid="class_gesture_classifier_1a3a992af95350e0fb0bdbc8090d7e33a7" kind="function"><name>countFingers</name></member>
+    <member refid="class_gesture_classifier_1a6be8497309e4ab05503ddfca9390fdce" kind="function"><name>isFist</name></member>
+  </compound>
+  <compound refid="class_gesture_recognizer" kind="class"><name>GestureRecognizer</name>
+    <member refid="class_gesture_recognizer_1a302ad49054256c470397b0c87226e400" kind="function"><name>GestureRecognizer</name></member>
+    <member refid="class_gesture_recognizer_1ac9415cdc6b215e732eaf63e652e6ff53" kind="function"><name>operator=</name></member>
+    <member refid="class_gesture_recognizer_1ac8809ec5c7108e8a921731fd691ec737" kind="function"><name>GestureRecognizer</name></member>
+    <member refid="class_gesture_recognizer_1a01d8f347c6037473260f52a54c870d73" kind="function"><name>operator=</name></member>
+    <member refid="class_gesture_recognizer_1aa4b93d051693f5e5557e5b9f72391315" kind="variable"><name>m_tracker</name></member>
+    <member refid="class_gesture_recognizer_1a16616cfb6010520c70e01bc53aed68e2" kind="variable"><name>m_classifier</name></member>
+    <member refid="class_gesture_recognizer_1abb2a1226f2f0ab2b60e5a9b0a4b2a6d3" kind="variable"><name>m_debugView</name></member>
+    <member refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kind="function"><name>GestureRecognizer</name></member>
+    <member refid="class_gesture_recognizer_1a5c7570da67a7331a5e004c1a50289eac" kind="function"><name>~GestureRecognizer</name></member>
+    <member refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" kind="function"><name>process</name></member>
+    <member refid="class_gesture_recognizer_1a20c517e7446b6a9c3b06e7cfb76a309b" kind="function"><name>setDebugView</name></member>
+  </compound>
+  <compound refid="struct_gesture_result" kind="struct"><name>GestureResult</name>
+    <member refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kind="variable"><name>type</name></member>
+    <member refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" kind="variable"><name>handX</name></member>
+    <member refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" kind="variable"><name>handY</name></member>
+    <member refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" kind="variable"><name>confidence</name></member>
+    <member refid="struct_gesture_result_1a98a6f90701fa3336baee0d2baf48288b" kind="function"><name>typeName</name></member>
+  </compound>
+  <compound refid="struct_hand_data" kind="struct"><name>HandData</name>
+    <member refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" kind="variable"><name>detected</name></member>
+    <member refid="struct_hand_data_1a0d8fd3c6e3e4821922fca134ec063cd3" kind="variable"><name>landmarks</name></member>
+    <member refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" kind="variable"><name>centerX</name></member>
+    <member refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" kind="variable"><name>centerY</name></member>
+  </compound>
+  <compound refid="class_hand_tracker" kind="class"><name>HandTracker</name>
+    <member refid="class_hand_tracker_1a99149aad44dd677420b42b865d961285" kind="variable"><name>m_lowerSkin</name></member>
+    <member refid="class_hand_tracker_1afd767e6b0305d856e955079d29ca0f92" kind="variable"><name>m_upperSkin</name></member>
+    <member refid="class_hand_tracker_1ade7931253ef73d9b3740f218fbfdf77f" kind="variable"><name>kMinHandArea</name></member>
+    <member refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" kind="function"><name>HandTracker</name></member>
+    <member refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" kind="function"><name>detect</name></member>
+    <member refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" kind="function"><name>drawLandmarks</name></member>
+    <member refid="class_hand_tracker_1a40eec710c3b75e4ff99d5dff9453499e" kind="function"><name>preprocessFrame</name></member>
+    <member refid="class_hand_tracker_1a962d9a50a408a8383443e60961ea72cd" kind="function"><name>extractHandData</name></member>
+  </compound>
+  <compound refid="class_input_simulator" kind="class"><name>InputSimulator</name>
+    <member refid="class_input_simulator_1aac60ceafc9510a593e5e7dbf1950fac4" kind="function"><name>moveMouse</name></member>
+    <member refid="class_input_simulator_1a147b62fd5b9ec44e12738388a6a5d0eb" kind="function"><name>mouseButtonDown</name></member>
+    <member refid="class_input_simulator_1a412bff05a4a7a1219b7cf151b929105c" kind="function"><name>mouseButtonUp</name></member>
+    <member refid="class_input_simulator_1a4661e744a656f4dcc36fcdb845752e4b" kind="function"><name>mouseScroll</name></member>
+    <member refid="class_input_simulator_1a955d47de1ca26432d3e7d863424f279e" kind="function"><name>keyDown</name></member>
+    <member refid="class_input_simulator_1ad4b90069a5b4ea581c79cd7a8c50cb98" kind="function"><name>keyUp</name></member>
+  </compound>
+  <compound refid="struct_landmark" kind="struct"><name>Landmark</name>
+    <member refid="struct_landmark_1ac896cc0bd59f87c573e87ce75b3e4f0d" kind="variable"><name>x</name></member>
+    <member refid="struct_landmark_1aec0b094b5dee543afb0b4a362f61733d" kind="variable"><name>y</name></member>
+    <member refid="struct_landmark_1a1ee445126e0c5be978d4db897b939ff3" kind="variable"><name>z</name></member>
+  </compound>
+  <compound refid="class_logger" kind="class"><name>Logger</name>
+    <member refid="class_logger_1af89a2c357c75b18a7f36663f67d51366" kind="variable"><name>s_file</name></member>
+    <member refid="class_logger_1a03c639c4979a6ac6ef5125bde5595ce9" kind="variable"><name>s_mutex</name></member>
+    <member refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" kind="function"><name>Logger</name></member>
+    <member refid="class_logger_1add0f34d4c753c86af8074840a72366b3" kind="function"><name>Logger</name></member>
+    <member refid="class_logger_1a8c0ca770cdc91ca9fc3015286568e1ea" kind="function"><name>operator=</name></member>
+    <member refid="class_logger_1aad8d1baeca78a12758392615a2785992" kind="function"><name>init</name></member>
+    <member refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kind="function"><name>log</name></member>
+    <member refid="class_logger_1a21948a5f734c0c33a1a1ab79bea24a57" kind="function"><name>isInitialized</name></member>
+    <member refid="class_logger_1a2c648034dd7e9ac2a8f33a8240be1a39" kind="function"><name>levelToString</name></member>
+    <member refid="class_logger_1a6fa5f5096e9bc731841e4fc389db3402" kind="function"><name>timestamp</name></member>
+  </compound>
+  <compound refid="class_mouse_controller" kind="class"><name>MouseController</name>
+    <member refid="class_mouse_controller_1ac2b3c3e2e0b325628e33615286587f53" kind="function"><name>MouseController</name></member>
+    <member refid="class_mouse_controller_1a729d9b317a31538af2b96b88b266640c" kind="function"><name>operator=</name></member>
+    <member refid="class_mouse_controller_1a51735c9af4092e531322191b0b2cfe20" kind="function"><name>MouseController</name></member>
+    <member refid="class_mouse_controller_1a66cd4df60c664621a87a6530158678be" kind="function"><name>operator=</name></member>
+    <member refid="class_mouse_controller_1a218777e2f20ca0f7b42be798291afce3" kind="variable"><name>m_smoothing</name></member>
+    <member refid="class_mouse_controller_1af600288353ab925c940114a5c032194e" kind="variable"><name>m_prevX</name></member>
+    <member refid="class_mouse_controller_1a5c7cff61d95d3b4bb5fc5c30a4508970" kind="variable"><name>m_prevY</name></member>
+    <member refid="class_mouse_controller_1aaf36a2e2c3ffff75568117a03e53db0f" kind="variable"><name>m_dragActive</name></member>
+    <member refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" kind="function"><name>MouseController</name></member>
+    <member refid="class_mouse_controller_1a96860a9e3c11ab8becbc74d3670e8da0" kind="function"><name>~MouseController</name></member>
+    <member refid="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" kind="function"><name>applyGesture</name></member>
+    <member refid="class_mouse_controller_1addca1a0f4699d559ba8b83bcd4959f52" kind="function"><name>screenSize</name></member>
+    <member refid="class_mouse_controller_1a8cbed5e30d798ce04712705a38cf9ecd" kind="function"><name>moveCursor</name></member>
+    <member refid="class_mouse_controller_1a6bb08cabdfeee2215e6d7abfb966c4d9" kind="function"><name>leftClick</name></member>
+    <member refid="class_mouse_controller_1a56b823e43d3ac41261f368a1daf17684" kind="function"><name>rightClick</name></member>
+    <member refid="class_mouse_controller_1a3456deb202e07ff017107464fabf60c6" kind="function"><name>scroll</name></member>
+  </compound>
+  <compound refid="struct_screen_size" kind="struct"><name>ScreenSize</name>
+    <member refid="struct_screen_size_1a4f5773b5832dd44cc6cf1fe28b7bcdbb" kind="variable"><name>width</name></member>
+    <member refid="struct_screen_size_1ae7447f7fbc13911e07c2a4179bfef6f4" kind="variable"><name>height</name></member>
+  </compound>
+  <compound refid="class_settings_window" kind="class"><name>SettingsWindow</name>
+    <member refid="class_settings_window_1ac7232f26a127ff7b8495897935f0c251" kind="variable"><name>m_config</name></member>
+    <member refid="class_settings_window_1a2530805042246b043e8f08b55691ea8a" kind="variable"><name>m_visible</name></member>
+    <member refid="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" kind="function"><name>SettingsWindow</name></member>
+    <member refid="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" kind="function"><name>show</name></member>
+    <member refid="class_settings_window_1a44e2f62e83a75d069b1cc6871fcaad4d" kind="function"><name>hide</name></member>
+    <member refid="class_settings_window_1a6d8ab89f66b4e454870fe3f4d4acb33c" kind="function"><name>isVisible</name></member>
+  </compound>
+  <compound refid="class_timer" kind="class"><name>Timer</name>
+    <member refid="class_timer_1a60db4ae935547a60bb648c155f0ddb37" kind="variable"><name>m_start</name></member>
+    <member refid="class_timer_1a3a8b5272198d029779dc9302a54305a8" kind="function"><name>start</name></member>
+    <member refid="class_timer_1a65fb67a7963bebbd996156d9a15bf260" kind="function"><name>elapsedMs</name></member>
+    <member refid="class_timer_1ae8da1d7bfe4f2bf80bf22f06d81c1c75" kind="function"><name>fps</name></member>
+  </compound>
+  <compound refid="class_tray_icon" kind="class"><name>TrayIcon</name>
+    <member refid="class_tray_icon_1ae8a7647e5e5f5f1f6acf675a826a438c" kind="variable"><name>m_app</name></member>
+    <member refid="class_tray_icon_1abdb4a255bdaedd158ab901ce849ffd5b" kind="function"><name>TrayIcon</name></member>
+    <member refid="class_tray_icon_1a4ab023074143b46c3eb9dda2a1678492" kind="function"><name>~TrayIcon</name></member>
+    <member refid="class_tray_icon_1a862cf3a089f74d7fc82c7e1e33e7a4b5" kind="function"><name>show</name></member>
+    <member refid="class_tray_icon_1aecdd10e0b98df27f46f3df654e170d58" kind="function"><name>hide</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_application_8h" kind="file"><name>Application.h</name>
+  </compound>
+  <compound refid="_config_manager_8h" kind="file"><name>ConfigManager.h</name>
+  </compound>
+  <compound refid="_gesture_classifier_8h" kind="file"><name>GestureClassifier.h</name>
+  </compound>
+  <compound refid="_gesture_recognizer_8h" kind="file"><name>GestureRecognizer.h</name>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" kind="enum"><name>GestureType</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kind="enumvalue"><name>NONE</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" kind="enumvalue"><name>MOVE</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" kind="enumvalue"><name>LEFT_CLICK</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" kind="enumvalue"><name>RIGHT_CLICK</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea6ae640c96760bbabf3c8abafd1abc20f" kind="enumvalue"><name>SCROLL_UP</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea26b36a2a5f3ef7983f88fb7601ccd228" kind="enumvalue"><name>SCROLL_DOWN</name></member>
+    <member refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" kind="enumvalue"><name>DRAG</name></member>
+  </compound>
+  <compound refid="_hand_tracker_8h" kind="file"><name>HandTracker.h</name>
+  </compound>
+  <compound refid="_input_simulator_8h" kind="file"><name>InputSimulator.h</name>
+  </compound>
+  <compound refid="_mouse_controller_8h" kind="file"><name>MouseController.h</name>
+  </compound>
+  <compound refid="_settings_window_8h" kind="file"><name>SettingsWindow.h</name>
+  </compound>
+  <compound refid="_tray_icon_8h" kind="file"><name>TrayIcon.h</name>
+  </compound>
+  <compound refid="_logger_8h" kind="file"><name>Logger.h</name>
+    <member refid="group___log_macros_1ga2332264037abe02c8041a498b2fa1627" kind="define"><name>LOG_DEBUG</name></member>
+    <member refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kind="define"><name>LOG_INFO</name></member>
+    <member refid="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" kind="define"><name>LOG_WARN</name></member>
+    <member refid="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" kind="define"><name>LOG_ERROR</name></member>
+    <member refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" kind="enum"><name>LogLevel</name></member>
+    <member refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86adc30ec20708ef7b0f641ef78b7880a15" kind="enumvalue"><name>DEBUG</name></member>
+    <member refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a551b723eafd6a31d444fcb2f5920fbd3" kind="enumvalue"><name>INFO</name></member>
+    <member refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a32bd8a1db2275458673903bdb84cb277" kind="enumvalue"><name>WARN</name></member>
+    <member refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86abb1ca97ec761fc37101737ba0aa2e7c5" kind="enumvalue"><name>ERROR</name></member>
+  </compound>
+  <compound refid="_timer_8h" kind="file"><name>Timer.h</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="_application_8cpp" kind="file"><name>Application.cpp</name>
+  </compound>
+  <compound refid="_config_manager_8cpp" kind="file"><name>ConfigManager.cpp</name>
+  </compound>
+  <compound refid="_gesture_classifier_8cpp" kind="file"><name>GestureClassifier.cpp</name>
+  </compound>
+  <compound refid="_gesture_recognizer_8cpp" kind="file"><name>GestureRecognizer.cpp</name>
+  </compound>
+  <compound refid="_hand_tracker_8cpp" kind="file"><name>HandTracker.cpp</name>
+  </compound>
+  <compound refid="_input_simulator_8cpp" kind="file"><name>InputSimulator.cpp</name>
+    <member refid="_input_simulator_8cpp_1ac7bef5d85e3dcd73eef56ad39ffc84a9" kind="define"><name>WIN32_LEAN_AND_MEAN</name></member>
+  </compound>
+  <compound refid="_mouse_controller_8cpp" kind="file"><name>MouseController.cpp</name>
+    <member refid="_mouse_controller_8cpp_1ac7bef5d85e3dcd73eef56ad39ffc84a9" kind="define"><name>WIN32_LEAN_AND_MEAN</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_settings_window_8cpp" kind="file"><name>SettingsWindow.cpp</name>
+  </compound>
+  <compound refid="_tray_icon_8cpp" kind="file"><name>TrayIcon.cpp</name>
+  </compound>
+  <compound refid="_logger_8cpp" kind="file"><name>Logger.cpp</name>
+  </compound>
+  <compound refid="_timer_8cpp" kind="file"><name>Timer.cpp</name>
+  </compound>
+  <compound refid="group___log_macros" kind="group"><name>LogMacros</name>
+    <member refid="group___log_macros_1ga2332264037abe02c8041a498b2fa1627" kind="define"><name>LOG_DEBUG</name></member>
+    <member refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kind="define"><name>LOG_INFO</name></member>
+    <member refid="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" kind="define"><name>LOG_WARN</name></member>
+    <member refid="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" kind="define"><name>LOG_ERROR</name></member>
+  </compound>
+  <compound refid="dir_3d69f64eaf81436fe2b22361382717e5" kind="dir"><name>core</name>
+  </compound>
+  <compound refid="dir_aebb8dcc11953d78e620bbef0b9e2183" kind="dir"><name>core</name>
+  </compound>
+  <compound refid="dir_f6ebdb82e9f6c33c3c13ba777a09d438" kind="dir"><name>gesture</name>
+  </compound>
+  <compound refid="dir_deab696b41d67ebe41fee97e766081ad" kind="dir"><name>gesture</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_9f5c276ab9fb4f37ad248a8f0e5ee4a1" kind="dir"><name>input</name>
+  </compound>
+  <compound refid="dir_d365e15d984c8d0205117ee0c40d6716" kind="dir"><name>input</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_97d41d4f3e4ae379f4f3cc1df9993b19" kind="dir"><name>ui</name>
+  </compound>
+  <compound refid="dir_da5c6b39c0a2f54e57df6799511cd3ab" kind="dir"><name>ui</name>
+  </compound>
+  <compound refid="dir_821002d4f10779a80d4fb17bc32f21f1" kind="dir"><name>utils</name>
+  </compound>
+  <compound refid="dir_313caf1132e152dd9b58bea13a4052ca" kind="dir"><name>utils</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

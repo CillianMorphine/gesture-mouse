@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_settings_window" kind="class" language="C++" prot="public">
+    <compoundname>SettingsWindow</compoundname>
+    <includes refid="_settings_window_8h" local="no">SettingsWindow.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_settings_window_1ac7232f26a127ff7b8495897935f0c251" prot="private" static="no" mutable="no">
+        <type><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> *</type>
+        <definition>ConfigManager* SettingsWindow::m_config</definition>
+        <argsstring></argsstring>
+        <name>m_config</name>
+        <qualifiedname>SettingsWindow::m_config</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/SettingsWindow.h" line="17" column="19" bodyfile="include/ui/SettingsWindow.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_settings_window_1a2530805042246b043e8f08b55691ea8a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SettingsWindow::m_visible</definition>
+        <argsstring></argsstring>
+        <name>m_visible</name>
+        <qualifiedname>SettingsWindow::m_visible</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/SettingsWindow.h" line="18" column="10" bodyfile="include/ui/SettingsWindow.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SettingsWindow::SettingsWindow</definition>
+        <argsstring>(ConfigManager *config)</argsstring>
+        <name>SettingsWindow</name>
+        <qualifiedname>SettingsWindow::SettingsWindow</qualifiedname>
+        <param>
+          <type><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/SettingsWindow.h" line="10" column="14" bodyfile="src/ui/SettingsWindow.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsWindow::show</definition>
+        <argsstring>()</argsstring>
+        <name>show</name>
+        <qualifiedname>SettingsWindow::show</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/SettingsWindow.h" line="12" column="10" bodyfile="src/ui/SettingsWindow.cpp" bodystart="7" bodyend="11"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_window_1a44e2f62e83a75d069b1cc6871fcaad4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SettingsWindow::hide</definition>
+        <argsstring>()</argsstring>
+        <name>hide</name>
+        <qualifiedname>SettingsWindow::hide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/SettingsWindow.h" line="13" column="10" bodyfile="src/ui/SettingsWindow.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_settings_window_1a6d8ab89f66b4e454870fe3f4d4acb33c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SettingsWindow::isVisible</definition>
+        <argsstring>() const</argsstring>
+        <name>isVisible</name>
+        <qualifiedname>SettingsWindow::isVisible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/SettingsWindow.h" line="14" column="10" bodyfile="src/ui/SettingsWindow.cpp" bodystart="17" bodyend="19"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Вікно налаштувань (чутливість, кольоровий діапазон, камера). </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/ui/SettingsWindow.h" line="8" column="1" bodyfile="include/ui/SettingsWindow.h" bodystart="8" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_settings_window_1a44e2f62e83a75d069b1cc6871fcaad4d" prot="public" virt="non-virtual"><scope>SettingsWindow</scope><name>hide</name></member>
+      <member refid="class_settings_window_1a6d8ab89f66b4e454870fe3f4d4acb33c" prot="public" virt="non-virtual"><scope>SettingsWindow</scope><name>isVisible</name></member>
+      <member refid="class_settings_window_1ac7232f26a127ff7b8495897935f0c251" prot="private" virt="non-virtual"><scope>SettingsWindow</scope><name>m_config</name></member>
+      <member refid="class_settings_window_1a2530805042246b043e8f08b55691ea8a" prot="private" virt="non-virtual"><scope>SettingsWindow</scope><name>m_visible</name></member>
+      <member refid="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" prot="public" virt="non-virtual"><scope>SettingsWindow</scope><name>SettingsWindow</name></member>
+      <member refid="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" prot="public" virt="non-virtual"><scope>SettingsWindow</scope><name>show</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_config_manager" kind="class" language="C++" prot="public">
+    <compoundname>ConfigManager</compoundname>
+    <includes refid="_config_manager_8h" local="no">ConfigManager.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_config_manager_1ada20508678ea4906d915193352e91241" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ConfigManager::m_filePath</definition>
+        <argsstring></argsstring>
+        <name>m_filePath</name>
+        <qualifiedname>ConfigManager::m_filePath</qualifiedname>
+        <briefdescription>
+<para>Шлях до конфіг-файлу </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="91" column="17" bodyfile="include/core/ConfigManager.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_config_manager_1a918252b85d3888d3e1b763bb39dc22e6" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; ConfigManager::m_data</definition>
+        <argsstring></argsstring>
+        <name>m_data</name>
+        <qualifiedname>ConfigManager::m_data</qualifiedname>
+        <briefdescription>
+<para>Словник key→value. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="92" column="24" bodyfile="include/core/ConfigManager.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ConfigManager::ConfigManager</definition>
+        <argsstring>(const std::string &amp;filePath)</argsstring>
+        <name>ConfigManager</name>
+        <qualifiedname>ConfigManager::ConfigManager</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Негайно завантажує конфіг з файлу. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Шлях до конфіг-файлу (відносний або абсолютний). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Якщо файл не існує — використовуються значення за замовчуванням, без виключень. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="54" column="14" bodyfile="src/core/ConfigManager.cpp" bodystart="6" bodyend="9"/>
+        <references refid="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" compoundref="_config_manager_8cpp" startline="11" endline="32">load</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1a1e085642302bf8877c1f80cb6c9c6327" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T ConfigManager::get</definition>
+        <argsstring>(const std::string &amp;key, const T &amp;defaultValue) const</argsstring>
+        <name>get</name>
+        <qualifiedname>ConfigManager::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>defaultValue</declname>
+        </param>
+        <briefdescription>
+<para>Повертає значення ключа, перетворене до типу T. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Цільовий тип: float, int, bool, std::string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ у форматі &quot;module.parameter&quot;. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Значення, яке повертається при відсутності ключа. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Значення типу T або defaultValue.</para>
+</simplesect>
+<simplesect kind="note"><para>Спеціалізації для float, int, bool визначені в .cpp. Для std::string — просто повертає рядок. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="68" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1a8eba87f60475f39e0e27b22ac9b6ffc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void ConfigManager::set</definition>
+        <argsstring>(const std::string &amp;key, const T &amp;value)</argsstring>
+        <name>set</name>
+        <qualifiedname>ConfigManager::set</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Встановлює значення ключа (без збереження на диск). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ключ. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Нове значення (рядок). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Для збереження викличте <ref refid="class_config_manager_1ab5a426ba88966fa7383a963d97762c52" kindref="member">save()</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="77" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1ab5a426ba88966fa7383a963d97762c52" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigManager::save</definition>
+        <argsstring>() const</argsstring>
+        <name>save</name>
+        <qualifiedname>ConfigManager::save</qualifiedname>
+        <briefdescription>
+<para>Зберігає поточні налаштування у файл. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Перезаписує файл повністю (коментарі не зберігаються). </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="83" column="10" bodyfile="src/core/ConfigManager.cpp" bodystart="34" bodyend="39"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigManager::load</definition>
+        <argsstring>()</argsstring>
+        <name>load</name>
+        <qualifiedname>ConfigManager::load</qualifiedname>
+        <briefdescription>
+<para>Перезавантажує конфіг з файлу (скидає runtime-зміни). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/ConfigManager.h" line="88" column="10" bodyfile="src/core/ConfigManager.cpp" bodystart="11" bodyend="32"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+        <references refid="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" compoundref="_logger_8h" startline="134">LOG_WARN</references>
+        <referencedby refid="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" compoundref="_config_manager_8cpp" startline="6" endline="9">ConfigManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1abe819460027991afa440c5f63c7d9be5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>float</type>
+        <definition>float ConfigManager::get</definition>
+        <argsstring>(const std::string &amp;key, const float &amp;def) const</argsstring>
+        <name>get</name>
+        <qualifiedname>ConfigManager::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/ConfigManager.cpp" line="42" column="1" bodyfile="src/core/ConfigManager.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1ae55bae714c4c5712468e52f71b3f9de4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int ConfigManager::get</definition>
+        <argsstring>(const std::string &amp;key, const int &amp;def) const</argsstring>
+        <name>get</name>
+        <qualifiedname>ConfigManager::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const int &amp;</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/ConfigManager.cpp" line="49" column="1" bodyfile="src/core/ConfigManager.cpp" bodystart="49" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_manager_1a889d792dbadc14ce4edab3fa63691e06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool ConfigManager::get</definition>
+        <argsstring>(const std::string &amp;key, const bool &amp;def) const</argsstring>
+        <name>get</name>
+        <qualifiedname>ConfigManager::get</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>def</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/core/ConfigManager.cpp" line="56" column="1" bodyfile="src/core/ConfigManager.cpp" bodystart="56" bodyend="60"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Зчитує та зберігає налаштування у форматі key=value. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Підтримує типізований доступ через шаблонний метод <ref refid="class_config_manager_1a1e085642302bf8877c1f80cb6c9c6327" kindref="member">get&lt;T&gt;()</ref>. При відсутності ключа або помилці парсингу повертає defaultValue.</para>
+<para><simplesect kind="par"><title>Приклад:</title><para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" kindref="member">ConfigManager</ref><sp/>cfg(</highlight><highlight class="stringliteral">&quot;config/settings.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>smooth<sp/>=<sp/>cfg.get&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;mouse.smoothing&quot;</highlight><highlight class="normal">,<sp/>0.3F);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/>camIdx<sp/>=<sp/>cfg.get&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;camera.index&quot;</highlight><highlight class="normal">,<sp/>0);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/>debug<sp/><sp/>=<sp/>cfg.get&lt;</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;debug.show_window&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/core/ConfigManager.h" line="46" column="1" bodyfile="include/core/ConfigManager.h" bodystart="46" bodyend="93"/>
+    <listofallmembers>
+      <member refid="class_config_manager_1a970fea6ebcc2af54a7b6eb0978a7fb01" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>ConfigManager</name></member>
+      <member refid="class_config_manager_1a1e085642302bf8877c1f80cb6c9c6327" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>get</name></member>
+      <member refid="class_config_manager_1abe819460027991afa440c5f63c7d9be5" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>get</name></member>
+      <member refid="class_config_manager_1ae55bae714c4c5712468e52f71b3f9de4" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>get</name></member>
+      <member refid="class_config_manager_1a889d792dbadc14ce4edab3fa63691e06" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>get</name></member>
+      <member refid="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>load</name></member>
+      <member refid="class_config_manager_1a918252b85d3888d3e1b763bb39dc22e6" prot="private" virt="non-virtual"><scope>ConfigManager</scope><name>m_data</name></member>
+      <member refid="class_config_manager_1ada20508678ea4906d915193352e91241" prot="private" virt="non-virtual"><scope>ConfigManager</scope><name>m_filePath</name></member>
+      <member refid="class_config_manager_1ab5a426ba88966fa7383a963d97762c52" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>save</name></member>
+      <member refid="class_config_manager_1a8eba87f60475f39e0e27b22ac9b6ffc4" prot="public" virt="non-virtual"><scope>ConfigManager</scope><name>set</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

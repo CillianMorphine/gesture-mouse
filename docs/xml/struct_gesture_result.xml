@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="struct_gesture_result" kind="struct" language="C++" prot="public">
+    <compoundname>GestureResult</compoundname>
+    <includes refid="_gesture_recognizer_8h" local="no">GestureRecognizer.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" prot="public" static="no" mutable="no">
+        <type><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" kindref="member">GestureType</ref></type>
+        <definition>GestureType GestureResult::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>GestureResult::type</qualifiedname>
+        <initializer>{<ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">GestureType::NONE</ref>}</initializer>
+        <briefdescription>
+<para>Тип розпізнаного жесту </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="88" column="17" bodyfile="include/gesture/GestureRecognizer.h" bodystart="88" bodyend="88"/>
+        <referencedby refid="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" compoundref="_mouse_controller_8cpp" startline="21" endline="44">MouseController::applyGesture</referencedby>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+        <referencedby refid="struct_gesture_result_1a98a6f90701fa3336baee0d2baf48288b" compoundref="_gesture_recognizer_8cpp" startline="7" endline="18">typeName</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GestureResult::handX</definition>
+        <argsstring></argsstring>
+        <name>handX</name>
+        <qualifiedname>GestureResult::handX</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Нормалізована X-координата центру руки [0..1]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="89" column="11" bodyfile="include/gesture/GestureRecognizer.h" bodystart="89" bodyend="89"/>
+        <referencedby refid="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" compoundref="_mouse_controller_8cpp" startline="21" endline="44">MouseController::applyGesture</referencedby>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GestureResult::handY</definition>
+        <argsstring></argsstring>
+        <name>handY</name>
+        <qualifiedname>GestureResult::handY</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Нормалізована Y-координата центру руки [0..1]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="90" column="11" bodyfile="include/gesture/GestureRecognizer.h" bodystart="90" bodyend="90"/>
+        <referencedby refid="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" compoundref="_mouse_controller_8cpp" startline="21" endline="44">MouseController::applyGesture</referencedby>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GestureResult::confidence</definition>
+        <argsstring></argsstring>
+        <name>confidence</name>
+        <qualifiedname>GestureResult::confidence</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Впевненість класифікатора [0..1], 1.0 = максимум </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="91" column="11" bodyfile="include/gesture/GestureRecognizer.h" bodystart="91" bodyend="91"/>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_gesture_result_1a98a6f90701fa3336baee0d2baf48288b" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string GestureResult::typeName</definition>
+        <argsstring>() const</argsstring>
+        <name>typeName</name>
+        <qualifiedname>GestureResult::typeName</qualifiedname>
+        <briefdescription>
+<para>Повертає рядкову назву типу жесту. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Зручно для логування та debug-виводу: <programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="group___log_macros_1ga2332264037abe02c8041a498b2fa1627" kindref="member">LOG_DEBUG</ref>(</highlight><highlight class="stringliteral">&quot;Gesture:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>result.typeName());</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Рядок у верхньому регістрі, наприклад <computeroutput>"LEFT_CLICK"</computeroutput>, або <computeroutput>"NONE"</computeroutput> якщо жест не виявлено. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="104" column="18" bodyfile="src/gesture/GestureRecognizer.cpp" bodystart="7" bodyend="18"/>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" compoundref="_gesture_recognizer_8h" startline="67">DRAG</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" compoundref="_gesture_recognizer_8h" startline="63">LEFT_CLICK</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" compoundref="_gesture_recognizer_8h" startline="62">MOVE</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" compoundref="_gesture_recognizer_8h" startline="61">NONE</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" compoundref="_gesture_recognizer_8h" startline="64">RIGHT_CLICK</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea26b36a2a5f3ef7983f88fb7601ccd228" compoundref="_gesture_recognizer_8h" startline="66">SCROLL_DOWN</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea6ae640c96760bbabf3c8abafd1abc20f" compoundref="_gesture_recognizer_8h" startline="65">SCROLL_UP</references>
+        <references refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" compoundref="_gesture_recognizer_8h" startline="88" endline="88">type</references>
+        <referencedby refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" compoundref="_gesture_recognizer_8cpp" startline="28" endline="49">GestureRecognizer::process</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Результат розпізнавання одного кадру відеопотоку. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Структура є <bold>value type</bold> (копіюється дешево). Координати нормалізовані до діапазону [0.0, 1.0] відносно розмірів кадру камери — <ref refid="class_mouse_controller" kindref="compound">MouseController</ref> перетворює їх у піксельні координати екрана.</para>
+<para><simplesect kind="par"><title>Приклад використання:</title><para><programlisting filename=".cpp"><codeline><highlight class="normal">GestureResult<sp/>result<sp/>=<sp/>recognizer.process(frame);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.<ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref><sp/>==<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" kindref="member">GestureType::MOVE</ref><sp/>&amp;&amp;<sp/>result.<ref refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" kindref="member">confidence</ref><sp/>&gt;<sp/>0.7F)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mouseCtrl.applyGesture(result);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/gesture/GestureRecognizer.h" line="87" column="1" bodyfile="include/gesture/GestureRecognizer.h" bodystart="87" bodyend="105"/>
+    <listofallmembers>
+      <member refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" prot="public" virt="non-virtual"><scope>GestureResult</scope><name>confidence</name></member>
+      <member refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" prot="public" virt="non-virtual"><scope>GestureResult</scope><name>handX</name></member>
+      <member refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" prot="public" virt="non-virtual"><scope>GestureResult</scope><name>handY</name></member>
+      <member refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" prot="public" virt="non-virtual"><scope>GestureResult</scope><name>type</name></member>
+      <member refid="struct_gesture_result_1a98a6f90701fa3336baee0d2baf48288b" prot="public" virt="non-virtual"><scope>GestureResult</scope><name>typeName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

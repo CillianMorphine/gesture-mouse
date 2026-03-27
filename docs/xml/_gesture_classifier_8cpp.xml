@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_gesture_classifier_8cpp" kind="file" language="C++">
+    <compoundname>GestureClassifier.cpp</compoundname>
+    <includes refid="_gesture_classifier_8h" local="yes">gesture/GestureClassifier.h</includes>
+    <includes refid="_config_manager_8h" local="yes">core/ConfigManager.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>core/ConfigManager.h</label>
+        <link refid="_config_manager_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gesture/GestureClassifier.h</label>
+        <link refid="_gesture_classifier_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>gesture/GestureRecognizer.h</label>
+        <link refid="_gesture_recognizer_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gesture/HandTracker.h</label>
+        <link refid="_hand_tracker_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>GestureClassifier.cpp</label>
+        <link refid="_gesture_classifier_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+      <node id="9">
+        <label>opencv2/core/mat.hpp</label>
+      </node>
+      <node id="4">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="11">
+        <label>unordered_map</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_gesture_classifier_8h" kindref="compound">gesture/GestureClassifier.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_config_manager_8h" kindref="compound">core/ConfigManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="class_gesture_classifier_1a50f700f5945bb8abe2ea3f094cfcb1e1" refkind="member"><highlight class="normal"><ref refid="class_gesture_classifier_1a50f700f5945bb8abe2ea3f094cfcb1e1" kindref="member">GestureClassifier::GestureClassifier</ref>(<ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/></highlight><highlight class="comment">/*config*/</highlight><highlight class="normal">)<sp/>{}</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" refkind="member"><highlight class="normal"><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref><sp/><ref refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" kindref="member">GestureClassifier::classify</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>&amp;<sp/>hand)<sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!hand.<ref refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" kindref="member">detected</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref>{<ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">GestureType::NONE</ref>};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref><sp/>result;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" kindref="member">handX</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>hand.<ref refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" kindref="member">centerX</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" kindref="member">handY</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>hand.<ref refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" kindref="member">centerY</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" kindref="member">confidence</ref><sp/>=<sp/>0.85f;<sp/></highlight><highlight class="comment">//<sp/>Спрощено;<sp/>у<sp/>повній<sp/>версії<sp/>—<sp/>результат<sp/>нейромережі</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fingers<sp/>=<sp/>countFingers(hand);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fingers<sp/>&gt;=<sp/>4)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref><sp/>=<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" kindref="member">GestureType::MOVE</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fingers<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref><sp/>=<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" kindref="member">GestureType::LEFT_CLICK</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fingers<sp/>==<sp/>2)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref><sp/>=<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" kindref="member">GestureType::RIGHT_CLICK</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isFist(hand))<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref><sp/>=<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" kindref="member">GestureType::DRAG</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.<ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref><sp/>=<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">GestureType::NONE</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>GestureClassifier::countFingers(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>&amp;<sp/>hand)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Спрощена<sp/>евристика:<sp/>у<sp/>повній<sp/>реалізації<sp/>—<sp/>аналіз<sp/>опуклої<sp/>оболонки</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)hand;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>4;<sp/></highlight><highlight class="comment">//<sp/>Заглушка</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>GestureClassifier::isFist(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>&amp;<sp/>hand)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)hand;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>Заглушка</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/gesture/GestureClassifier.cpp"/>
+  </compounddef>
+</doxygen>

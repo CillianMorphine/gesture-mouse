@@ -1,0 +1,469 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_mouse_controller" kind="class" language="C++" prot="public">
+    <compoundname>MouseController</compoundname>
+    <includes refid="_mouse_controller_8h" local="no">MouseController.h</includes>
+    <sectiondef kind="user-defined">
+      <header>Rule of 5</header>
+      <memberdef kind="function" id="class_mouse_controller_1ac2b3c3e2e0b325628e33615286587f53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MouseController::MouseController</definition>
+        <argsstring>(const MouseController &amp;)=delete</argsstring>
+        <name>MouseController</name>
+        <qualifiedname>MouseController::MouseController</qualifiedname>
+        <param>
+          <type>const <ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="81" column="5"/>
+        <references refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" compoundref="_mouse_controller_8cpp" startline="14" endline="17">MouseController</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a729d9b317a31538af2b96b88b266640c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &amp;</type>
+        <definition>MouseController &amp; MouseController::operator=</definition>
+        <argsstring>(const MouseController &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>MouseController::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="82" column="21"/>
+        <references refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" compoundref="_mouse_controller_8cpp" startline="14" endline="17">MouseController</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a51735c9af4092e531322191b0b2cfe20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MouseController::MouseController</definition>
+        <argsstring>(MouseController &amp;&amp;)=default</argsstring>
+        <name>MouseController</name>
+        <qualifiedname>MouseController::MouseController</qualifiedname>
+        <param>
+          <type><ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="83" column="5"/>
+        <references refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" compoundref="_mouse_controller_8cpp" startline="14" endline="17">MouseController</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a66cd4df60c664621a87a6530158678be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &amp;</type>
+        <definition>MouseController &amp; MouseController::operator=</definition>
+        <argsstring>(MouseController &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>MouseController::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="84" column="21"/>
+        <references refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" compoundref="_mouse_controller_8cpp" startline="14" endline="17">MouseController</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mouse_controller_1a218777e2f20ca0f7b42be798291afce3" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MouseController::m_smoothing</definition>
+        <argsstring></argsstring>
+        <name>m_smoothing</name>
+        <qualifiedname>MouseController::m_smoothing</qualifiedname>
+        <initializer>{0.3F}</initializer>
+        <briefdescription>
+<para>Коефіцієнт EMA-фільтру [0..1]. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="162" column="11" bodyfile="include/input/MouseController.h" bodystart="162" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mouse_controller_1af600288353ab925c940114a5c032194e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MouseController::m_prevX</definition>
+        <argsstring></argsstring>
+        <name>m_prevX</name>
+        <qualifiedname>MouseController::m_prevX</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Попередня X-координата (після згладжування). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="163" column="11" bodyfile="include/input/MouseController.h" bodystart="163" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mouse_controller_1a5c7cff61d95d3b4bb5fc5c30a4508970" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MouseController::m_prevY</definition>
+        <argsstring></argsstring>
+        <name>m_prevY</name>
+        <qualifiedname>MouseController::m_prevY</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Попередня Y-координата (після згладжування). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="164" column="11" bodyfile="include/input/MouseController.h" bodystart="164" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mouse_controller_1aaf36a2e2c3ffff75568117a03e53db0f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MouseController::m_dragActive</definition>
+        <argsstring></argsstring>
+        <name>m_dragActive</name>
+        <qualifiedname>MouseController::m_dragActive</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Прапорець активного режиму перетягування </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="165" column="11" bodyfile="include/input/MouseController.h" bodystart="165" bodyend="165"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MouseController::MouseController</definition>
+        <argsstring>(ConfigManager *config)</argsstring>
+        <name>MouseController</name>
+        <qualifiedname>MouseController::MouseController</qualifiedname>
+        <param>
+          <type><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Зчитує налаштування з конфігу. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вказівник на <ref refid="class_config_manager" kindref="compound">ConfigManager</ref> (не nullptr, не власник). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="74" column="14" bodyfile="src/input/MouseController.cpp" bodystart="14" bodyend="17"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+        <referencedby refid="class_mouse_controller_1ac2b3c3e2e0b325628e33615286587f53">MouseController</referencedby>
+        <referencedby refid="class_mouse_controller_1a51735c9af4092e531322191b0b2cfe20">MouseController</referencedby>
+        <referencedby refid="class_mouse_controller_1a729d9b317a31538af2b96b88b266640c">operator=</referencedby>
+        <referencedby refid="class_mouse_controller_1a66cd4df60c664621a87a6530158678be">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a96860a9e3c11ab8becbc74d3670e8da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MouseController::~MouseController</definition>
+        <argsstring>()</argsstring>
+        <name>~MouseController</name>
+        <qualifiedname>MouseController::~MouseController</qualifiedname>
+        <briefdescription>
+<para>Деструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Відпускає кнопку миші якщо drag активний. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="77" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MouseController::applyGesture</definition>
+        <argsstring>(const GestureResult &amp;gesture)</argsstring>
+        <name>applyGesture</name>
+        <qualifiedname>MouseController::applyGesture</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_gesture_result" kindref="compound">GestureResult</ref> &amp;</type>
+          <declname>gesture</declname>
+        </param>
+        <briefdescription>
+<para>Застосовує розпізнаний жест як системну дію миші. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Відповідність <ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" kindref="member">GestureType</ref> → дія:</para>
+<para><table rows="8" cols="3"><row>
+<entry thead="yes"><para><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" kindref="member">GestureType</ref>  </para>
+</entry><entry thead="yes"><para>Виклик  </para>
+</entry><entry thead="yes"><para>Опис  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>MOVE  </para>
+</entry><entry thead="no"><para><computeroutput>moveCursor(x, y)</computeroutput>  </para>
+</entry><entry thead="no"><para>EMA-плавне переміщення  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>LEFT_CLICK  </para>
+</entry><entry thead="no"><para><computeroutput>leftClick()</computeroutput>  </para>
+</entry><entry thead="no"><para>MouseDown + MouseUp  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>RIGHT_CLICK  </para>
+</entry><entry thead="no"><para><computeroutput>rightClick()</computeroutput>  </para>
+</entry><entry thead="no"><para>MouseDown + MouseUp  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>SCROLL_UP  </para>
+</entry><entry thead="no"><para><computeroutput>scroll(+3)</computeroutput>  </para>
+</entry><entry thead="no"><para>3 кроки прокрутки вгору  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>SCROLL_DOWN  </para>
+</entry><entry thead="no"><para><computeroutput>scroll(-3)</computeroutput>  </para>
+</entry><entry thead="no"><para>3 кроки прокрутки вниз  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>DRAG  </para>
+</entry><entry thead="no"><para><emphasis>(TODO)</emphasis>  </para>
+</entry><entry thead="no"><para>MouseDown без MouseUp  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>NONE  </para>
+</entry><entry thead="no"><para><emphasis>(нічого)</emphasis>  </para>
+</entry><entry thead="no"><para>—  </para>
+</entry></row>
+</table>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gesture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Результат розпізнавання з <ref refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" kindref="member">GestureRecognizer::process()</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Клік відбувається миттєво (down+up в одному виклику). Для утримання кнопки (drag) стан зберігається в m_dragActive. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="108" column="10" bodyfile="src/input/MouseController.cpp" bodystart="21" bodyend="44"/>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" compoundref="_gesture_recognizer_8h" startline="67">DRAG</references>
+        <references refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" compoundref="_gesture_recognizer_8h" startline="89" endline="89">GestureResult::handX</references>
+        <references refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" compoundref="_gesture_recognizer_8h" startline="90" endline="90">GestureResult::handY</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" compoundref="_gesture_recognizer_8h" startline="63">LEFT_CLICK</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" compoundref="_gesture_recognizer_8h" startline="62">MOVE</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" compoundref="_gesture_recognizer_8h" startline="64">RIGHT_CLICK</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea26b36a2a5f3ef7983f88fb7601ccd228" compoundref="_gesture_recognizer_8h" startline="66">SCROLL_DOWN</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea6ae640c96760bbabf3c8abafd1abc20f" compoundref="_gesture_recognizer_8h" startline="65">SCROLL_UP</references>
+        <references refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" compoundref="_gesture_recognizer_8h" startline="88" endline="88">GestureResult::type</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_mouse_controller_1addca1a0f4699d559ba8b83bcd4959f52" prot="public" static="yes" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="struct_screen_size" kindref="compound">ScreenSize</ref></type>
+        <definition>std::pair&lt; int, int &gt; MouseController::screenSize</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>screenSize</name>
+        <qualifiedname>MouseController::screenSize</qualifiedname>
+        <briefdescription>
+<para>Повертає поточні розміри основного екрана. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Реалізація:<itemizedlist>
+<listitem><para><bold>Windows:</bold> <computeroutput>GetSystemMetrics(SM_CXSCREEN / SM_CYSCREEN)</computeroutput></para>
+</listitem><listitem><para><bold>Linux:</bold> <computeroutput>DefaultScreenOfDisplay(XOpenDisplay(nullptr))</computeroutput></para>
+</listitem><listitem><para><bold>Інше:</bold> hardcoded 1920×1080 як fallback</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="return"><para><ref refid="struct_screen_size" kindref="compound">ScreenSize</ref> з шириною та висотою в пікселях.</para>
+</simplesect>
+<simplesect kind="note"><para>noexcept — у разі помилки повертає {1920, 1080}. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="123" column="24" bodyfile="src/input/MouseController.cpp" bodystart="122" bodyend="135"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_mouse_controller_1a8cbed5e30d798ce04712705a38cf9ecd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MouseController::moveCursor</definition>
+        <argsstring>(float normX, float normY)</argsstring>
+        <name>moveCursor</name>
+        <qualifiedname>MouseController::moveCursor</qualifiedname>
+        <param>
+          <type>float</type>
+          <declname>normX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>normY</declname>
+        </param>
+        <briefdescription>
+<para>Переміщує курсор із EMA-згладжуванням. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><bold>Алгоритм:</bold><orderedlist>
+<listitem><para>Застосовує EMA: <computeroutput>m_prevX += m_smoothing * (normX - m_prevX)</computeroutput></para>
+</listitem><listitem><para>Денормалізує: <computeroutput>px = m_prevX * screenWidth</computeroutput></para>
+</listitem><listitem><para>Викликає платформний API</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>normX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Нормалізована X-координата з <ref refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" kindref="member">GestureResult::handX</ref> [0..1]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>normY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Нормалізована Y-координата з <ref refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" kindref="member">GestureResult::handY</ref> [0..1].</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>0.0F &lt;= normX &lt;= 1.0F &amp;&amp; 0.0F &lt;= normY &lt;= 1.0F </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="140" column="10" bodyfile="src/input/MouseController.cpp" bodystart="46" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a6bb08cabdfeee2215e6d7abfb966c4d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MouseController::leftClick</definition>
+        <argsstring>()</argsstring>
+        <name>leftClick</name>
+        <qualifiedname>MouseController::leftClick</qualifiedname>
+        <briefdescription>
+<para>Симулює клік лівою кнопкою миші (down + up). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Windows: MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP via SendInput. Linux: XTestFakeButtonEvent(dpy, 1, True/False). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="147" column="10" bodyfile="src/input/MouseController.cpp" bodystart="67" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a56b823e43d3ac41261f368a1daf17684" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MouseController::rightClick</definition>
+        <argsstring>()</argsstring>
+        <name>rightClick</name>
+        <qualifiedname>MouseController::rightClick</qualifiedname>
+        <briefdescription>
+<para>Симулює клік правою кнопкою миші (down + up). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="152" column="10" bodyfile="src/input/MouseController.cpp" bodystart="84" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mouse_controller_1a3456deb202e07ff017107464fabf60c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MouseController::scroll</definition>
+        <argsstring>(int delta)</argsstring>
+        <name>scroll</name>
+        <qualifiedname>MouseController::scroll</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+<para>Симулює прокрутку коліщатком миші. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Кількість кроків. Позитивне — вгору, від&apos;ємне — вниз. Один крок = WHEEL_DELTA (120) на Windows, кнопка 4/5 на Linux. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="160" column="10" bodyfile="src/input/MouseController.cpp" bodystart="101" bodyend="120"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Контролер миші — застосовує жести як системні дії введення. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Клас читає налаштування з <ref refid="class_config_manager" kindref="compound">ConfigManager</ref> при ініціалізації:</para>
+<para><table rows="2" cols="4"><row>
+<entry thead="yes"><para>Ключ конфігу  </para>
+</entry><entry thead="yes"><para>Тип  </para>
+</entry><entry thead="yes"><para>Замовч.  </para>
+</entry><entry thead="yes"><para>Опис  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>mouse.smoothing</computeroutput>  </para>
+</entry><entry thead="no"><para>float  </para>
+</entry><entry thead="no"><para>0.3  </para>
+</entry><entry thead="no"><para>Коефіцієнт EMA [0..1]  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="par"><title>Приклад інтеграції:</title><para><programlisting filename=".cpp"><codeline><highlight class="normal">ConfigManager<sp/>cfg(</highlight><highlight class="stringliteral">&quot;settings.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><ref refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" kindref="member">MouseController</ref><sp/>ctrl(&amp;cfg);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">GestureResult<sp/>g<sp/>=<sp/>recognizer.process(frame);</highlight></codeline>
+<codeline><highlight class="normal">ctrl.applyGesture(g);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>один<sp/>виклик<sp/>—<sp/>вся<sp/>логіка<sp/>всередині</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/input/MouseController.h" line="68" column="1" bodyfile="include/input/MouseController.h" bodystart="68" bodyend="166"/>
+    <listofallmembers>
+      <member refid="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" prot="public" virt="non-virtual"><scope>MouseController</scope><name>applyGesture</name></member>
+      <member refid="class_mouse_controller_1a6bb08cabdfeee2215e6d7abfb966c4d9" prot="private" virt="non-virtual"><scope>MouseController</scope><name>leftClick</name></member>
+      <member refid="class_mouse_controller_1aaf36a2e2c3ffff75568117a03e53db0f" prot="private" virt="non-virtual"><scope>MouseController</scope><name>m_dragActive</name></member>
+      <member refid="class_mouse_controller_1af600288353ab925c940114a5c032194e" prot="private" virt="non-virtual"><scope>MouseController</scope><name>m_prevX</name></member>
+      <member refid="class_mouse_controller_1a5c7cff61d95d3b4bb5fc5c30a4508970" prot="private" virt="non-virtual"><scope>MouseController</scope><name>m_prevY</name></member>
+      <member refid="class_mouse_controller_1a218777e2f20ca0f7b42be798291afce3" prot="private" virt="non-virtual"><scope>MouseController</scope><name>m_smoothing</name></member>
+      <member refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" prot="public" virt="non-virtual"><scope>MouseController</scope><name>MouseController</name></member>
+      <member refid="class_mouse_controller_1ac2b3c3e2e0b325628e33615286587f53" prot="public" virt="non-virtual"><scope>MouseController</scope><name>MouseController</name></member>
+      <member refid="class_mouse_controller_1a51735c9af4092e531322191b0b2cfe20" prot="public" virt="non-virtual"><scope>MouseController</scope><name>MouseController</name></member>
+      <member refid="class_mouse_controller_1a8cbed5e30d798ce04712705a38cf9ecd" prot="private" virt="non-virtual"><scope>MouseController</scope><name>moveCursor</name></member>
+      <member refid="class_mouse_controller_1a729d9b317a31538af2b96b88b266640c" prot="public" virt="non-virtual"><scope>MouseController</scope><name>operator=</name></member>
+      <member refid="class_mouse_controller_1a66cd4df60c664621a87a6530158678be" prot="public" virt="non-virtual"><scope>MouseController</scope><name>operator=</name></member>
+      <member refid="class_mouse_controller_1a56b823e43d3ac41261f368a1daf17684" prot="private" virt="non-virtual"><scope>MouseController</scope><name>rightClick</name></member>
+      <member refid="class_mouse_controller_1addca1a0f4699d559ba8b83bcd4959f52" prot="public" virt="non-virtual"><scope>MouseController</scope><name>screenSize</name></member>
+      <member refid="class_mouse_controller_1a3456deb202e07ff017107464fabf60c6" prot="private" virt="non-virtual"><scope>MouseController</scope><name>scroll</name></member>
+      <member refid="class_mouse_controller_1a96860a9e3c11ab8becbc74d3670e8da0" prot="public" virt="non-virtual"><scope>MouseController</scope><name>~MouseController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

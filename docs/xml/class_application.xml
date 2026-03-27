@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_application" kind="class" language="C++" prot="public">
+    <compoundname>Application</compoundname>
+    <includes refid="_application_8h" local="no">Application.h</includes>
+    <sectiondef kind="user-defined">
+      <header>Підсистеми (власні, керуються через RAII)</header>
+      <memberdef kind="variable" id="class_application_1a274dfbba23c488081021de8f2cdac1d4" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GestureRecognizer&gt; Application::m_recognizer</definition>
+        <argsstring></argsstring>
+        <name>m_recognizer</name>
+        <qualifiedname>Application::m_recognizer</qualifiedname>
+        <briefdescription>
+<para>Модуль CV-розпізнавання </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="168" column="21" bodyfile="include/core/Application.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_application_1a1f71479b1c8663e5978b4ea94aa39ef3" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_mouse_controller" kindref="compound">MouseController</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;MouseController&gt; Application::m_mouseCtrl</definition>
+        <argsstring></argsstring>
+        <name>m_mouseCtrl</name>
+        <qualifiedname>Application::m_mouseCtrl</qualifiedname>
+        <briefdescription>
+<para>Модуль керування мишею </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="169" column="23" bodyfile="include/core/Application.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_application_1a27b65b0d4855ec912bd4f8f99e721796" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_config_manager" kindref="compound">ConfigManager</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;ConfigManager&gt; Application::m_config</definition>
+        <argsstring></argsstring>
+        <name>m_config</name>
+        <qualifiedname>Application::m_config</qualifiedname>
+        <briefdescription>
+<para>Файл конфігурації </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="170" column="25" bodyfile="include/core/Application.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_application_1a7adbe96e3818a884ae781803d8b26b54" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_tray_icon" kindref="compound">TrayIcon</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;TrayIcon&gt; Application::m_tray</definition>
+        <argsstring></argsstring>
+        <name>m_tray</name>
+        <qualifiedname>Application::m_tray</qualifiedname>
+        <briefdescription>
+<para>UI — системний трей </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="171" column="30" bodyfile="include/core/Application.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="user-defined">
+      <header>Некопійовані операції (Rule of 5)</header>
+      <memberdef kind="function" id="class_application_1afaeec66a8591b6d88049b260133d13fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>(const Application &amp;)=delete</argsstring>
+        <name>Application</name>
+        <qualifiedname>Application::Application</qualifiedname>
+        <param>
+          <type>const <ref refid="class_application" kindref="compound">Application</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="82" column="5"/>
+        <references refid="class_application_1a758ec0591237b4b7204ee8d87a26f834">Application</references>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1a4bddd891168e3adc56dfd505ac41af7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_application" kindref="compound">Application</ref> &amp;</type>
+        <definition>Application &amp; Application::operator=</definition>
+        <argsstring>(const Application &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Application::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_application" kindref="compound">Application</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="83" column="17"/>
+        <references refid="class_application_1a758ec0591237b4b7204ee8d87a26f834">Application</references>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1a7b5be0a8e4df05ca7ceb2d3d7d275278" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>(Application &amp;&amp;)=delete</argsstring>
+        <name>Application</name>
+        <qualifiedname>Application::Application</qualifiedname>
+        <param>
+          <type><ref refid="class_application" kindref="compound">Application</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="84" column="5"/>
+        <references refid="class_application_1a758ec0591237b4b7204ee8d87a26f834">Application</references>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1aa909176412a911bcedb36005049c7bcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_application" kindref="compound">Application</ref> &amp;</type>
+        <definition>Application &amp; Application::operator=</definition>
+        <argsstring>(Application &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Application::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_application" kindref="compound">Application</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="85" column="17"/>
+        <references refid="class_application_1a758ec0591237b4b7204ee8d87a26f834">Application</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_application_1ab9dec516142a91a463e51205306b0e9a" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt;</type>
+        <definition>std::atomic&lt;bool&gt; Application::m_running</definition>
+        <argsstring></argsstring>
+        <name>m_running</name>
+        <qualifiedname>Application::m_running</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Прапорець активного стану головного циклу. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Атомарний для потокобезпечного доступу з TrayIcon-потоку. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="178" column="17" bodyfile="include/core/Application.h" bodystart="178" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_application_1afd7de7cce221bd5a00a293401f1ab4fc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Application::m_argc</definition>
+        <argsstring></argsstring>
+        <name>m_argc</name>
+        <qualifiedname>Application::m_argc</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Кількість аргументів CLI (збережена копія). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="180" column="12" bodyfile="include/core/Application.h" bodystart="180" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_application_1a37b8e5a4d63b48ab99d4f59f721b570e" prot="private" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** Application::m_argv</definition>
+        <argsstring></argsstring>
+        <name>m_argv</name>
+        <qualifiedname>Application::m_argv</qualifiedname>
+        <initializer>{nullptr}</initializer>
+        <briefdescription>
+<para>Масив аргументів CLI (не власник пам&apos;яті). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="181" column="10" bodyfile="include/core/Application.h" bodystart="181" bodyend="181"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_application_1a758ec0591237b4b7204ee8d87a26f834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::Application</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>Application</name>
+        <qualifiedname>Application::Application</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Виконує ініціалізацію всіх підсистем.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Кількість аргументів командного рядка (з main). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Масив рядків аргументів (з main).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>якщо не вдалося відкрити конфіг або камеру.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Передані argc/argv зберігаються як є — без копіювання рядків, тому час їхнього життя має перевищувати час життя <ref refid="class_application" kindref="compound">Application</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="73" column="5"/>
+        <referencedby refid="class_application_1a7b5be0a8e4df05ca7ceb2d3d7d275278">Application</referencedby>
+        <referencedby refid="class_application_1afaeec66a8591b6d88049b260133d13fc">Application</referencedby>
+        <referencedby refid="class_application_1aa909176412a911bcedb36005049c7bcf">operator=</referencedby>
+        <referencedby refid="class_application_1a4bddd891168e3adc56dfd505ac41af7f">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1a748bca84fefb9c12661cfaa2f623748d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Application::~Application</definition>
+        <argsstring>()</argsstring>
+        <name>~Application</name>
+        <qualifiedname>Application::~Application</qualifiedname>
+        <briefdescription>
+<para>Деструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Викликає cleanup() та зупиняє головний цикл. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="78" column="5" bodyfile="src/core/Application.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1a8cf8941c8db90117d3735bce5ae1fdf4" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Application::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <qualifiedname>Application::run</qualifiedname>
+        <briefdescription>
+<para>Запускає головний цикл програми. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Блокує до виклику <ref refid="class_application_1a6235fa1cc593954a1ba845d4402614b5" kindref="member">stop()</ref>.</para>
+<para>Послідовність виконання:<orderedlist>
+<listitem><para>Відображає іконку в системному треї.</para>
+</listitem><listitem><para>Входить у нескінченний цикл: <computeroutput>захват кадру → розпізнавання → дія</computeroutput>.</para>
+</listitem><listitem><para>Повертає керування після того, як m_running стає false.</para>
+</listitem></orderedlist>
+</para>
+<para><simplesect kind="return"><para>EXIT_SUCCESS (0) при нормальному завершенні, EXIT_FAILURE (1) якщо камеру не вдалося відкрити.</para>
+</simplesect>
+<simplesect kind="note"><para>Викличте <ref refid="class_application_1a6235fa1cc593954a1ba845d4402614b5" kindref="member">stop()</ref> з іншого потоку або з обробника сигналу, щоб завершити цикл.</para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_application_1a6235fa1cc593954a1ba845d4402614b5" kindref="member">stop()</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="105" column="10" bodyfile="src/core/Application.cpp" bodystart="31" bodyend="39"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="6" endline="18">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1a6235fa1cc593954a1ba845d4402614b5" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::stop</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>stop</name>
+        <qualifiedname>Application::stop</qualifiedname>
+        <briefdescription>
+<para>Надсилає сигнал завершення головному циклу. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Метод є потокобезпечним завдяки <computeroutput>std::atomic&lt;bool&gt;</computeroutput>. Цикл завершується після поточної ітерації (не миттєво).</para>
+<para>Типові сценарії виклику:<itemizedlist>
+<listitem><para>Клік &quot;Вихід&quot; у системному треї → TrayIcon::onExit()</para>
+</listitem><listitem><para>Сигнал SIGINT / SIGTERM (Ctrl+C)</para>
+</listitem><listitem><para>Команда <ndash/>no-gui в тестовому режимі</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>noexcept — метод ніколи не кидає виключень. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="121" column="10" bodyfile="src/core/Application.cpp" bodystart="64" bodyend="67"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_application_1af431bce25717b04a78d4d0940ed6a92c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <qualifiedname>Application::initialize</qualifiedname>
+        <briefdescription>
+<para>Ініціалізує всі підсистеми у правильному порядку. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Порядок ініціалізації важливий через залежності:<orderedlist>
+<listitem><para><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> — читає файл налаштувань</para>
+</listitem><listitem><para><ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> — залежить від <ref refid="class_config_manager" kindref="compound">ConfigManager</ref></para>
+</listitem><listitem><para><ref refid="class_mouse_controller" kindref="compound">MouseController</ref> — залежить від <ref refid="class_config_manager" kindref="compound">ConfigManager</ref></para>
+</listitem><listitem><para><ref refid="class_tray_icon" kindref="compound">TrayIcon</ref> — залежить від Application* (this)</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>при критичних помилках ініціалізації. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="136" column="10" bodyfile="src/core/Application.cpp" bodystart="20" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1a5be376956a17bc564595fb420cce1ba7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::mainLoop</definition>
+        <argsstring>()</argsstring>
+        <name>mainLoop</name>
+        <qualifiedname>Application::mainLoop</qualifiedname>
+        <briefdescription>
+<para>Головний цикл обробки відео. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><bold>Алгоритм одної ітерації:</bold><orderedlist>
+<listitem><para><computeroutput>cv::VideoCapture::read()</computeroutput> — захват кадру з камери</para>
+</listitem><listitem><para><computeroutput><ref refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" kindref="member">GestureRecognizer::process()</ref></computeroutput> — розпізнавання жесту</para>
+</listitem><listitem><para><computeroutput><ref refid="class_mouse_controller_1ae5e959b5853e02ac5ab5232c07a100ce" kindref="member">MouseController::applyGesture()</ref></computeroutput> — симуляція введення</para>
+</listitem><listitem><para><computeroutput>std::this_thread::sleep_for(16ms)</computeroutput> — обмеження до ~60 FPS</para>
+</listitem></orderedlist>
+</para>
+<para>Цикл виконується доки <computeroutput>m_running == true</computeroutput>.</para>
+<para><bold>Вибір sleep замість WaitKey:</bold> <computeroutput>cv::waitKey(16)</computeroutput> блокує потік тільки якщо відкрите вікно OpenCV. Оскільки debug-вікно опціональне, <computeroutput>sleep_for</computeroutput> є надійнішим рішенням. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="154" column="10" bodyfile="src/core/Application.cpp" bodystart="41" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_application_1aa9a857b3a751d9eb3cb47606c0e3c67a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Application::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>Application::cleanup</qualifiedname>
+        <briefdescription>
+<para>Звільняє всі ресурси у зворотному порядку до ініціалізації. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>unique_ptr забезпечує RAII-звільнення автоматично, але явний виклик reset() у правильному порядку запобігає use-after-free при деструкції залежних компонентів. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/core/Application.h" line="164" column="10" bodyfile="src/core/Application.cpp" bodystart="69" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Іконка у системному треї </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Головний клас програми — керує життєвим циклом усіх компонентів.</para>
+<para>Клас не підлягає копіюванню (Rule of 5). Типове використання:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_application_1a758ec0591237b4b7204ee8d87a26f834" kindref="member">Application</ref><sp/>app(argc,<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>app.run();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>блокує<sp/>до<sp/>зупинки</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+<sect1 id="class_application_1autotoc_md1_1s1"><sect2 id="class_application_1autotoc_md1_1s2"><sect3 id="class_application_1autotoc_md1">
+<title>Архітектурне рішення</title><para><ref refid="class_application" kindref="compound">Application</ref> зберігає всі залежності як <computeroutput>std::unique_ptr</computeroutput> — це забезпечує чіткий порядок знищення та спрощує тестування (залежності можна підміняти). </para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <location file="include/core/Application.h" line="60" column="1" bodyfile="include/core/Application.h" bodystart="60" bodyend="182"/>
+    <listofallmembers>
+      <member refid="class_application_1a758ec0591237b4b7204ee8d87a26f834" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="class_application_1afaeec66a8591b6d88049b260133d13fc" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="class_application_1a7b5be0a8e4df05ca7ceb2d3d7d275278" prot="public" virt="non-virtual"><scope>Application</scope><name>Application</name></member>
+      <member refid="class_application_1aa9a857b3a751d9eb3cb47606c0e3c67a" prot="private" virt="non-virtual"><scope>Application</scope><name>cleanup</name></member>
+      <member refid="class_application_1af431bce25717b04a78d4d0940ed6a92c" prot="private" virt="non-virtual"><scope>Application</scope><name>initialize</name></member>
+      <member refid="class_application_1afd7de7cce221bd5a00a293401f1ab4fc" prot="private" virt="non-virtual"><scope>Application</scope><name>m_argc</name></member>
+      <member refid="class_application_1a37b8e5a4d63b48ab99d4f59f721b570e" prot="private" virt="non-virtual"><scope>Application</scope><name>m_argv</name></member>
+      <member refid="class_application_1a27b65b0d4855ec912bd4f8f99e721796" prot="private" virt="non-virtual"><scope>Application</scope><name>m_config</name></member>
+      <member refid="class_application_1a1f71479b1c8663e5978b4ea94aa39ef3" prot="private" virt="non-virtual"><scope>Application</scope><name>m_mouseCtrl</name></member>
+      <member refid="class_application_1a274dfbba23c488081021de8f2cdac1d4" prot="private" virt="non-virtual"><scope>Application</scope><name>m_recognizer</name></member>
+      <member refid="class_application_1ab9dec516142a91a463e51205306b0e9a" prot="private" virt="non-virtual"><scope>Application</scope><name>m_running</name></member>
+      <member refid="class_application_1a7adbe96e3818a884ae781803d8b26b54" prot="private" virt="non-virtual"><scope>Application</scope><name>m_tray</name></member>
+      <member refid="class_application_1a5be376956a17bc564595fb420cce1ba7" prot="private" virt="non-virtual"><scope>Application</scope><name>mainLoop</name></member>
+      <member refid="class_application_1a4bddd891168e3adc56dfd505ac41af7f" prot="public" virt="non-virtual"><scope>Application</scope><name>operator=</name></member>
+      <member refid="class_application_1aa909176412a911bcedb36005049c7bcf" prot="public" virt="non-virtual"><scope>Application</scope><name>operator=</name></member>
+      <member refid="class_application_1a8cf8941c8db90117d3735bce5ae1fdf4" prot="public" virt="non-virtual"><scope>Application</scope><name>run</name></member>
+      <member refid="class_application_1a6235fa1cc593954a1ba845d4402614b5" prot="public" virt="non-virtual"><scope>Application</scope><name>stop</name></member>
+      <member refid="class_application_1a748bca84fefb9c12661cfaa2f623748d" prot="public" virt="non-virtual"><scope>Application</scope><name>~Application</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

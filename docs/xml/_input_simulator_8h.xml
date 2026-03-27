@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_input_simulator_8h" kind="file" language="C++">
+    <compoundname>InputSimulator.h</compoundname>
+    <includedby refid="_input_simulator_8cpp" local="yes">InputSimulator.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>InputSimulator.h</label>
+        <link refid="_input_simulator_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>InputSimulator.cpp</label>
+        <link refid="_input_simulator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_input_simulator" prot="public">InputSimulator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Низькорівневий<sp/>рівень<sp/>симуляції<sp/>вводу.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MouseController<sp/>використовує<sp/>цей<sp/>клас<sp/>для<sp/>відправки<sp/>подій<sp/>ОС.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_input_simulator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_input_simulator" kindref="compound">InputSimulator</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1aac60ceafc9510a593e5e7dbf1950fac4" kindref="member">moveMouse</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a147b62fd5b9ec44e12738388a6a5d0eb" kindref="member">mouseButtonDown</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>button);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1=left,<sp/>2=middle,<sp/>3=right</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a412bff05a4a7a1219b7cf151b929105c" kindref="member">mouseButtonUp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>button);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a4661e744a656f4dcc36fcdb845752e4b" kindref="member">mouseScroll</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>delta);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&gt;0<sp/>вгору,<sp/>&lt;0<sp/>вниз</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1a955d47de1ca26432d3e7d863424f279e" kindref="member">keyDown</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyCode);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_input_simulator_1ad4b90069a5b4ea581c79cd7a8c50cb98" kindref="member">keyUp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>keyCode);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/input/InputSimulator.h"/>
+  </compounddef>
+</doxygen>

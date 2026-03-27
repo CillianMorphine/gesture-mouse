@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="struct_hand_data" kind="struct" language="C++" prot="public">
+    <compoundname>HandData</compoundname>
+    <includes refid="_hand_tracker_8h" local="no">HandTracker.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool HandData::detected</definition>
+        <argsstring></argsstring>
+        <name>detected</name>
+        <qualifiedname>HandData::detected</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>true якщо рука виявлена </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="58" column="10" bodyfile="include/gesture/HandTracker.h" bodystart="58" bodyend="58"/>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+        <referencedby refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" compoundref="_hand_tracker_8cpp" startline="57" endline="62">HandTracker::drawLandmarks</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hand_data_1a0d8fd3c6e3e4821922fca134ec063cd3" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_landmark" kindref="compound">Landmark</ref> &gt;</type>
+        <definition>std::vector&lt;Landmark&gt; HandData::landmarks</definition>
+        <argsstring></argsstring>
+        <name>landmarks</name>
+        <qualifiedname>HandData::landmarks</qualifiedname>
+        <briefdescription>
+<para>Ключові точки (поточно: 1 — центр). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="59" column="17" bodyfile="include/gesture/HandTracker.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HandData::centerX</definition>
+        <argsstring></argsstring>
+        <name>centerX</name>
+        <qualifiedname>HandData::centerX</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Нормалізована X центру мас руки </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="60" column="11" bodyfile="include/gesture/HandTracker.h" bodystart="60" bodyend="60"/>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+        <referencedby refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" compoundref="_hand_tracker_8cpp" startline="57" endline="62">HandTracker::drawLandmarks</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float HandData::centerY</definition>
+        <argsstring></argsstring>
+        <name>centerY</name>
+        <qualifiedname>HandData::centerY</qualifiedname>
+        <initializer>{0.0F}</initializer>
+        <briefdescription>
+<para>Нормалізована Y центру мас руки </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="61" column="11" bodyfile="include/gesture/HandTracker.h" bodystart="61" bodyend="61"/>
+        <referencedby refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" compoundref="_gesture_classifier_8cpp" startline="6" endline="29">GestureClassifier::classify</referencedby>
+        <referencedby refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" compoundref="_hand_tracker_8cpp" startline="57" endline="62">HandTracker::drawLandmarks</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Результат виявлення руки на одному кадрі. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>У поточній реалізації зберігається 1 landmark (центр мас). Майбутні версії планують підтримку 21 точки (MediaPipe-сумісно). </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>HandData</label>
+        <link refid="struct_hand_data"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>landmarks</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Landmark</label>
+        <link refid="struct_landmark"/>
+      </node>
+      <node id="2">
+        <label>std::vector&lt; Landmark &gt;</label>
+        <childnode refid="3" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/gesture/HandTracker.h" line="57" column="1" bodyfile="include/gesture/HandTracker.h" bodystart="57" bodyend="62"/>
+    <listofallmembers>
+      <member refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" prot="public" virt="non-virtual"><scope>HandData</scope><name>centerX</name></member>
+      <member refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" prot="public" virt="non-virtual"><scope>HandData</scope><name>centerY</name></member>
+      <member refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" prot="public" virt="non-virtual"><scope>HandData</scope><name>detected</name></member>
+      <member refid="struct_hand_data_1a0d8fd3c6e3e4821922fca134ec063cd3" prot="public" virt="non-virtual"><scope>HandData</scope><name>landmarks</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_gesture_recognizer" kind="class" language="C++" prot="public">
+    <compoundname>GestureRecognizer</compoundname>
+    <includes refid="_gesture_recognizer_8h" local="no">GestureRecognizer.h</includes>
+    <sectiondef kind="user-defined">
+      <header>Некопійовані / переміщувані операції</header>
+      <memberdef kind="function" id="class_gesture_recognizer_1a302ad49054256c470397b0c87226e400" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GestureRecognizer::GestureRecognizer</definition>
+        <argsstring>(const GestureRecognizer &amp;)=delete</argsstring>
+        <name>GestureRecognizer</name>
+        <qualifiedname>GestureRecognizer::GestureRecognizer</qualifiedname>
+        <param>
+          <type>const <ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="157" column="5"/>
+        <references refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" compoundref="_gesture_recognizer_8cpp" startline="20" endline="24">GestureRecognizer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_recognizer_1ac9415cdc6b215e732eaf63e652e6ff53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &amp;</type>
+        <definition>GestureRecognizer &amp; GestureRecognizer::operator=</definition>
+        <argsstring>(const GestureRecognizer &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>GestureRecognizer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="158" column="23"/>
+        <references refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" compoundref="_gesture_recognizer_8cpp" startline="20" endline="24">GestureRecognizer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_recognizer_1ac8809ec5c7108e8a921731fd691ec737" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GestureRecognizer::GestureRecognizer</definition>
+        <argsstring>(GestureRecognizer &amp;&amp;)=default</argsstring>
+        <name>GestureRecognizer</name>
+        <qualifiedname>GestureRecognizer::GestureRecognizer</qualifiedname>
+        <param>
+          <type><ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="159" column="5"/>
+        <references refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" compoundref="_gesture_recognizer_8cpp" startline="20" endline="24">GestureRecognizer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_recognizer_1a01d8f347c6037473260f52a54c870d73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &amp;</type>
+        <definition>GestureRecognizer &amp; GestureRecognizer::operator=</definition>
+        <argsstring>(GestureRecognizer &amp;&amp;)=default</argsstring>
+        <name>operator=</name>
+        <qualifiedname>GestureRecognizer::operator=</qualifiedname>
+        <param>
+          <type><ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="160" column="23"/>
+        <references refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" compoundref="_gesture_recognizer_8cpp" startline="20" endline="24">GestureRecognizer</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gesture_recognizer_1aa4b93d051693f5e5557e5b9f72391315" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_hand_tracker" kindref="compound">HandTracker</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;HandTracker&gt; GestureRecognizer::m_tracker</definition>
+        <argsstring></argsstring>
+        <name>m_tracker</name>
+        <qualifiedname>GestureRecognizer::m_tracker</qualifiedname>
+        <briefdescription>
+<para>Детектор руки </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="213" column="27" bodyfile="include/gesture/GestureRecognizer.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gesture_recognizer_1a16616cfb6010520c70e01bc53aed68e2" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;GestureClassifier&gt; GestureRecognizer::m_classifier</definition>
+        <argsstring></argsstring>
+        <name>m_classifier</name>
+        <qualifiedname>GestureRecognizer::m_classifier</qualifiedname>
+        <briefdescription>
+<para>Класифікатор жестів </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="214" column="21" bodyfile="include/gesture/GestureRecognizer.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gesture_recognizer_1abb2a1226f2f0ab2b60e5a9b0a4b2a6d3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GestureRecognizer::m_debugView</definition>
+        <argsstring></argsstring>
+        <name>m_debugView</name>
+        <qualifiedname>GestureRecognizer::m_debugView</qualifiedname>
+        <initializer>{false}</initializer>
+        <briefdescription>
+<para>Стан debug-вікна </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="215" column="40" bodyfile="include/gesture/GestureRecognizer.h" bodystart="215" bodyend="215"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GestureRecognizer::GestureRecognizer</definition>
+        <argsstring>(ConfigManager *config)</argsstring>
+        <name>GestureRecognizer</name>
+        <qualifiedname>GestureRecognizer::GestureRecognizer</qualifiedname>
+        <param>
+          <type><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ініціалізує <ref refid="class_hand_tracker" kindref="compound">HandTracker</ref> і <ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вказівник на менеджер конфігурації (не власник, не nullptr).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>std::invalid_argument</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>якщо config == nullptr. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>std::runtime_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>якщо не вдалося ініціалізувати трекер.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="pre"><para>config != nullptr &amp;&amp; config-&gt;isLoaded() </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="148" column="14" bodyfile="src/gesture/GestureRecognizer.cpp" bodystart="20" bodyend="24"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+        <referencedby refid="class_gesture_recognizer_1a302ad49054256c470397b0c87226e400">GestureRecognizer</referencedby>
+        <referencedby refid="class_gesture_recognizer_1ac8809ec5c7108e8a921731fd691ec737">GestureRecognizer</referencedby>
+        <referencedby refid="class_gesture_recognizer_1ac9415cdc6b215e732eaf63e652e6ff53">operator=</referencedby>
+        <referencedby refid="class_gesture_recognizer_1a01d8f347c6037473260f52a54c870d73">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_recognizer_1a5c7570da67a7331a5e004c1a50289eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GestureRecognizer::~GestureRecognizer</definition>
+        <argsstring>()</argsstring>
+        <name>~GestureRecognizer</name>
+        <qualifiedname>GestureRecognizer::~GestureRecognizer</qualifiedname>
+        <briefdescription>
+<para>Деструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Закриває debug-вікно якщо воно відкрите. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="153" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref></type>
+        <definition>GestureResult GestureRecognizer::process</definition>
+        <argsstring>(const cv::Mat &amp;frame)</argsstring>
+        <name>process</name>
+        <qualifiedname>GestureRecognizer::process</qualifiedname>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Обробляє один кадр і повертає розпізнаний жест. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><bold>Алгоритм обробки:</bold><orderedlist>
+<listitem><para><computeroutput>HandTracker::detect(frame)</computeroutput> → знаходить контур руки через HSV-маску</para>
+</listitem><listitem><para>Якщо рука не виявлена — повертає <computeroutput><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref>{<ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">GestureType::NONE</ref>}</computeroutput></para>
+</listitem><listitem><para><computeroutput>GestureClassifier::classify(handData)</computeroutput> → визначає тип жесту</para>
+</listitem><listitem><para>Якщо ввімкнено debug-вікно — накладає landmarks на кадр</para>
+</listitem></orderedlist>
+</para>
+<para><bold>Продуктивність:</bold> типовий час виконання &lt; 5 мс на CPU (Intel i5).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Кадр BGR з камери (CV_8UC3). Не модифікується.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref> з типом жесту, координатами та впевненістю. Якщо frame порожній — повертає NONE без помилок.</para>
+</simplesect>
+<simplesect kind="note"><para>Метод <bold>не є потокобезпечним</bold> — викликати тільки з одного потоку.</para>
+</simplesect>
+<simplesect kind="par"><title>Приклад:</title><para><programlisting filename=".cpp"><codeline><highlight class="normal">cv::VideoCapture<sp/>cap(0);</highlight></codeline>
+<codeline><highlight class="normal">cv::Mat<sp/>frame;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cap.read(frame))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>recognizer.process(frame);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result.type<sp/>!=<sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">GestureType::NONE</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kindref="member">LOG_INFO</ref>(</highlight><highlight class="stringliteral">&quot;Gesture:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>result.typeName());</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="193" column="20" bodyfile="src/gesture/GestureRecognizer.cpp" bodystart="28" bodyend="49"/>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" compoundref="_gesture_recognizer_8h" startline="61">NONE</references>
+        <references refid="struct_gesture_result_1a98a6f90701fa3336baee0d2baf48288b" compoundref="_gesture_recognizer_8cpp" startline="7" endline="18">GestureResult::typeName</references>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_recognizer_1a20c517e7446b6a9c3b06e7cfb76a309b" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void GestureRecognizer::setDebugView</definition>
+        <argsstring>(bool enabled) noexcept</argsstring>
+        <name>setDebugView</name>
+        <qualifiedname>GestureRecognizer::setDebugView</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+<para>Вмикає або вимикає debug-вікно з накладеними landmarks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>При увімкненні відкривається вікно <computeroutput>"GestureMouse Debug"</computeroutput> з:<itemizedlist>
+<listitem><para>Контуром виявленої руки (зелений)</para>
+</listitem><listitem><para>Центром мас (синій кружок)</para>
+</listitem><listitem><para>Назвою розпізнаного жесту (білий текст)</para>
+</listitem></itemizedlist>
+</para>
+<para>При вимкненні вікно закривається через <computeroutput>cv::destroyWindow()</computeroutput>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true — показати вікно, false — закрити.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>noexcept — помилки OpenCV при роботі з вікнами ігноруються. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="210" column="10" bodyfile="src/gesture/GestureRecognizer.cpp" bodystart="51" bodyend="54"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Фасад модуля розпізнавання — координує <ref refid="class_hand_tracker" kindref="compound">HandTracker</ref> і <ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> є <bold>єдиною публічною точкою входу</bold> до підсистеми CV. <ref refid="class_application" kindref="compound">Application</ref> взаємодіє лише з цим класом, не знаючи деталей реалізації <ref refid="class_hand_tracker" kindref="compound">HandTracker</ref> або <ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref>.</para>
+<sect1 id="class_gesture_recognizer_1autotoc_md5_1s1"><sect2 id="class_gesture_recognizer_1autotoc_md5_1s2"><sect3 id="class_gesture_recognizer_1autotoc_md5">
+<title>Патерн Facade</title><para><programlisting><codeline><highlight class="normal">Application</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>│</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>└──►<sp/><ref refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" kindref="member">GestureRecognizer::process</ref>(frame)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──►<sp/><ref refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" kindref="member">HandTracker::detect</ref>(frame)<sp/><sp/><sp/><sp/><sp/><sp/>→<sp/>HandData</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──►<sp/><ref refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" kindref="member">GestureClassifier::classify</ref>(hand)<sp/>→<sp/>GestureResult</highlight></codeline>
+</programlisting></para>
+</sect3></sect2></sect1>
+<sect1 id="class_gesture_recognizer_1autotoc_md6_1s1"><sect2 id="class_gesture_recognizer_1autotoc_md6_1s2"><sect3 id="class_gesture_recognizer_1autotoc_md6">
+<title>Налаштування через ConfigManager</title><para><table rows="4" cols="4"><row>
+<entry thead="yes"><para>Ключ  </para>
+</entry><entry thead="yes"><para>Тип  </para>
+</entry><entry thead="yes"><para>За замовч.  </para>
+</entry><entry thead="yes"><para>Опис  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>gesture.confidence</computeroutput>  </para>
+</entry><entry thead="no"><para>float  </para>
+</entry><entry thead="no"><para>0.6  </para>
+</entry><entry thead="no"><para>Мін. впевненість для підтвердження  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>camera.index</computeroutput>  </para>
+</entry><entry thead="no"><para>int  </para>
+</entry><entry thead="no"><para>0  </para>
+</entry><entry thead="no"><para>Індекс камери для OpenCV  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>debug.show_window</computeroutput>  </para>
+</entry><entry thead="no"><para>bool  </para>
+</entry><entry thead="no"><para>false  </para>
+</entry><entry thead="no"><para>Показувати debug-кадр  </para>
+</entry></row>
+</table>
+</para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <location file="include/gesture/GestureRecognizer.h" line="136" column="1" bodyfile="include/gesture/GestureRecognizer.h" bodystart="136" bodyend="216"/>
+    <listofallmembers>
+      <member refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>GestureRecognizer</name></member>
+      <member refid="class_gesture_recognizer_1a302ad49054256c470397b0c87226e400" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>GestureRecognizer</name></member>
+      <member refid="class_gesture_recognizer_1ac8809ec5c7108e8a921731fd691ec737" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>GestureRecognizer</name></member>
+      <member refid="class_gesture_recognizer_1a16616cfb6010520c70e01bc53aed68e2" prot="private" virt="non-virtual"><scope>GestureRecognizer</scope><name>m_classifier</name></member>
+      <member refid="class_gesture_recognizer_1abb2a1226f2f0ab2b60e5a9b0a4b2a6d3" prot="private" virt="non-virtual"><scope>GestureRecognizer</scope><name>m_debugView</name></member>
+      <member refid="class_gesture_recognizer_1aa4b93d051693f5e5557e5b9f72391315" prot="private" virt="non-virtual"><scope>GestureRecognizer</scope><name>m_tracker</name></member>
+      <member refid="class_gesture_recognizer_1ac9415cdc6b215e732eaf63e652e6ff53" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>operator=</name></member>
+      <member refid="class_gesture_recognizer_1a01d8f347c6037473260f52a54c870d73" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>operator=</name></member>
+      <member refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>process</name></member>
+      <member refid="class_gesture_recognizer_1a20c517e7446b6a9c3b06e7cfb76a309b" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>setDebugView</name></member>
+      <member refid="class_gesture_recognizer_1a5c7570da67a7331a5e004c1a50289eac" prot="public" virt="non-virtual"><scope>GestureRecognizer</scope><name>~GestureRecognizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

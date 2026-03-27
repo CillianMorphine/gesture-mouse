@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_hand_tracker_8cpp" kind="file" language="C++">
+    <compoundname>HandTracker.cpp</compoundname>
+    <includes refid="_hand_tracker_8h" local="yes">gesture/HandTracker.h</includes>
+    <includes refid="_config_manager_8h" local="yes">core/ConfigManager.h</includes>
+    <includes refid="_logger_8h" local="yes">utils/Logger.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>core/ConfigManager.h</label>
+        <link refid="_config_manager_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gesture/HandTracker.h</label>
+        <link refid="_hand_tracker_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>utils/Logger.h</label>
+        <link refid="_logger_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HandTracker.cpp</label>
+        <link refid="_hand_tracker_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>chrono</label>
+      </node>
+      <node id="10">
+        <label>fstream</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="12">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>mutex</label>
+      </node>
+      <node id="3">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="14">
+        <label>sstream</label>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="7">
+        <label>unordered_map</label>
+      </node>
+      <node id="4">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_hand_tracker_8h" kindref="compound">gesture/HandTracker.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_config_manager_8h" kindref="compound">core/ConfigManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_logger_8h" kindref="compound">utils/Logger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" refkind="member"><highlight class="normal"><ref refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" kindref="member">HandTracker::HandTracker</ref>(<ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/>config)<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Завантаження<sp/>параметрів<sp/>тілесного<sp/>кольору<sp/>з<sp/>конфігу<sp/>(якщо<sp/>є)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kindref="member">LOG_INFO</ref>(</highlight><highlight class="stringliteral">&quot;HandTracker<sp/>initialized<sp/>(skin-color<sp/>method).&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">cv::Mat<sp/>HandTracker::preprocessFrame(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>frame)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>blurred,<sp/>hsv,<sp/>mask;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::GaussianBlur(frame,<sp/>blurred,<sp/>{5,<sp/>5},<sp/>0);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::cvtColor(blurred,<sp/>hsv,<sp/>cv::COLOR_BGR2HSV);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::inRange(hsv,<sp/>m_lowerSkin,<sp/>m_upperSkin,<sp/>mask);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Морфологічна<sp/>обробка<sp/>для<sp/>усунення<sp/>шуму</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>kernel<sp/>=<sp/>cv::getStructuringElement(cv::MORPH_ELLIPSE,<sp/>{5,<sp/>5});</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::morphologyEx(mask,<sp/>mask,<sp/>cv::MORPH_OPEN,<sp/><sp/>kernel);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::morphologyEx(mask,<sp/>mask,<sp/>cv::MORPH_CLOSE,<sp/>kernel);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mask;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" refkind="member"><highlight class="normal"><ref refid="struct_hand_data" kindref="compound">HandData</ref><sp/><ref refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" kindref="member">HandTracker::detect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>frame)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>mask<sp/>=<sp/>preprocessFrame(frame);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;cv::Point&gt;&gt;<sp/>contours;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::findContours(mask,<sp/>contours,<sp/>cv::RETR_EXTERNAL,<sp/>cv::CHAIN_APPROX_SIMPLE);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(contours.empty())<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Найбільший<sp/>контур<sp/>—<sp/>це<sp/>рука</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>maxIt<sp/>=<sp/>std::max_element(contours.begin(),<sp/>contours.end(),</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>cv::contourArea(a)<sp/>&lt;<sp/>cv::contourArea(b);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>area<sp/>=<sp/>cv::contourArea(*maxIt);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(area<sp/>&lt;<sp/>3000.0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/></highlight><highlight class="comment">//<sp/>занадто<sp/>малий<sp/>об&apos;єкт</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>extractHandData(mask,<sp/>frame);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><ref refid="struct_hand_data" kindref="compound">HandData</ref><sp/>HandTracker::extractHandData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>mask,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/></highlight><highlight class="comment">/*original*/</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Moments<sp/>m<sp/>=<sp/>cv::moments(mask,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m.m00<sp/>&lt;<sp/>1.0)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>HandData<sp/>data;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>data.<ref refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" kindref="member">detected</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>data.<ref refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" kindref="member">centerX</ref><sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m.m10<sp/>/<sp/>m.m00)<sp/>/<sp/>mask.cols;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>data.centerY<sp/><sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">float</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(m.m01<sp/>/<sp/>m.m00)<sp/>/<sp/>mask.rows;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Спрощена<sp/>модель:<sp/>один<sp/>&quot;ключовий&quot;<sp/>landmark<sp/>у<sp/>центрі<sp/>маси</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>data.landmarks.push_back({data.centerX,<sp/>data.centerY,<sp/>0.0f});</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" kindref="member">HandTracker::drawLandmarks</ref>(cv::Mat&amp;<sp/>frame,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>&amp;<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!data.<ref refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" kindref="member">detected</ref>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cx<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(data.<ref refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" kindref="member">centerX</ref><sp/>*<sp/>frame.cols);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cy<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(data.<ref refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" kindref="member">centerY</ref><sp/>*<sp/>frame.rows);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::circle(frame,<sp/>{cx,<sp/>cy},<sp/>8,<sp/>{0,<sp/>255,<sp/>0},<sp/>-1);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/gesture/HandTracker.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_settings_window_8h" kind="file" language="C++">
+    <compoundname>SettingsWindow.h</compoundname>
+    <includedby refid="_settings_window_8cpp" local="yes">SettingsWindow.cpp</includedby>
+    <invincdepgraph>
+      <node id="1">
+        <label>SettingsWindow.h</label>
+        <link refid="_settings_window_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>SettingsWindow.cpp</label>
+        <link refid="_settings_window_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_settings_window" prot="public">SettingsWindow</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_config_manager" kindref="compound">ConfigManager</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Вікно<sp/>налаштувань<sp/>(чутливість,<sp/>кольоровий<sp/>діапазон,<sp/>камера).</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="class_settings_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" kindref="member">SettingsWindow</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" kindref="member">SettingsWindow</ref>(<ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/>config);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" kindref="member">show</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a44e2f62e83a75d069b1cc6871fcaad4d" kindref="member">hide</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a6d8ab89f66b4e454870fe3f4d4acb33c" kindref="member">isVisible</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/>m_config;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>m_visible<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/ui/SettingsWindow.h"/>
+  </compounddef>
+</doxygen>

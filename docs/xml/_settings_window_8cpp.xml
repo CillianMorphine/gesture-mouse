@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_settings_window_8cpp" kind="file" language="C++">
+    <compoundname>SettingsWindow.cpp</compoundname>
+    <includes refid="_settings_window_8h" local="yes">ui/SettingsWindow.h</includes>
+    <includes refid="_config_manager_8h" local="yes">core/ConfigManager.h</includes>
+    <includes refid="_logger_8h" local="yes">utils/Logger.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>core/ConfigManager.h</label>
+        <link refid="_config_manager_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ui/SettingsWindow.h</label>
+        <link refid="_settings_window_8h"/>
+      </node>
+      <node id="6">
+        <label>utils/Logger.h</label>
+        <link refid="_logger_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>SettingsWindow.cpp</label>
+        <link refid="_settings_window_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>chrono</label>
+      </node>
+      <node id="8">
+        <label>fstream</label>
+      </node>
+      <node id="9">
+        <label>iomanip</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>mutex</label>
+      </node>
+      <node id="12">
+        <label>sstream</label>
+      </node>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="5">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_settings_window_8h" kindref="compound">ui/SettingsWindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_config_manager_8h" kindref="compound">core/ConfigManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_logger_8h" kindref="compound">utils/Logger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" refkind="member"><highlight class="normal"><ref refid="class_settings_window_1a63949b97a3596ab51156fe9f2fc2d79d" kindref="member">SettingsWindow::SettingsWindow</ref>(<ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/>config)<sp/>:<sp/>m_config(config)<sp/>{}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" kindref="member">SettingsWindow::show</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>m_visible<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kindref="member">LOG_INFO</ref>(</highlight><highlight class="stringliteral">&quot;SettingsWindow<sp/>shown<sp/>(stub).&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO:<sp/>відобразити<sp/>OpenCV<sp/>trackbar<sp/>або<sp/>нативне<sp/>вікно<sp/>налаштувань</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_settings_window_1a44e2f62e83a75d069b1cc6871fcaad4d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a44e2f62e83a75d069b1cc6871fcaad4d" kindref="member">SettingsWindow::hide</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>m_visible<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_settings_window_1a6d8ab89f66b4e454870fe3f4d4acb33c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_settings_window_1a6d8ab89f66b4e454870fe3f4d4acb33c" kindref="member">SettingsWindow::isVisible</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_visible;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/ui/SettingsWindow.cpp"/>
+  </compounddef>
+</doxygen>

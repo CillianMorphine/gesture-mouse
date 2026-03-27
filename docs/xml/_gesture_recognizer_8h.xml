@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_gesture_recognizer_8h" kind="file" language="C++">
+    <compoundname>GestureRecognizer.h</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">string</includes>
+    <includes local="no">opencv2/core/mat.hpp</includes>
+    <includedby refid="_application_8cpp" local="yes">Application.cpp</includedby>
+    <includedby refid="_gesture_classifier_8h" local="yes">GestureClassifier.h</includedby>
+    <includedby refid="_gesture_recognizer_8cpp" local="yes">GestureRecognizer.cpp</includedby>
+    <includedby refid="_mouse_controller_8h" local="yes">MouseController.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>GestureRecognizer.h</label>
+        <link refid="_gesture_recognizer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>memory</label>
+      </node>
+      <node id="4">
+        <label>opencv2/core/mat.hpp</label>
+      </node>
+      <node id="3">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>GestureClassifier.h</label>
+        <link refid="_gesture_classifier_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>GestureRecognizer.h</label>
+        <link refid="_gesture_recognizer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>MouseController.h</label>
+        <link refid="_mouse_controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Application.cpp</label>
+        <link refid="_application_8cpp"/>
+      </node>
+      <node id="4">
+        <label>GestureClassifier.cpp</label>
+        <link refid="_gesture_classifier_8cpp"/>
+      </node>
+      <node id="5">
+        <label>GestureRecognizer.cpp</label>
+        <link refid="_gesture_recognizer_8cpp"/>
+      </node>
+      <node id="7">
+        <label>MouseController.cpp</label>
+        <link refid="_mouse_controller_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_gesture_result" prot="public">GestureResult</innerclass>
+    <innerclass refid="class_gesture_recognizer" prot="public">GestureRecognizer</innerclass>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" prot="public" static="no" strong="yes">
+        <type>uint8_t</type>
+        <name>GestureType</name>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Жест не виявлено або рука поза кадром </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" prot="public">
+          <name>MOVE</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Переміщення курсору (відкрита долоня). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" prot="public">
+          <name>LEFT_CLICK</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Клік лівою кнопкою (1 палець). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" prot="public">
+          <name>RIGHT_CLICK</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Клік правою кнопкою (2 пальці — V). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea6ae640c96760bbabf3c8abafd1abc20f" prot="public">
+          <name>SCROLL_UP</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+<para>Прокрутка вгору </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea26b36a2a5f3ef7983f88fb7601ccd228" prot="public">
+          <name>SCROLL_DOWN</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+<para>Прокрутка вниз </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" prot="public">
+          <name>DRAG</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+<para>Перетягування (кулак + рух). </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Перелік усіх розпізнаваних типів жестів. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Відповідність жестів → дій миші:</para>
+<para><table rows="8" cols="3"><row>
+<entry thead="yes"><para>Значення  </para>
+</entry><entry thead="yes"><para>Жест  </para>
+</entry><entry thead="yes"><para>Дія миші  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>NONE  </para>
+</entry><entry thead="no"><para>Рука не виявлена  </para>
+</entry><entry thead="no"><para>—  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>MOVE  </para>
+</entry><entry thead="no"><para>Відкрита долоня (4+ пальців)  </para>
+</entry><entry thead="no"><para>Переміщення курсору  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>LEFT_CLICK  </para>
+</entry><entry thead="no"><para>Вказівний палець  </para>
+</entry><entry thead="no"><para>Клік лівою кнопкою  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>RIGHT_CLICK  </para>
+</entry><entry thead="no"><para>Два пальці (V)  </para>
+</entry><entry thead="no"><para>Клік правою кнопкою  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>SCROLL_UP  </para>
+</entry><entry thead="no"><para>Рух угору з долонею  </para>
+</entry><entry thead="no"><para>Прокрутка вгору  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>SCROLL_DOWN  </para>
+</entry><entry thead="no"><para>Рух вниз з долонею  </para>
+</entry><entry thead="no"><para>Прокрутка вниз  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>DRAG  </para>
+</entry><entry thead="no"><para>Стиснутий кулак у русі  </para>
+</entry><entry thead="no"><para>Перетягування  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="note"><para>Значення enum є стабільними — їх можна зберігати у конфіг-файлах. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureRecognizer.h" line="60" column="1" bodyfile="include/gesture/GestureRecognizer.h" bodystart="60" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Фасад модуля розпізнавання жестів руки. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ваше Ім&apos;я </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+Цей модуль реалізує <bold>конвеєр розпізнавання</bold> у три кроки:</para>
+<para><dot>
+digraph pipeline {
+  rankdir=LR;
+  node [shape=box, style=filled, fillcolor=&quot;#1a2540&quot;, color=&quot;#4a9eff&quot;,
+        fontcolor=white, fontname=Helvetica];
+  A [label=&quot;cv::Mat\n(raw frame)&quot;];
+  B [label=&quot;HandTracker\n(HSV segmentation)&quot;];
+  C [label=&quot;GestureClassifier\n(finger counting)&quot;];
+  D [label=&quot;GestureResult\n(type + coords)&quot;];
+  A -&gt; B -&gt; C -&gt; D;
+}
+</dot>
+</para>
+<sect1 id="_gesture_recognizer_8h_1autotoc_md4_1s1"><sect2 id="_gesture_recognizer_8h_1autotoc_md4_1s2"><sect3 id="_gesture_recognizer_8h_1autotoc_md4">
+<title>Вибір алгоритму</title><para>Поточна реалізація використовує <bold>HSV-сегментацію тілесного кольору</bold> як компроміс між точністю та швидкістю без потреби в GPU чи ML-моделі.</para>
+<para><table rows="4" cols="4"><row>
+<entry thead="yes"><para>Підхід  </para>
+</entry><entry thead="yes"><para>Точність  </para>
+</entry><entry thead="yes"><para>Швидкість  </para>
+</entry><entry thead="yes"><para>Залежності  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>HSV-сегментація (поточний)  </para>
+</entry><entry thead="no"><para>Середня  </para>
+</entry><entry thead="no"><para>Висока  </para>
+</entry><entry thead="no"><para>OpenCV  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>MediaPipe Hands  </para>
+</entry><entry thead="no"><para>Висока  </para>
+</entry><entry thead="no"><para>Висока  </para>
+</entry><entry thead="no"><para>MediaPipe, Python/C++  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>CNN (власна модель)  </para>
+</entry><entry thead="no"><para>Дуже висока  </para>
+</entry><entry thead="no"><para>Середня  </para>
+</entry><entry thead="no"><para>TensorFlow/ONNX  </para>
+</entry></row>
+</table>
+</para>
+<para><simplesect kind="see"><para><ref refid="class_hand_tracker" kindref="compound">HandTracker</ref> </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref> </para>
+</simplesect>
+</para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@file<sp/>GestureRecognizer.h</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Фасад<sp/>модуля<sp/>розпізнавання<sp/>жестів<sp/>руки.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@author<sp/>Ваше<sp/>Ім&apos;я</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date<sp/>2025</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Цей<sp/>модуль<sp/>реалізує<sp/>**конвеєр<sp/>розпізнавання**<sp/>у<sp/>три<sp/>кроки:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>@dot</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>digraph<sp/>pipeline<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/>rankdir=LR;</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/>node<sp/>[shape=box,<sp/>style=filled,<sp/>fillcolor=&quot;#1a2540&quot;,<sp/>color=&quot;#4a9eff&quot;,</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fontcolor=white,<sp/>fontname=Helvetica];</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/>A<sp/>[label=&quot;cv::Mat\n(raw<sp/>frame)&quot;];</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/>B<sp/>[label=&quot;HandTracker\n(HSV<sp/>segmentation)&quot;];</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/>C<sp/>[label=&quot;GestureClassifier\n(finger<sp/>counting)&quot;];</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/>D<sp/>[label=&quot;GestureResult\n(type<sp/>+<sp/>coords)&quot;];</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/>A<sp/>-&gt;<sp/>B<sp/>-&gt;<sp/>C<sp/>-&gt;<sp/>D;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>@enddot</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>###<sp/>Вибір<sp/>алгоритму</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>Поточна<sp/>реалізація<sp/>використовує<sp/>**HSV-сегментацію<sp/>тілесного<sp/>кольору**</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>як<sp/>компроміс<sp/>між<sp/>точністю<sp/>та<sp/>швидкістю<sp/>без<sp/>потреби<sp/>в<sp/>GPU<sp/>чи<sp/>ML-моделі.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>|<sp/>Підхід<sp/>|<sp/>Точність<sp/>|<sp/>Швидкість<sp/>|<sp/>Залежності<sp/>|</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>|--------|----------|-----------|------------|</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>|<sp/>HSV-сегментація<sp/>(поточний)<sp/>|<sp/>Середня<sp/>|<sp/>Висока<sp/>|<sp/>OpenCV<sp/>|</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>|<sp/>MediaPipe<sp/>Hands<sp/>|<sp/>Висока<sp/>|<sp/>Висока<sp/>|<sp/>MediaPipe,<sp/>Python/C++<sp/>|</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>|<sp/>CNN<sp/>(власна<sp/>модель)<sp/>|<sp/>Дуже<sp/>висока<sp/>|<sp/>Середня<sp/>|<sp/>TensorFlow/ONNX<sp/>|</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@see<sp/>HandTracker</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>@see<sp/>GestureClassifier</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/mat.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="42"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Перелік<sp/>усіх<sp/>розпізнаваних<sp/>типів<sp/>жестів.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>Відповідність<sp/>жестів<sp/>→<sp/>дій<sp/>миші:</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>|<sp/>Значення<sp/>|<sp/>Жест<sp/>|<sp/>Дія<sp/>миші<sp/>|</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>|----------|------|----------|</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>|<sp/>NONE<sp/>|<sp/>Рука<sp/>не<sp/>виявлена<sp/>|<sp/>—<sp/>|</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>|<sp/>MOVE<sp/>|<sp/>Відкрита<sp/>долоня<sp/>(4+<sp/>пальців)<sp/>|<sp/>Переміщення<sp/>курсору<sp/>|</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>|<sp/>LEFT_CLICK<sp/>|<sp/>Вказівний<sp/>палець<sp/>|<sp/>Клік<sp/>лівою<sp/>кнопкою<sp/>|</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>|<sp/>RIGHT_CLICK<sp/>|<sp/>Два<sp/>пальці<sp/>(V)<sp/>|<sp/>Клік<sp/>правою<sp/>кнопкою<sp/>|</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>|<sp/>SCROLL_UP<sp/>|<sp/>Рух<sp/>угору<sp/>з<sp/>долонею<sp/>|<sp/>Прокрутка<sp/>вгору<sp/>|</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>|<sp/>SCROLL_DOWN<sp/>|<sp/>Рух<sp/>вниз<sp/>з<sp/>долонею<sp/>|<sp/>Прокрутка<sp/>вниз<sp/>|</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>|<sp/>DRAG<sp/>|<sp/>Стиснутий<sp/>кулак<sp/>у<sp/>русі<sp/>|<sp/>Перетягування<sp/>|</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>@note<sp/>Значення<sp/>enum<sp/>є<sp/>стабільними<sp/>—<sp/>їх<sp/>можна<sp/>зберігати<sp/>у<sp/>конфіг-файлах.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" kindref="member">GestureType</ref><sp/>:<sp/>uint8_t<sp/>{</highlight></codeline>
+<codeline lineno="61" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">NONE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0,<sp/></highlight><highlight class="comment">///&lt;<sp/>Жест<sp/>не<sp/>виявлено<sp/>або<sp/>рука<sp/>поза<sp/>кадром</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" kindref="member">MOVE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">///&lt;<sp/>Переміщення<sp/>курсору<sp/>(відкрита<sp/>долоня)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" kindref="member">LEFT_CLICK</ref><sp/><sp/>=<sp/>2,<sp/></highlight><highlight class="comment">///&lt;<sp/>Клік<sp/>лівою<sp/>кнопкою<sp/>(1<sp/>палець)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" kindref="member">RIGHT_CLICK</ref><sp/>=<sp/>3,<sp/></highlight><highlight class="comment">///&lt;<sp/>Клік<sp/>правою<sp/>кнопкою<sp/>(2<sp/>пальці<sp/>—<sp/>V)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea6ae640c96760bbabf3c8abafd1abc20f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea6ae640c96760bbabf3c8abafd1abc20f" kindref="member">SCROLL_UP</ref><sp/><sp/><sp/>=<sp/>4,<sp/></highlight><highlight class="comment">///&lt;<sp/>Прокрутка<sp/>вгору</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea26b36a2a5f3ef7983f88fb7601ccd228" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea26b36a2a5f3ef7983f88fb7601ccd228" kindref="member">SCROLL_DOWN</ref><sp/>=<sp/>5,<sp/></highlight><highlight class="comment">///&lt;<sp/>Прокрутка<sp/>вниз</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" kindref="member">DRAG</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>6,<sp/></highlight><highlight class="comment">///&lt;<sp/>Перетягування<sp/>(кулак<sp/>+<sp/>рух)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="70"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Результат<sp/>розпізнавання<sp/>одного<sp/>кадру<sp/>відеопотоку.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>Структура<sp/>є<sp/>**value<sp/>type**<sp/>(копіюється<sp/>дешево).</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>Координати<sp/>нормалізовані<sp/>до<sp/>діапазону<sp/>[0.0,<sp/>1.0]<sp/>відносно</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>розмірів<sp/>кадру<sp/>камери<sp/>—<sp/>MouseController<sp/>перетворює<sp/>їх<sp/>у</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>піксельні<sp/>координати<sp/>екрана.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@par<sp/>Приклад<sp/>використання:</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>GestureResult<sp/>result<sp/>=<sp/>recognizer.process(frame);</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>if<sp/>(result.type<sp/>==<sp/>GestureType::MOVE<sp/>&amp;&amp;<sp/>result.confidence<sp/>&gt;<sp/>0.7F)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>mouseCtrl.applyGesture(result);</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="struct_gesture_result" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref><sp/>{</highlight></codeline>
+<codeline lineno="88" refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effe" kindref="member">GestureType</ref><sp/><ref refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" kindref="member">type</ref>{<ref refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" kindref="member">GestureType::NONE</ref>};<sp/></highlight><highlight class="comment">///&lt;<sp/>Тип<sp/>розпізнаного<sp/>жесту</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" kindref="member">handX</ref>{0.0F};<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Нормалізована<sp/>X-координата<sp/>центру<sp/>руки<sp/>[0..1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" kindref="member">handY</ref>{0.0F};<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Нормалізована<sp/>Y-координата<sp/>центру<sp/>руки<sp/>[0..1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" kindref="member">confidence</ref>{0.0F};<sp/></highlight><highlight class="comment">///&lt;<sp/>Впевненість<sp/>класифікатора<sp/>[0..1],<sp/>1.0<sp/>=<sp/>максимум</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Повертає<sp/>рядкову<sp/>назву<sp/>типу<sp/>жесту.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details<sp/>Зручно<sp/>для<sp/>логування<sp/>та<sp/>debug-виводу:</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>LOG_DEBUG(&quot;Gesture:<sp/>&quot;<sp/>+<sp/>result.typeName());</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>Рядок<sp/>у<sp/>верхньому<sp/>регістрі,<sp/>наприклад<sp/>`&quot;LEFT_CLICK&quot;`,</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>або<sp/>`&quot;NONE&quot;`<sp/>якщо<sp/>жест<sp/>не<sp/>виявлено.</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>std::string<sp/><ref refid="struct_gesture_result_1a98a6f90701fa3336baee0d2baf48288b" kindref="member">typeName</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_config_manager" kindref="compound">ConfigManager</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_hand_tracker" kindref="compound">HandTracker</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref>;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="112"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Фасад<sp/>модуля<sp/>розпізнавання<sp/>—<sp/>координує<sp/>HandTracker<sp/>і<sp/>GestureClassifier.</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>GestureRecognizer<sp/>є<sp/>**єдиною<sp/>публічною<sp/>точкою<sp/>входу**<sp/>до<sp/>підсистеми<sp/>CV.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>Application<sp/>взаємодіє<sp/>лише<sp/>з<sp/>цим<sp/>класом,<sp/>не<sp/>знаючи<sp/>деталей<sp/>реалізації</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>HandTracker<sp/>або<sp/>GestureClassifier.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>###<sp/>Патерн<sp/>Facade</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>Application</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>│</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>└──►<sp/>GestureRecognizer::process(frame)</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──►<sp/>HandTracker::detect(frame)<sp/><sp/><sp/><sp/><sp/><sp/>→<sp/>HandData</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──►<sp/>GestureClassifier::classify(hand)<sp/>→<sp/>GestureResult</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>###<sp/>Налаштування<sp/>через<sp/>ConfigManager</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>|<sp/>Ключ<sp/>|<sp/>Тип<sp/>|<sp/>За<sp/>замовч.<sp/>|<sp/>Опис<sp/>|</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>|------|-----|------------|------|</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>|<sp/>`gesture.confidence`<sp/>|<sp/>float<sp/>|<sp/>0.6<sp/>|<sp/>Мін.<sp/>впевненість<sp/>для<sp/>підтвердження<sp/>|</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*<sp/>|<sp/>`camera.index`<sp/>|<sp/>int<sp/>|<sp/>0<sp/>|<sp/>Індекс<sp/>камери<sp/>для<sp/>OpenCV<sp/>|</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>*<sp/>|<sp/>`debug.show_window`<sp/>|<sp/>bool<sp/>|<sp/>false<sp/>|<sp/>Показувати<sp/>debug-кадр<sp/>|</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="class_gesture_recognizer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Конструктор.<sp/>Ініціалізує<sp/>HandTracker<sp/>і<sp/>GestureClassifier.</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>config<sp/>Вказівник<sp/>на<sp/>менеджер<sp/>конфігурації<sp/>(не<sp/>власник,<sp/>не<sp/>nullptr).</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@throws<sp/>std::invalid_argument<sp/>якщо<sp/>config<sp/>==<sp/>nullptr.</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@throws<sp/>std::runtime_error<sp/>якщо<sp/>не<sp/>вдалося<sp/>ініціалізувати<sp/>трекер.</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@pre<sp/>config<sp/>!=<sp/>nullptr<sp/>&amp;&amp;<sp/>config-&gt;isLoaded()</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>(<ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/>config);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Деструктор.<sp/>Закриває<sp/>debug-вікно<sp/>якщо<sp/>воно<sp/>відкрите.</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="class_gesture_recognizer_1a5c7570da67a7331a5e004c1a50289eac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gesture_recognizer_1a5c7570da67a7331a5e004c1a50289eac" kindref="member">~GestureRecognizer</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>@name<sp/>Некопійовані<sp/>/<sp/>переміщувані<sp/>операції</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>@{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="class_gesture_recognizer_1a302ad49054256c470397b0c87226e400" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gesture_recognizer_1a302ad49054256c470397b0c87226e400" kindref="member">GestureRecognizer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>&amp;)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158" refid="class_gesture_recognizer_1ac9415cdc6b215e732eaf63e652e6ff53" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>&amp;<sp/><ref refid="class_gesture_recognizer_1ac9415cdc6b215e732eaf63e652e6ff53" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159" refid="class_gesture_recognizer_1ac8809ec5c7108e8a921731fd691ec737" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gesture_recognizer_1ac8809ec5c7108e8a921731fd691ec737" kindref="member">GestureRecognizer</ref>(<ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>&amp;&amp;)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="160" refid="class_gesture_recognizer_1a01d8f347c6037473260f52a54c870d73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>&amp;<sp/><ref refid="class_gesture_recognizer_1a01d8f347c6037473260f52a54c870d73" kindref="member">operator=</ref>(<ref refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" kindref="member">GestureRecognizer</ref>&amp;&amp;)<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>@}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Обробляє<sp/>один<sp/>кадр<sp/>і<sp/>повертає<sp/>розпізнаний<sp/>жест.</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>**Алгоритм<sp/>обробки:**</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>1.<sp/>`HandTracker::detect(frame)`<sp/>→<sp/>знаходить<sp/>контур<sp/>руки<sp/>через<sp/>HSV-маску</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>2.<sp/>Якщо<sp/>рука<sp/>не<sp/>виявлена<sp/>—<sp/>повертає<sp/>`GestureResult{GestureType::NONE}`</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>3.<sp/>`GestureClassifier::classify(handData)`<sp/>→<sp/>визначає<sp/>тип<sp/>жесту</highlight></codeline>
+<codeline lineno="171"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>4.<sp/>Якщо<sp/>ввімкнено<sp/>debug-вікно<sp/>—<sp/>накладає<sp/>landmarks<sp/>на<sp/>кадр</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>**Продуктивність:**<sp/>типовий<sp/>час<sp/>виконання<sp/>&lt;<sp/>5<sp/>мс<sp/>на<sp/>CPU<sp/>(Intel<sp/>i5).</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>frame<sp/>Кадр<sp/>BGR<sp/>з<sp/>камери<sp/>(CV_8UC3).<sp/>Не<sp/>модифікується.</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>GestureResult<sp/>з<sp/>типом<sp/>жесту,<sp/>координатами<sp/>та<sp/>впевненістю.</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Якщо<sp/>frame<sp/>порожній<sp/>—<sp/>повертає<sp/>NONE<sp/>без<sp/>помилок.</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Метод<sp/>**не<sp/>є<sp/>потокобезпечним**<sp/>—<sp/>викликати<sp/>тільки<sp/>з<sp/>одного<sp/>потоку.</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@par<sp/>Приклад:</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>cv::VideoCapture<sp/>cap(0);</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>cv::Mat<sp/>frame;</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>while<sp/>(cap.read(frame))<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>auto<sp/>result<sp/>=<sp/>recognizer.process(frame);</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>if<sp/>(result.type<sp/>!=<sp/>GestureType::NONE)</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG_INFO(&quot;Gesture:<sp/>&quot;<sp/>+<sp/>result.typeName());</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref><sp/><ref refid="class_gesture_recognizer_1ab05de270df0863d4dc17b9ef7e4c8059" kindref="member">process</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>frame);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Вмикає<sp/>або<sp/>вимикає<sp/>debug-вікно<sp/>з<sp/>накладеними<sp/>landmarks.</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>При<sp/>увімкненні<sp/>відкривається<sp/>вікно<sp/>`&quot;GestureMouse<sp/>Debug&quot;`<sp/>з:</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>Контуром<sp/>виявленої<sp/>руки<sp/>(зелений)</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>Центром<sp/>мас<sp/>(синій<sp/>кружок)</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>Назвою<sp/>розпізнаного<sp/>жесту<sp/>(білий<sp/>текст)</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>При<sp/>вимкненні<sp/>вікно<sp/>закривається<sp/>через<sp/>`cv::destroyWindow()`.</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>enabled<sp/>true<sp/>—<sp/>показати<sp/>вікно,<sp/>false<sp/>—<sp/>закрити.</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>noexcept<sp/>—<sp/>помилки<sp/>OpenCV<sp/>при<sp/>роботі<sp/>з<sp/>вікнами<sp/>ігноруються.</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_gesture_recognizer_1a20c517e7446b6a9c3b06e7cfb76a309b" kindref="member">setDebugView</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>enabled)<sp/></highlight><highlight class="keyword">noexcept</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;HandTracker&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_tracker;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Детектор<sp/>руки</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unique_ptr&lt;GestureClassifier&gt;<sp/>m_classifier;<sp/></highlight><highlight class="comment">///&lt;<sp/>Класифікатор<sp/>жестів</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_debugView{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/></highlight><highlight class="comment">///&lt;<sp/>Стан<sp/>debug-вікна</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/gesture/GestureRecognizer.h"/>
+  </compounddef>
+</doxygen>

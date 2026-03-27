@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_hand_tracker_8h" kind="file" language="C++">
+    <compoundname>HandTracker.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes local="no">vector</includes>
+    <includedby refid="_gesture_classifier_8h" local="yes">GestureClassifier.h</includedby>
+    <includedby refid="_gesture_recognizer_8cpp" local="yes">GestureRecognizer.cpp</includedby>
+    <includedby refid="_hand_tracker_8cpp" local="yes">HandTracker.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>HandTracker.h</label>
+        <link refid="_hand_tracker_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>GestureClassifier.h</label>
+        <link refid="_gesture_classifier_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>HandTracker.h</label>
+        <link refid="_hand_tracker_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GestureClassifier.cpp</label>
+        <link refid="_gesture_classifier_8cpp"/>
+      </node>
+      <node id="4">
+        <label>GestureRecognizer.cpp</label>
+        <link refid="_gesture_recognizer_8cpp"/>
+      </node>
+      <node id="5">
+        <label>HandTracker.cpp</label>
+        <link refid="_hand_tracker_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_landmark" prot="public">Landmark</innerclass>
+    <innerclass refid="struct_hand_data" prot="public">HandData</innerclass>
+    <innerclass refid="class_hand_tracker" prot="public">HandTracker</innerclass>
+    <briefdescription>
+<para>Виявлення руки на відеокадрі методом HSV-сегментації. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Ваше Ім&apos;я </para>
+</simplesect>
+<simplesect kind="date"><para>2025</para>
+</simplesect>
+</para>
+<sect1 id="_hand_tracker_8h_1autotoc_md7_1s1"><sect2 id="_hand_tracker_8h_1autotoc_md7_1s2"><sect3 id="_hand_tracker_8h_1autotoc_md7">
+<title>Алгоритм HSV-сегментації тілесного кольору</title><para><orderedlist>
+<listitem><para><bold>Gaussian blur</bold> — зменшення шуму (ядро 5×5)</para>
+</listitem><listitem><para><bold>BGR→HSV</bold> — колірний простір HSV стійкіший до змін освітлення</para>
+</listitem><listitem><para><bold>inRange</bold> — бінарна маска тілесного кольору<itemizedlist>
+<listitem><para>H: [0°, 20°] — жовтувато-червоний відтінок шкіри</para>
+</listitem><listitem><para>S: [20, 255] — насиченість (виключає сірі тони)</para>
+</listitem><listitem><para>V: [70, 255] — яскравість (виключає темряву)</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Морфологія</bold> — open (видаляє шум) + close (заповнює дірки)</para>
+</listitem><listitem><para><bold>findContours</bold> — знаходить контури об&apos;єктів на масці</para>
+</listitem><listitem><para><bold>Найбільший контур</bold> → якщо площа &gt; 3000 пікс² — це рука</para>
+</listitem><listitem><para><bold>Moments</bold> — обчислення центру мас контуру</para>
+</listitem></orderedlist>
+</para>
+</sect3></sect2></sect1>
+<sect1 id="_hand_tracker_8h_1autotoc_md8_1s1"><sect2 id="_hand_tracker_8h_1autotoc_md8_1s2"><sect3 id="_hand_tracker_8h_1autotoc_md8">
+<title>Обмеження методу</title><para><itemizedlist>
+<listitem><para>Чутливий до умов освітлення (рекомендується нейтральне фонове освітлення)</para>
+</listitem><listitem><para>Може давати хибні спрацьовування на об&apos;єктах тілесного кольору</para>
+</listitem><listitem><para>Не розрізняє ліву і праву руку</para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="see"><para><ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref> </para>
+</simplesect>
+</para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="2"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>@file<sp/>HandTracker.h</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Виявлення<sp/>руки<sp/>на<sp/>відеокадрі<sp/>методом<sp/>HSV-сегментації.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>@author<sp/>Ваше<sp/>Ім&apos;я</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>@date<sp/>2025</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>###<sp/>Алгоритм<sp/>HSV-сегментації<sp/>тілесного<sp/>кольору</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>1.<sp/>**Gaussian<sp/>blur**<sp/>—<sp/>зменшення<sp/>шуму<sp/>(ядро<sp/>5×5)</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>2.<sp/>**BGR→HSV**<sp/>—<sp/>колірний<sp/>простір<sp/>HSV<sp/>стійкіший<sp/>до<sp/>змін<sp/>освітлення</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>3.<sp/>**inRange**<sp/>—<sp/>бінарна<sp/>маска<sp/>тілесного<sp/>кольору</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>H:<sp/>[0°,<sp/>20°]<sp/>—<sp/>жовтувато-червоний<sp/>відтінок<sp/>шкіри</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>S:<sp/>[20,<sp/>255]<sp/>—<sp/>насиченість<sp/>(виключає<sp/>сірі<sp/>тони)</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>-<sp/>V:<sp/>[70,<sp/>255]<sp/>—<sp/>яскравість<sp/>(виключає<sp/>темряву)</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>4.<sp/>**Морфологія**<sp/>—<sp/>open<sp/>(видаляє<sp/>шум)<sp/>+<sp/>close<sp/>(заповнює<sp/>дірки)</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>5.<sp/>**findContours**<sp/>—<sp/>знаходить<sp/>контури<sp/>об&apos;єктів<sp/>на<sp/>масці</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>6.<sp/>**Найбільший<sp/>контур**<sp/>→<sp/>якщо<sp/>площа<sp/>&gt;<sp/>3000<sp/>пікс²<sp/>—<sp/>це<sp/>рука</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>7.<sp/>**Moments**<sp/>—<sp/>обчислення<sp/>центру<sp/>мас<sp/>контуру</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>###<sp/>Обмеження<sp/>методу</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>-<sp/>Чутливий<sp/>до<sp/>умов<sp/>освітлення<sp/>(рекомендується<sp/>нейтральне<sp/>фонове<sp/>освітлення)</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>-<sp/>Може<sp/>давати<sp/>хибні<sp/>спрацьовування<sp/>на<sp/>об&apos;єктах<sp/>тілесного<sp/>кольору</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>-<sp/>Не<sp/>розрізняє<sp/>ліву<sp/>і<sp/>праву<sp/>руку</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>@see<sp/>GestureClassifier</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Координата<sp/>однієї<sp/>ключової<sp/>точки<sp/>(landmark)<sp/>руки<sp/>у<sp/>3D-просторі.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>У<sp/>поточній<sp/>реалізації<sp/>z<sp/>завжди<sp/>0<sp/>(2D-трекінг).</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>Структура<sp/>сумісна<sp/>з<sp/>форматом<sp/>MediaPipe<sp/>Hand<sp/>Landmarks</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>для<sp/>можливого<sp/>майбутнього<sp/>переходу.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>Координати<sp/>нормалізовані:<sp/>(0,0)<sp/>=<sp/>лівий<sp/>верхній<sp/>кут<sp/>кадру,</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>(1,1)<sp/>=<sp/>правий<sp/>нижній<sp/>кут.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="struct_landmark" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_landmark" kindref="compound">Landmark</ref><sp/>{</highlight></codeline>
+<codeline lineno="45" refid="struct_landmark_1ac896cc0bd59f87c573e87ce75b3e4f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_landmark_1ac896cc0bd59f87c573e87ce75b3e4f0d" kindref="member">x</ref>{0.0F};<sp/></highlight><highlight class="comment">///&lt;<sp/>Нормалізована<sp/>X-координата<sp/>[0..1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="struct_landmark_1aec0b094b5dee543afb0b4a362f61733d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_landmark_1aec0b094b5dee543afb0b4a362f61733d" kindref="member">y</ref>{0.0F};<sp/></highlight><highlight class="comment">///&lt;<sp/>Нормалізована<sp/>Y-координата<sp/>[0..1]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="struct_landmark_1a1ee445126e0c5be978d4db897b939ff3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_landmark_1a1ee445126e0c5be978d4db897b939ff3" kindref="member">z</ref>{0.0F};<sp/></highlight><highlight class="comment">///&lt;<sp/>Глибина<sp/>(зарезервовано,<sp/>завжди<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Результат<sp/>виявлення<sp/>руки<sp/>на<sp/>одному<sp/>кадрі.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>У<sp/>поточній<sp/>реалізації<sp/>зберігається<sp/>1<sp/>landmark<sp/>(центр<sp/>мас).</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Майбутні<sp/>версії<sp/>планують<sp/>підтримку<sp/>21<sp/>точки<sp/>(MediaPipe-сумісно).</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="struct_hand_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_hand_data" kindref="compound">HandData</ref><sp/>{</highlight></codeline>
+<codeline lineno="58" refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" kindref="member">detected</ref>{</highlight><highlight class="keyword">false</highlight><highlight class="normal">};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>true<sp/>якщо<sp/>рука<sp/>виявлена</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="struct_hand_data_1a0d8fd3c6e3e4821922fca134ec063cd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Landmark&gt;<sp/><ref refid="struct_hand_data_1a0d8fd3c6e3e4821922fca134ec063cd3" kindref="member">landmarks</ref>;<sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Ключові<sp/>точки<sp/>(поточно:<sp/>1<sp/>—<sp/>центр)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" kindref="member">centerX</ref>{0.0F};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Нормалізована<sp/>X<sp/>центру<sp/>мас<sp/>руки</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" kindref="member">centerY</ref>{0.0F};<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Нормалізована<sp/>Y<sp/>центру<sp/>мас<sp/>руки</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_config_manager" kindref="compound">ConfigManager</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Детектор<sp/>руки<sp/>на<sp/>основі<sp/>HSV-сегментації<sp/>тілесного<sp/>кольору.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>Клас<sp/>інкапсулює<sp/>весь<sp/>pipeline<sp/>виявлення<sp/>руки.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>GestureRecognizer<sp/>отримує<sp/>HandData<sp/>і<sp/>передає<sp/>її<sp/>до<sp/>GestureClassifier.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>###<sp/>Налаштування<sp/>кольорового<sp/>діапазону</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>Параметри<sp/>HSV<sp/>за<sp/>замовчуванням<sp/>підходять<sp/>для<sp/>більшості<sp/>умов.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>При<sp/>поганому<sp/>виявленні<sp/>—<sp/>відрегулюйте<sp/>через<sp/>конфіг<sp/>або<sp/>SettingsWindow:</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@code{.cpp}</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>//<sp/>Значення<sp/>за<sp/>замовчуванням<sp/>(можна<sp/>змінити<sp/>в<sp/>config)</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>m_lowerSkin<sp/>=<sp/>{0,<sp/>20,<sp/>70};<sp/><sp/><sp/><sp/>//<sp/>H_min,<sp/>S_min,<sp/>V_min</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>m_upperSkin<sp/>=<sp/>{20,<sp/>255,<sp/>255};<sp/>//<sp/>H_max,<sp/>S_max,<sp/>V_max</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>@endcode</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_hand_tracker" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" kindref="member">HandTracker</ref><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Конструктор.<sp/>Завантажує<sp/>HSV-параметри<sp/>з<sp/>конфігу.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>config<sp/>Вказівник<sp/>на<sp/>ConfigManager<sp/>(nullable<sp/>—<sp/>використовує<sp/>defaults).</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" kindref="member">HandTracker</ref>(<ref refid="class_config_manager" kindref="compound">ConfigManager</ref>*<sp/>config);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Виявляє<sp/>руку<sp/>на<sp/>кадрі<sp/>та<sp/>повертає<sp/>дані<sp/>про<sp/>неї.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Повний<sp/>pipeline:<sp/>blur<sp/>→<sp/>HSV<sp/>→<sp/>mask<sp/>→<sp/>morph<sp/>→<sp/>contours<sp/>→<sp/>moments.</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>При<sp/>відсутності<sp/>руки<sp/>або<sp/>недостатній<sp/>площі<sp/>контуру</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>повертає<sp/>`HandData{false}`<sp/>без<sp/>помилок.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>frame<sp/>Вхідний<sp/>кадр<sp/>BGR<sp/>(CV_8UC3,<sp/>не<sp/>порожній).</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>HandData<sp/>з<sp/>detected=true<sp/>і<sp/>координатами<sp/>при<sp/>успіху,</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>або<sp/>HandData{false}<sp/>якщо<sp/>рука<sp/>не<sp/>знайдена.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@complexity<sp/>O(W<sp/>×<sp/>H)<sp/>де<sp/>W,<sp/>H<sp/>—<sp/>розміри<sp/>кадру.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref><sp/><ref refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" kindref="member">detect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>frame);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Малює<sp/>landmarks<sp/>і<sp/>контур<sp/>руки<sp/>на<sp/>кадрі<sp/>(для<sp/>debug-режиму).</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Накладає<sp/>на<sp/>кадр:</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>Зелений<sp/>кружок<sp/>діаметром<sp/>16px<sp/>у<sp/>центрі<sp/>мас</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>(майбутнє)<sp/>скелет<sp/>21<sp/>landmark<sp/>з<sp/>MediaPipe</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param[in,out]<sp/>frame<sp/>Кадр<sp/>для<sp/>малювання<sp/>(модифікується<sp/>in-place).</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>data<sp/>HandData<sp/>отримана<sp/>від<sp/>detect().</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@note<sp/>Якщо<sp/>data.detected<sp/>==<sp/>false<sp/>—<sp/>нічого<sp/>не<sp/>малює.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" kindref="member">drawLandmarks</ref>(cv::Mat&amp;<sp/>frame,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref>&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Підготовка<sp/>кадру:<sp/>blur<sp/>→<sp/>HSV<sp/>→<sp/>бінарна<sp/>маска<sp/>→<sp/>морфологія.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>**Чому<sp/>Gaussian<sp/>blur<sp/>перед<sp/>HSV?**</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Дрібний<sp/>піксельний<sp/>шум<sp/>камери<sp/>сильно<sp/>фрагментує<sp/>HSV-маску.</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Blur<sp/>5×5<sp/>забирає<sp/>HF-шум<sp/>без<sp/>розмивання<sp/>меж<sp/>руки.</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>**Чому<sp/>морфологічна<sp/>обробка?**</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>`MORPH_OPEN`<sp/>(erosion<sp/>+<sp/>dilation):<sp/>видаляє<sp/>дрібні<sp/>ізольовані<sp/>плями</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>-<sp/>`MORPH_CLOSE`<sp/>(dilation<sp/>+<sp/>erosion):<sp/>заповнює<sp/>дірки<sp/>всередині<sp/>руки</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>frame<sp/>Вхідний<sp/>BGR-кадр.</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>Бінарна<sp/>маска<sp/>(CV_8UC1)<sp/>де<sp/>255<sp/>=<sp/>тілесний<sp/>колір.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>cv::Mat<sp/>preprocessFrame(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>frame);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@brief<sp/>Обчислює<sp/>HandData<sp/>з<sp/>бінарної<sp/>маски<sp/>через<sp/>моменти<sp/>контуру.</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@details</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>Використовує<sp/>`cv::moments()`<sp/>для<sp/>знаходження<sp/>центру<sp/>мас:</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>cx<sp/>=<sp/>M10<sp/>/<sp/>M00<sp/><sp/>(нормалізований<sp/>X)</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>cy<sp/>=<sp/>M01<sp/>/<sp/>M00<sp/><sp/>(нормалізований<sp/>Y)</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>```</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>mask<sp/>Бінарна<sp/>маска<sp/>(результат<sp/>preprocessFrame).</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@param<sp/>original<sp/>Оригінальний<sp/>BGR-кадр<sp/>(зарезервований<sp/>для<sp/>майбутніх<sp/>потреб).</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>@return<sp/>HandData<sp/>з<sp/>coordinates<sp/>або<sp/>HandData{false}<sp/>при<sp/>M00<sp/>&lt;<sp/>1.</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="struct_hand_data" kindref="compound">HandData</ref><sp/>extractHandData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>mask,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>original);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Scalar<sp/>m_lowerSkin{0,<sp/>20,<sp/>70};<sp/><sp/><sp/><sp/></highlight><highlight class="comment">///&lt;<sp/>Нижня<sp/>межа<sp/>HSV<sp/>тілесного<sp/>кольору</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Scalar<sp/>m_upperSkin{20,<sp/>255,<sp/>255};<sp/></highlight><highlight class="comment">///&lt;<sp/>Верхня<sp/>межа<sp/>HSV<sp/>тілесного<sp/>кольору</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/><sp/>///<sp/>Мінімальна<sp/>площа<sp/>контуру<sp/>для<sp/>розпізнавання<sp/>руки<sp/>(пікселі²)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>kMinHandArea<sp/>=<sp/>3000.0;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/gesture/HandTracker.h"/>
+  </compounddef>
+</doxygen>

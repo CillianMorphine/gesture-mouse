@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_logger" kind="class" language="C++" prot="public">
+    <compoundname>Logger</compoundname>
+    <includes refid="_logger_8h" local="no">Logger.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_logger_1af89a2c357c75b18a7f36663f67d51366" prot="private" static="yes" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream Logger::s_file</definition>
+        <argsstring></argsstring>
+        <name>s_file</name>
+        <qualifiedname>Logger::s_file</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="110" column="26" bodyfile="include/utils/Logger.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_logger_1a03c639c4979a6ac6ef5125bde5595ce9" prot="private" static="yes" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex Logger::s_mutex</definition>
+        <argsstring></argsstring>
+        <name>s_mutex</name>
+        <qualifiedname>Logger::s_mutex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="111" column="26" bodyfile="include/utils/Logger.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Logger::Logger</definition>
+        <argsstring>()=delete</argsstring>
+        <name>Logger</name>
+        <qualifiedname>Logger::Logger</qualifiedname>
+        <briefdescription>
+<para>Забороняємо створення об&apos;єктів </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="62" column="5"/>
+        <referencedby refid="class_logger_1add0f34d4c753c86af8074840a72366b3">Logger</referencedby>
+        <referencedby refid="class_logger_1a8c0ca770cdc91ca9fc3015286568e1ea">operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_logger_1add0f34d4c753c86af8074840a72366b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Logger::Logger</definition>
+        <argsstring>(const Logger &amp;)=delete</argsstring>
+        <name>Logger</name>
+        <qualifiedname>Logger::Logger</qualifiedname>
+        <param>
+          <type>const <ref refid="class_logger" kindref="compound">Logger</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="63" column="5"/>
+        <references refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439">Logger</references>
+      </memberdef>
+      <memberdef kind="function" id="class_logger_1a8c0ca770cdc91ca9fc3015286568e1ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_logger" kindref="compound">Logger</ref> &amp;</type>
+        <definition>Logger &amp; Logger::operator=</definition>
+        <argsstring>(const Logger &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>Logger::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="class_logger" kindref="compound">Logger</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="64" column="12"/>
+        <references refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439">Logger</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_logger_1aad8d1baeca78a12758392615a2785992" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::init</definition>
+        <argsstring>(const std::string &amp;filePath)</argsstring>
+        <name>init</name>
+        <qualifiedname>Logger::init</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+<para>Ініціалізує логер: відкриває файл для запису. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Шлях до лог-файлу. Якщо файл існує — дописує (append).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Якщо файл не вдалося відкрити — логер продовжує виводити у stdout. Виклик <ref refid="class_logger_1aad8d1baeca78a12758392615a2785992" kindref="member">init()</ref> двічі закриває попередній файл і відкриває новий.</para>
+</simplesect>
+<simplesect kind="par"><title>Приклад:</title><para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="class_logger_1aad8d1baeca78a12758392615a2785992" kindref="member">Logger::init</ref>(</highlight><highlight class="stringliteral">&quot;logs/gesture_mouse.log&quot;</highlight><highlight class="normal">);</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="79" column="17" bodyfile="src/utils/Logger.cpp" bodystart="11" bodyend="17"/>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="6" endline="18">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Logger::log</definition>
+        <argsstring>(LogLevel level, const std::string &amp;message, const char *file, int line)</argsstring>
+        <name>log</name>
+        <qualifiedname>Logger::log</qualifiedname>
+        <param>
+          <type><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" kindref="member">LogLevel</ref></type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Записує повідомлення з рівнем, часовою міткою та позицією в коді. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Зазвичай викликається через макроси LOG_*, які автоматично підставляють <computeroutput>__FILE__</computeroutput> та <computeroutput>__LINE__</computeroutput>.</para>
+<para>Формат рядка: <computeroutput>[TIMESTAMP] [LEVEL] message (<ulink url="file:line">file:line</ulink>)</computeroutput></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Рівень важливості (DEBUG / INFO / WARN / ERROR). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Текст повідомлення (UTF-8). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ім&apos;я файлу (зазвичай <bold>FILE</bold>). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Номер рядка (зазвичай <bold>LINE</bold>).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+@thread_safety Потокобезпечний (захищений std::mutex). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="97" column="17" bodyfile="src/utils/Logger.cpp" bodystart="19" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_logger_1a21948a5f734c0c33a1a1ab79bea24a57" prot="public" static="yes" nodiscard="yes" const="no" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool Logger::isInitialized</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>isInitialized</name>
+        <qualifiedname>Logger::isInitialized</qualifiedname>
+        <briefdescription>
+<para>Перевіряє чи логер ініціалізований (файл відкрито). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true якщо лог-файл успішно відкрито. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="104" column="18" bodyfile="include/utils/Logger.h" bodystart="104" bodyend="104"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_logger_1a2c648034dd7e9ac2a8f33a8240be1a39" prot="private" static="yes" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Logger::levelToString</definition>
+        <argsstring>(LogLevel l)</argsstring>
+        <name>levelToString</name>
+        <qualifiedname>Logger::levelToString</qualifiedname>
+        <param>
+          <type><ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86" kindref="member">LogLevel</ref></type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="107" column="25" bodyfile="src/utils/Logger.cpp" bodystart="35" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_logger_1a6fa5f5096e9bc731841e4fc389db3402" prot="private" static="yes" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Logger::timestamp</definition>
+        <argsstring>()</argsstring>
+        <name>timestamp</name>
+        <qualifiedname>Logger::timestamp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="108" column="25" bodyfile="src/utils/Logger.cpp" bodystart="46" bodyend="52"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Статичний потокобезпечний логер з виводом у файл і stdout. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Всі методи статичні — логер є <bold>singleton за поведінкою</bold>, але реалізований без патерну Singleton (простіше тестувати).</para>
+<para><simplesect kind="note"><para>Клас не підлягає інстанціюванню (конструктор видалений). </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="include/utils/Logger.h" line="60" column="1" bodyfile="include/utils/Logger.h" bodystart="60" bodyend="112"/>
+    <listofallmembers>
+      <member refid="class_logger_1aad8d1baeca78a12758392615a2785992" prot="public" virt="non-virtual"><scope>Logger</scope><name>init</name></member>
+      <member refid="class_logger_1a21948a5f734c0c33a1a1ab79bea24a57" prot="public" virt="non-virtual"><scope>Logger</scope><name>isInitialized</name></member>
+      <member refid="class_logger_1a2c648034dd7e9ac2a8f33a8240be1a39" prot="private" virt="non-virtual"><scope>Logger</scope><name>levelToString</name></member>
+      <member refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" prot="public" virt="non-virtual"><scope>Logger</scope><name>log</name></member>
+      <member refid="class_logger_1aefffc02e0c6c0ab09ec1f77fe35f6439" prot="public" virt="non-virtual"><scope>Logger</scope><name>Logger</name></member>
+      <member refid="class_logger_1add0f34d4c753c86af8074840a72366b3" prot="public" virt="non-virtual"><scope>Logger</scope><name>Logger</name></member>
+      <member refid="class_logger_1a8c0ca770cdc91ca9fc3015286568e1ea" prot="public" virt="non-virtual"><scope>Logger</scope><name>operator=</name></member>
+      <member refid="class_logger_1af89a2c357c75b18a7f36663f67d51366" prot="private" virt="non-virtual"><scope>Logger</scope><name>s_file</name></member>
+      <member refid="class_logger_1a03c639c4979a6ac6ef5125bde5595ce9" prot="private" virt="non-virtual"><scope>Logger</scope><name>s_mutex</name></member>
+      <member refid="class_logger_1a6fa5f5096e9bc731841e4fc389db3402" prot="private" virt="non-virtual"><scope>Logger</scope><name>timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

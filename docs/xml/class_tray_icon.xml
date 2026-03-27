@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_tray_icon" kind="class" language="C++" prot="public">
+    <compoundname>TrayIcon</compoundname>
+    <includes refid="_tray_icon_8h" local="no">TrayIcon.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tray_icon_1ae8a7647e5e5f5f1f6acf675a826a438c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_application" kindref="compound">Application</ref> *</type>
+        <definition>Application* TrayIcon::m_app</definition>
+        <argsstring></argsstring>
+        <name>m_app</name>
+        <qualifiedname>TrayIcon::m_app</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/TrayIcon.h" line="18" column="17" bodyfile="include/ui/TrayIcon.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tray_icon_1abdb4a255bdaedd158ab901ce849ffd5b" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TrayIcon::TrayIcon</definition>
+        <argsstring>(Application *app)</argsstring>
+        <name>TrayIcon</name>
+        <qualifiedname>TrayIcon::TrayIcon</qualifiedname>
+        <param>
+          <type><ref refid="class_application" kindref="compound">Application</ref> *</type>
+          <declname>app</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/TrayIcon.h" line="11" column="14" bodyfile="src/ui/TrayIcon.cpp" bodystart="5" bodyend="7"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1a4ab023074143b46c3eb9dda2a1678492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TrayIcon::~TrayIcon</definition>
+        <argsstring>()</argsstring>
+        <name>~TrayIcon</name>
+        <qualifiedname>TrayIcon::~TrayIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/TrayIcon.h" line="12" column="5" bodyfile="src/ui/TrayIcon.cpp" bodystart="9" bodyend="11"/>
+        <references refid="class_tray_icon_1aecdd10e0b98df27f46f3df654e170d58" compoundref="_tray_icon_8cpp" startline="20" endline="22">hide</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1a862cf3a089f74d7fc82c7e1e33e7a4b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::show</definition>
+        <argsstring>()</argsstring>
+        <name>show</name>
+        <qualifiedname>TrayIcon::show</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/TrayIcon.h" line="14" column="10" bodyfile="src/ui/TrayIcon.cpp" bodystart="13" bodyend="18"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1aecdd10e0b98df27f46f3df654e170d58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::hide</definition>
+        <argsstring>()</argsstring>
+        <name>hide</name>
+        <qualifiedname>TrayIcon::hide</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/ui/TrayIcon.h" line="15" column="10" bodyfile="src/ui/TrayIcon.cpp" bodystart="20" bodyend="22"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+        <referencedby refid="class_tray_icon_1a4ab023074143b46c3eb9dda2a1678492" compoundref="_tray_icon_8cpp" startline="9" endline="11">~TrayIcon</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Іконка у системному треї. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Надає користувачу доступ до налаштувань та виходу. </para>
+    </detaileddescription>
+    <location file="include/ui/TrayIcon.h" line="9" column="1" bodyfile="include/ui/TrayIcon.h" bodystart="9" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_tray_icon_1aecdd10e0b98df27f46f3df654e170d58" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>hide</name></member>
+      <member refid="class_tray_icon_1ae8a7647e5e5f5f1f6acf675a826a438c" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>m_app</name></member>
+      <member refid="class_tray_icon_1a862cf3a089f74d7fc82c7e1e33e7a4b5" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>show</name></member>
+      <member refid="class_tray_icon_1abdb4a255bdaedd158ab901ce849ffd5b" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>TrayIcon</name></member>
+      <member refid="class_tray_icon_1a4ab023074143b46c3eb9dda2a1678492" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>~TrayIcon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="group___log_macros" kind="group">
+    <compoundname>LogMacros</compoundname>
+    <title>Макроси логування</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group___log_macros_1ga2332264037abe02c8041a498b2fa1627" prot="public" static="no">
+        <name>LOG_DEBUG</name>
+        <param><defname>msg</defname></param>
+        <initializer>do { <ref refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kindref="member">Logger::log</ref>(<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86adc30ec20708ef7b0f641ef78b7880a15" kindref="member">LogLevel::DEBUG</ref>, (msg), __FILE__, __LINE__); } while(false)</initializer>
+        <briefdescription>
+<para>Логування debug-повідомлення. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="130" column="9" bodyfile="include/utils/Logger.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" prot="public" static="no">
+        <name>LOG_INFO</name>
+        <param><defname>msg</defname></param>
+        <initializer>do { <ref refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kindref="member">Logger::log</ref>(<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a551b723eafd6a31d444fcb2f5920fbd3" kindref="member">LogLevel::INFO</ref>,  (msg), __FILE__, __LINE__); } while(false)</initializer>
+        <briefdescription>
+<para>Логування інформаційного повідомлення. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="132" column="9" bodyfile="include/utils/Logger.h" bodystart="132" bodyend="-1"/>
+        <referencedby refid="class_gesture_recognizer_1ae651aee817094eec405fa1d6ffecd1cc" compoundref="_gesture_recognizer_8cpp" startline="20" endline="24">GestureRecognizer::GestureRecognizer</referencedby>
+        <referencedby refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" compoundref="_hand_tracker_8cpp" startline="5" endline="8">HandTracker::HandTracker</referencedby>
+        <referencedby refid="class_tray_icon_1aecdd10e0b98df27f46f3df654e170d58" compoundref="_tray_icon_8cpp" startline="20" endline="22">TrayIcon::hide</referencedby>
+        <referencedby refid="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" compoundref="_config_manager_8cpp" startline="11" endline="32">ConfigManager::load</referencedby>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="6" endline="18">main</referencedby>
+        <referencedby refid="class_mouse_controller_1a2e4e48674c9cf0d4a2ee823e566849d0" compoundref="_mouse_controller_8cpp" startline="14" endline="17">MouseController::MouseController</referencedby>
+        <referencedby refid="class_application_1a8cf8941c8db90117d3735bce5ae1fdf4" compoundref="_application_8cpp" startline="31" endline="39">Application::run</referencedby>
+        <referencedby refid="class_config_manager_1ab5a426ba88966fa7383a963d97762c52" compoundref="_config_manager_8cpp" startline="34" endline="39">ConfigManager::save</referencedby>
+        <referencedby refid="class_settings_window_1a4e7169d9026d2ff3d6098662c518e69a" compoundref="_settings_window_8cpp" startline="7" endline="11">SettingsWindow::show</referencedby>
+        <referencedby refid="class_tray_icon_1a862cf3a089f74d7fc82c7e1e33e7a4b5" compoundref="_tray_icon_8cpp" startline="13" endline="18">TrayIcon::show</referencedby>
+        <referencedby refid="class_application_1a6235fa1cc593954a1ba845d4402614b5" compoundref="_application_8cpp" startline="64" endline="67">Application::stop</referencedby>
+        <referencedby refid="class_tray_icon_1abdb4a255bdaedd158ab901ce849ffd5b" compoundref="_tray_icon_8cpp" startline="5" endline="7">TrayIcon::TrayIcon</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___log_macros_1gaeaf09e51c5a1f84078e5c6aa59dc48de" prot="public" static="no">
+        <name>LOG_WARN</name>
+        <param><defname>msg</defname></param>
+        <initializer>do { <ref refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kindref="member">Logger::log</ref>(<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86a32bd8a1db2275458673903bdb84cb277" kindref="member">LogLevel::WARN</ref>,  (msg), __FILE__, __LINE__); } while(false)</initializer>
+        <briefdescription>
+<para>Логування попередження. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="134" column="9" bodyfile="include/utils/Logger.h" bodystart="134" bodyend="-1"/>
+        <referencedby refid="class_config_manager_1a306413e92a12e3844797ff0ef3c1e4f4" compoundref="_config_manager_8cpp" startline="11" endline="32">ConfigManager::load</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" prot="public" static="no">
+        <name>LOG_ERROR</name>
+        <param><defname>msg</defname></param>
+        <initializer>do { <ref refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kindref="member">Logger::log</ref>(<ref refid="_logger_8h_1a3d8d85bddc47594db84f7f2f84022e86abb1ca97ec761fc37101737ba0aa2e7c5" kindref="member">LogLevel::ERROR</ref>, (msg), __FILE__, __LINE__); } while(false)</initializer>
+        <briefdescription>
+<para>Логування критичної помилки. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/utils/Logger.h" line="136" column="9" bodyfile="include/utils/Logger.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Зручні макроси для виклику <ref refid="class_logger_1af831a965a5ea3bc724f5a8facfd4d2d3" kindref="member">Logger::log()</ref> з автоматичним <bold>FILE</bold>/__LINE__. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Обгортка <computeroutput>do { ... } while(false)</computeroutput> дозволяє безпечно використовувати макроси в конструкціях <computeroutput>if/else</computeroutput> без фігурних дужок: <programlisting filename=".cpp"><codeline><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(error)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___log_macros_1ga7ebf4c3b4fb05d6f9094089ded75cbdd" kindref="member">LOG_ERROR</ref>(</highlight><highlight class="stringliteral">&quot;Something<sp/>went<sp/>wrong&quot;</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="comment">//<sp/>безпечно</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" kindref="member">LOG_INFO</ref>(</highlight><highlight class="stringliteral">&quot;All<sp/>good&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>безпечно</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

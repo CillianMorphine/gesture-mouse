@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="struct_screen_size" kind="struct" language="C++" prot="public">
+    <compoundname>ScreenSize</compoundname>
+    <includes refid="_mouse_controller_8h" local="no">MouseController.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_screen_size_1a4f5773b5832dd44cc6cf1fe28b7bcdbb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ScreenSize::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>ScreenSize::width</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Ширина екрана в пікселях </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="45" column="9" bodyfile="include/input/MouseController.h" bodystart="45" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_screen_size_1ae7447f7fbc13911e07c2a4179bfef6f4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ScreenSize::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>ScreenSize::height</qualifiedname>
+        <initializer>{0}</initializer>
+        <briefdescription>
+<para>Висота екрана в пікселях </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/input/MouseController.h" line="46" column="9" bodyfile="include/input/MouseController.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Розміри екрана у пікселях. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Повертається <computeroutput>screenSize()</computeroutput>. Іменована структура замість <computeroutput>std::pair&lt;int,int&gt;</computeroutput> — краща читабельність (readability-identifier-naming). </para>
+    </detaileddescription>
+    <location file="include/input/MouseController.h" line="44" column="1" bodyfile="include/input/MouseController.h" bodystart="44" bodyend="47"/>
+    <listofallmembers>
+      <member refid="struct_screen_size_1ae7447f7fbc13911e07c2a4179bfef6f4" prot="public" virt="non-virtual"><scope>ScreenSize</scope><name>height</name></member>
+      <member refid="struct_screen_size_1a4f5773b5832dd44cc6cf1fe28b7bcdbb" prot="public" virt="non-virtual"><scope>ScreenSize</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

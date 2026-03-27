@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_gesture_classifier" kind="class" language="C++" prot="public">
+    <compoundname>GestureClassifier</compoundname>
+    <includes refid="_gesture_classifier_8h" local="no">GestureClassifier.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gesture_classifier_1afba83135936a9a711b7d8993f708d091" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float GestureClassifier::m_confidenceThreshold</definition>
+        <argsstring></argsstring>
+        <name>m_confidenceThreshold</name>
+        <qualifiedname>GestureClassifier::m_confidenceThreshold</qualifiedname>
+        <initializer>= 0.6f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureClassifier.h" line="22" column="11" bodyfile="include/gesture/GestureClassifier.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gesture_classifier_1a50f700f5945bb8abe2ea3f094cfcb1e1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GestureClassifier::GestureClassifier</definition>
+        <argsstring>(ConfigManager *config)</argsstring>
+        <name>GestureClassifier</name>
+        <qualifiedname>GestureClassifier::GestureClassifier</qualifiedname>
+        <param>
+          <type><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureClassifier.h" line="13" column="14" bodyfile="src/gesture/GestureClassifier.cpp" bodystart="4" bodyend="4"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_gesture_result" kindref="compound">GestureResult</ref></type>
+        <definition>GestureResult GestureClassifier::classify</definition>
+        <argsstring>(const HandData &amp;hand)</argsstring>
+        <name>classify</name>
+        <qualifiedname>GestureClassifier::classify</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_hand_data" kindref="compound">HandData</ref> &amp;</type>
+          <declname>hand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureClassifier.h" line="15" column="19" bodyfile="src/gesture/GestureClassifier.cpp" bodystart="6" bodyend="29"/>
+        <references refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" compoundref="_hand_tracker_8h" startline="60" endline="60">HandData::centerX</references>
+        <references refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" compoundref="_hand_tracker_8h" startline="61" endline="61">HandData::centerY</references>
+        <references refid="struct_gesture_result_1a8be72f20cf40e53debba93f8b654ce12" compoundref="_gesture_recognizer_8h" startline="91" endline="91">GestureResult::confidence</references>
+        <references refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" compoundref="_hand_tracker_8h" startline="58" endline="58">HandData::detected</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaff3480bb59f4249a9453a0caaa1b2236" compoundref="_gesture_recognizer_8h" startline="67">DRAG</references>
+        <references refid="struct_gesture_result_1a1eadac0d7a2cca9f95b810a17b764ef6" compoundref="_gesture_recognizer_8h" startline="89" endline="89">GestureResult::handX</references>
+        <references refid="struct_gesture_result_1a341bf4c80bb3dbbf40b40eb876d9f69e" compoundref="_gesture_recognizer_8h" startline="90" endline="90">GestureResult::handY</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea4be090920378d236e1dd1cb923dde7d4" compoundref="_gesture_recognizer_8h" startline="63">LEFT_CLICK</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeaf7f93635f8e193a924ae4a691bb66b8f" compoundref="_gesture_recognizer_8h" startline="62">MOVE</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effeab50339a10e1de285ac99d4c3990b8693" compoundref="_gesture_recognizer_8h" startline="61">NONE</references>
+        <references refid="_gesture_recognizer_8h_1a21b9dab37e2393fad9b78a5c3529effea5ba9ad440e405f78f6d5e8f11d2a60e8" compoundref="_gesture_recognizer_8h" startline="64">RIGHT_CLICK</references>
+        <references refid="struct_gesture_result_1a3481202dc51342502d0071f3fdb55ee7" compoundref="_gesture_recognizer_8h" startline="88" endline="88">GestureResult::type</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gesture_classifier_1a3a992af95350e0fb0bdbc8090d7e33a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int GestureClassifier::countFingers</definition>
+        <argsstring>(const HandData &amp;hand)</argsstring>
+        <name>countFingers</name>
+        <qualifiedname>GestureClassifier::countFingers</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_hand_data" kindref="compound">HandData</ref> &amp;</type>
+          <declname>hand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureClassifier.h" line="18" column="10" bodyfile="src/gesture/GestureClassifier.cpp" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gesture_classifier_1a6be8497309e4ab05503ddfca9390fdce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool GestureClassifier::isFist</definition>
+        <argsstring>(const HandData &amp;hand)</argsstring>
+        <name>isFist</name>
+        <qualifiedname>GestureClassifier::isFist</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_hand_data" kindref="compound">HandData</ref> &amp;</type>
+          <declname>hand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/GestureClassifier.h" line="19" column="10" bodyfile="src/gesture/GestureClassifier.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Класифікує жест на основі даних про руку. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Поточна реалізація — евристична (на основі аналізу виступів). </para>
+    </detaileddescription>
+    <location file="include/gesture/GestureClassifier.h" line="11" column="1" bodyfile="include/gesture/GestureClassifier.h" bodystart="11" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_gesture_classifier_1a736bec72c73f01bf562c303fd21f0756" prot="public" virt="non-virtual"><scope>GestureClassifier</scope><name>classify</name></member>
+      <member refid="class_gesture_classifier_1a3a992af95350e0fb0bdbc8090d7e33a7" prot="private" virt="non-virtual"><scope>GestureClassifier</scope><name>countFingers</name></member>
+      <member refid="class_gesture_classifier_1a50f700f5945bb8abe2ea3f094cfcb1e1" prot="public" virt="non-virtual"><scope>GestureClassifier</scope><name>GestureClassifier</name></member>
+      <member refid="class_gesture_classifier_1a6be8497309e4ab05503ddfca9390fdce" prot="private" virt="non-virtual"><scope>GestureClassifier</scope><name>isFist</name></member>
+      <member refid="class_gesture_classifier_1afba83135936a9a711b7d8993f708d091" prot="private" virt="non-virtual"><scope>GestureClassifier</scope><name>m_confidenceThreshold</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

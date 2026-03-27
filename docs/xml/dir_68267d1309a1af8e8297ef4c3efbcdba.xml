@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_aebb8dcc11953d78e620bbef0b9e2183">core</innerdir>
+    <innerdir refid="dir_deab696b41d67ebe41fee97e766081ad">gesture</innerdir>
+    <innerdir refid="dir_d365e15d984c8d0205117ee0c40d6716">input</innerdir>
+    <innerdir refid="dir_da5c6b39c0a2f54e57df6799511cd3ab">ui</innerdir>
+    <innerdir refid="dir_313caf1132e152dd9b58bea13a4052ca">utils</innerdir>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_hand_tracker" kind="class" language="C++" prot="public">
+    <compoundname>HandTracker</compoundname>
+    <includes refid="_hand_tracker_8h" local="no">HandTracker.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_hand_tracker_1a99149aad44dd677420b42b865d961285" prot="private" static="no" mutable="no">
+        <type>cv::Scalar</type>
+        <definition>cv::Scalar HandTracker::m_lowerSkin</definition>
+        <argsstring></argsstring>
+        <name>m_lowerSkin</name>
+        <qualifiedname>HandTracker::m_lowerSkin</qualifiedname>
+        <initializer>{0, 20, 70}</initializer>
+        <briefdescription>
+<para>Нижня межа HSV тілесного кольору </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="157" column="16" bodyfile="include/gesture/HandTracker.h" bodystart="157" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_hand_tracker_1afd767e6b0305d856e955079d29ca0f92" prot="private" static="no" mutable="no">
+        <type>cv::Scalar</type>
+        <definition>cv::Scalar HandTracker::m_upperSkin</definition>
+        <argsstring></argsstring>
+        <name>m_upperSkin</name>
+        <qualifiedname>HandTracker::m_upperSkin</qualifiedname>
+        <initializer>{20, 255, 255}</initializer>
+        <briefdescription>
+<para>Верхня межа HSV тілесного кольору </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="158" column="16" bodyfile="include/gesture/HandTracker.h" bodystart="158" bodyend="158"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_hand_tracker_1ade7931253ef73d9b3740f218fbfdf77f" prot="private" static="yes" constexpr="yes" mutable="no">
+        <type>double</type>
+        <definition>double HandTracker::kMinHandArea</definition>
+        <argsstring></argsstring>
+        <name>kMinHandArea</name>
+        <qualifiedname>HandTracker::kMinHandArea</qualifiedname>
+        <initializer>= 3000.0</initializer>
+        <briefdescription>
+<para>Мінімальна площа контуру для розпізнавання руки (пікселі²). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="161" column="29" bodyfile="include/gesture/HandTracker.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>HandTracker::HandTracker</definition>
+        <argsstring>(ConfigManager *config)</argsstring>
+        <name>HandTracker</name>
+        <qualifiedname>HandTracker::HandTracker</qualifiedname>
+        <param>
+          <type><ref refid="class_config_manager" kindref="compound">ConfigManager</ref> *</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Конструктор. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Завантажує HSV-параметри з конфігу. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вказівник на <ref refid="class_config_manager" kindref="compound">ConfigManager</ref> (nullable — використовує defaults). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="89" column="14" bodyfile="src/gesture/HandTracker.cpp" bodystart="5" bodyend="8"/>
+        <references refid="group___log_macros_1gac8e803773221119947b55f6ae85a9c63" compoundref="_logger_8h" startline="132">LOG_INFO</references>
+      </memberdef>
+      <memberdef kind="function" id="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_hand_data" kindref="compound">HandData</ref></type>
+        <definition>HandData HandTracker::detect</definition>
+        <argsstring>(const cv::Mat &amp;frame)</argsstring>
+        <name>detect</name>
+        <qualifiedname>HandTracker::detect</qualifiedname>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Виявляє руку на кадрі та повертає дані про неї. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Повний pipeline: blur → HSV → mask → morph → contours → moments. При відсутності руки або недостатній площі контуру повертає <computeroutput><ref refid="struct_hand_data" kindref="compound">HandData</ref>{false}</computeroutput> без помилок.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вхідний кадр BGR (CV_8UC3, не порожній). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_hand_data" kindref="compound">HandData</ref> з detected=true і координатами при успіху, або <ref refid="struct_hand_data" kindref="compound">HandData</ref>{false} якщо рука не знайдена.</para>
+</simplesect>
+@complexity O(W × H) де W, H — розміри кадру. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="105" column="15" bodyfile="src/gesture/HandTracker.cpp" bodystart="23" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HandTracker::drawLandmarks</definition>
+        <argsstring>(cv::Mat &amp;frame, const HandData &amp;data)</argsstring>
+        <name>drawLandmarks</name>
+        <qualifiedname>HandTracker::drawLandmarks</qualifiedname>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_hand_data" kindref="compound">HandData</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Малює landmarks і контур руки на кадрі (для debug-режиму). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Накладає на кадр:<itemizedlist>
+<listitem><para>Зелений кружок діаметром 16px у центрі мас</para>
+</listitem><listitem><para>(майбутнє) скелет 21 landmark з MediaPipe</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Кадр для малювання (модифікується in-place). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_hand_data" kindref="compound">HandData</ref> отримана від <ref refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" kindref="member">detect()</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Якщо data.detected == false — нічого не малює. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="120" column="10" bodyfile="src/gesture/HandTracker.cpp" bodystart="57" bodyend="62"/>
+        <references refid="struct_hand_data_1ac83ef75e525345fd23235a944fbbea33" compoundref="_hand_tracker_8h" startline="60" endline="60">HandData::centerX</references>
+        <references refid="struct_hand_data_1a11109d9e5a3f7a83f31fbb4329b88796" compoundref="_hand_tracker_8h" startline="61" endline="61">HandData::centerY</references>
+        <references refid="struct_hand_data_1a8b03e1ad266b410f6e83271cd9928e97" compoundref="_hand_tracker_8h" startline="58" endline="58">HandData::detected</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_hand_tracker_1a40eec710c3b75e4ff99d5dff9453499e" prot="private" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat HandTracker::preprocessFrame</definition>
+        <argsstring>(const cv::Mat &amp;frame)</argsstring>
+        <name>preprocessFrame</name>
+        <qualifiedname>HandTracker::preprocessFrame</qualifiedname>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+<para>Підготовка кадру: blur → HSV → бінарна маска → морфологія. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><bold>Чому Gaussian blur перед HSV?</bold> Дрібний піксельний шум камери сильно фрагментує HSV-маску. Blur 5×5 забирає HF-шум без розмивання меж руки.</para>
+<para><bold>Чому морфологічна обробка?</bold><itemizedlist>
+<listitem><para><computeroutput>MORPH_OPEN</computeroutput> (erosion + dilation): видаляє дрібні ізольовані плями</para>
+</listitem><listitem><para><computeroutput>MORPH_CLOSE</computeroutput> (dilation + erosion): заповнює дірки всередині руки</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>frame</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Вхідний BGR-кадр. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Бінарна маска (CV_8UC1) де 255 = тілесний колір. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="138" column="14" bodyfile="src/gesture/HandTracker.cpp" bodystart="10" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_hand_tracker_1a962d9a50a408a8383443e60961ea72cd" prot="private" static="no" nodiscard="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_hand_data" kindref="compound">HandData</ref></type>
+        <definition>HandData HandTracker::extractHandData</definition>
+        <argsstring>(const cv::Mat &amp;mask, const cv::Mat &amp;original)</argsstring>
+        <name>extractHandData</name>
+        <qualifiedname>HandTracker::extractHandData</qualifiedname>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>original</declname>
+        </param>
+        <briefdescription>
+<para>Обчислює <ref refid="struct_hand_data" kindref="compound">HandData</ref> з бінарної маски через моменти контуру. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Використовує <computeroutput>cv::moments()</computeroutput> для знаходження центру мас: <programlisting><codeline><highlight class="normal">cx<sp/>=<sp/>M10<sp/>/<sp/>M00<sp/><sp/>(нормалізований<sp/>X)</highlight></codeline>
+<codeline><highlight class="normal">cy<sp/>=<sp/>M01<sp/>/<sp/>M00<sp/><sp/>(нормалізований<sp/>Y)</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Бінарна маска (результат preprocessFrame). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>original</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Оригінальний BGR-кадр (зарезервований для майбутніх потреб). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="struct_hand_data" kindref="compound">HandData</ref> з coordinates або <ref refid="struct_hand_data" kindref="compound">HandData</ref>{false} при M00 &lt; 1. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/gesture/HandTracker.h" line="154" column="15" bodyfile="src/gesture/HandTracker.cpp" bodystart="43" bodyend="55"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Детектор руки на основі HSV-сегментації тілесного кольору. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Клас інкапсулює весь pipeline виявлення руки. <ref refid="class_gesture_recognizer" kindref="compound">GestureRecognizer</ref> отримує <ref refid="struct_hand_data" kindref="compound">HandData</ref> і передає її до <ref refid="class_gesture_classifier" kindref="compound">GestureClassifier</ref>.</para>
+<sect1 id="class_hand_tracker_1autotoc_md9_1s1"><sect2 id="class_hand_tracker_1autotoc_md9_1s2"><sect3 id="class_hand_tracker_1autotoc_md9">
+<title>Налаштування кольорового діапазону</title><para>Параметри HSV за замовчуванням підходять для більшості умов. При поганому виявленні — відрегулюйте через конфіг або <ref refid="class_settings_window" kindref="compound">SettingsWindow</ref>:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="comment">//<sp/>Значення<sp/>за<sp/>замовчуванням<sp/>(можна<sp/>змінити<sp/>в<sp/>config)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">m_lowerSkin<sp/>=<sp/>{0,<sp/>20,<sp/>70};<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>H_min,<sp/>S_min,<sp/>V_min</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">m_upperSkin<sp/>=<sp/>{20,<sp/>255,<sp/>255};<sp/></highlight><highlight class="comment">//<sp/>H_max,<sp/>S_max,<sp/>V_max</highlight></codeline>
+</programlisting> </para>
+</sect3></sect2></sect1>
+    </detaileddescription>
+    <location file="include/gesture/HandTracker.h" line="83" column="1" bodyfile="include/gesture/HandTracker.h" bodystart="83" bodyend="162"/>
+    <listofallmembers>
+      <member refid="class_hand_tracker_1a07291d23230fc13c10d3b9a06e9f3fe6" prot="public" virt="non-virtual"><scope>HandTracker</scope><name>detect</name></member>
+      <member refid="class_hand_tracker_1a948ac85a6a1d4846f4524912a9688f55" prot="public" virt="non-virtual"><scope>HandTracker</scope><name>drawLandmarks</name></member>
+      <member refid="class_hand_tracker_1a962d9a50a408a8383443e60961ea72cd" prot="private" virt="non-virtual"><scope>HandTracker</scope><name>extractHandData</name></member>
+      <member refid="class_hand_tracker_1a65f21dc1ea8e5dccdc99334e5c97186e" prot="public" virt="non-virtual"><scope>HandTracker</scope><name>HandTracker</name></member>
+      <member refid="class_hand_tracker_1ade7931253ef73d9b3740f218fbfdf77f" prot="private" virt="non-virtual"><scope>HandTracker</scope><name>kMinHandArea</name></member>
+      <member refid="class_hand_tracker_1a99149aad44dd677420b42b865d961285" prot="private" virt="non-virtual"><scope>HandTracker</scope><name>m_lowerSkin</name></member>
+      <member refid="class_hand_tracker_1afd767e6b0305d856e955079d29ca0f92" prot="private" virt="non-virtual"><scope>HandTracker</scope><name>m_upperSkin</name></member>
+      <member refid="class_hand_tracker_1a40eec710c3b75e4ff99d5dff9453499e" prot="private" virt="non-virtual"><scope>HandTracker</scope><name>preprocessFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
