@@ -1,0 +1,75 @@
+# ============================================================
+# .clang-tidy — Static analysis configuration for GestureMouse
+# Tool: clang-tidy (LLVM project)
+# Docs: https://clang.llvm.org/extra/clang-tidy/
+# ============================================================
+
+---
+# Checks to enable/disable.
+# Prefix with '-' to disable a check.
+Checks: >
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  cppcoreguidelines-*,
+  modernize-*,
+  readability-*,
+  performance-*,
+  bugprone-*,
+  misc-*,
+  -modernize-use-trailing-return-type,
+  -readability-magic-numbers,
+  -cppcoreguidelines-avoid-magic-numbers,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -misc-non-private-member-variables-in-classes,
+  -readability-identifier-length,
+  -cppcoreguidelines-pro-type-vararg,
+  -modernize-use-nodiscard
+
+# Treat warnings as errors in CI (set to false for local dev)
+WarningsAsErrors: ''
+
+# Use .clang-format for formatting suggestions
+FormatStyle: file
+
+# Header filter: also check project headers (not system/third-party)
+HeaderFilterRegex: '^(src|include)/.*\.(h|hpp)$'
+
+# ============================================================
+# Per-check options
+# ============================================================
+CheckOptions:
+  # Naming conventions
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.StructCase
+    value: CamelCase
+  - key: readability-identifier-naming.FunctionCase
+    value: camelCase
+  - key: readability-identifier-naming.VariableCase
+    value: camelCase
+  - key: readability-identifier-naming.ParameterCase
+    value: camelCase
+  - key: readability-identifier-naming.MemberPrefix
+    value: 'm_'
+  - key: readability-identifier-naming.ConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+
+  # Function complexity
+  - key: readability-function-cognitive-complexity.Threshold
+    value: '25'
+
+  # Line length (via readability)
+  - key: readability-function-size.LineThreshold
+    value: '80'
+  - key: readability-function-size.StatementThreshold
+    value: '50'
+
+  # Modernize: use = default where possible
+  - key: modernize-use-default-member-init.UseAssignment
+    value: '1'
+
+  # Performance: avoid unnecessary copies
+  - key: performance-unnecessary-copy-initialization.AllowedTypes
+    value: ''
