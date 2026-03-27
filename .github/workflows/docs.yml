@@ -1,0 +1,101 @@
+name: 📚 Generate & Publish Documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'include/**'
+      - 'README.md'
+      - 'Doxyfile'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:   # ручний запуск із GitHub UI
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # ──────────────────────────────────────────────────────────
+  # Job 1: Generate Doxygen documentation
+  # ──────────────────────────────────────────────────────────
+  generate-docs:
+    name: Generate Doxygen docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Install Doxygen + Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y doxygen graphviz
+          doxygen --version
+          dot -V
+
+      - name: 📂 Create output directory
+        run: mkdir -p docs/generated
+
+      - name: 📖 Generate documentation
+        run: doxygen Doxyfile
+
+      - name: 📊 Check for warnings
+        run: |
+          if [ -f "docs/generated/doxygen-warnings.log" ]; then
+            WARNINGS=$(wc -l < docs/generated/doxygen-warnings.log)
+            echo "Doxygen warnings: $WARNINGS"
+            if [ "$WARNINGS" -gt 0 ]; then
+              echo "::warning::Doxygen produced $WARNINGS warning(s)"
+              cat docs/generated/doxygen-warnings.log
+            fi
+          fi
+
+      - name: 📦 Upload docs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: doxygen-docs
+          path: docs/generated/html/
+          retention-days: 30
+
+  # ──────────────────────────────────────────────────────────
+  # Job 2: Deploy to GitHub Pages (only on push to main)
+  # ──────────────────────────────────────────────────────────
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: generate-docs
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 📥 Download docs artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: doxygen-docs
+          path: ./html-docs
+
+      - name: ⚙️ Setup GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: 📤 Upload to Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./html-docs
+
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: ✅ Print deployed URL
+        run: echo "Documentation published at ${{ steps.deployment.outputs.page_url }}"
