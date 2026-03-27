@@ -1,0 +1,22 @@
+# .clang-tidy-ignore
+# Files and directories excluded from linting
+# Used by run-clang-tidy and our custom scripts
+
+# Build output
+build/
+cmake-build-*/
+out/
+
+# Third-party / vendored code
+third_party/
+vendor/
+external/
+
+# Generated files
+*.pb.h
+*.pb.cc
+moc_*.cpp
+ui_*.h
+
+# Test fixtures (not production code)
+tests/fixtures/

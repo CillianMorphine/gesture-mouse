@@ -1,0 +1,83 @@
+# ============================================================
+# .clang-format — Code formatting rules for GestureMouse
+# Tool: clang-format (LLVM project)
+# Run: clang-format -i <file>     (format in-place)
+#      clang-format --dry-run <file>  (check only)
+# ============================================================
+
+Language: Cpp
+BasedOnStyle: Google
+
+# --- Indentation ---
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+IndentCaseLabels: true
+IndentPPDirectives: BeforeHash
+
+# --- Line length ---
+ColumnLimit: 100
+
+# --- Braces ---
+BreakBeforeBraces: Attach
+BraceWrapping:
+  AfterClass: false
+  AfterFunction: false
+  AfterNamespace: false
+  AfterStruct: false
+  BeforeElse: false
+
+# --- Spacing ---
+SpaceBeforeParens: ControlStatements
+SpaceAfterCStyleCast: false
+SpaceInEmptyParentheses: false
+SpacesInAngles: false
+SpacesInContainerLiterals: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeRangeBasedForLoopColon: true
+
+# --- Line breaks ---
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Empty
+AlwaysBreakTemplateDeclarations: Yes
+BreakConstructorInitializers: BeforeComma
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+# --- Includes ---
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup
+IncludeCategories:
+  # Project headers first
+  - Regex: '^"(core|gesture|input|ui|utils)/'
+    Priority: 1
+  # Then standard library
+  - Regex: '^<[a-z_]+>'
+    Priority: 2
+  # Then third-party (OpenCV etc.)
+  - Regex: '^<opencv'
+    Priority: 3
+
+# --- Alignment ---
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignTrailingComments: true
+AlignAfterOpenBracket: Align
+
+# --- Pointer / reference ---
+PointerAlignment: Left
+ReferenceAlignment: Left
+
+# --- Comments ---
+ReflowComments: true
+CommentPragmas: '^ NOLINT'
+
+# --- Other ---
+Cpp11BracedListStyle: true
+DerivePointerAlignment: false
+FixNamespaceComments: true
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+Standard: c++17

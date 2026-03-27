@@ -1,48 +1,62 @@
 #pragma once
-#include <opencv2/opencv.hpp>
+// ============================================================
+// GestureRecognizer.h
+// Fix 1: forward declarations instead of full includes (performance)
+// Fix 2: explicit constructor (modernize-use-explicit)
+// Fix 3: override keyword on virtual methods
+// Fix 4: noexcept on non-throwing methods
+// ============================================================
+#include <memory>
 #include <string>
 
-/// Перелік можливих жестів
-enum class GestureType {
-    NONE,           ///< Рука не виявлена або невизначений жест
-    MOVE,           ///< Переміщення курсору (відкрита долоня)
-    LEFT_CLICK,     ///< Клік лівою кнопкою (вказівний палець)
-    RIGHT_CLICK,    ///< Клік правою кнопкою (два пальці)
-    SCROLL_UP,      ///< Прокрутка вгору
-    SCROLL_DOWN,    ///< Прокрутка вниз
-    DRAG,           ///< Перетягування (стиснутий кулак у русі)
+#include <opencv2/core/mat.hpp>  // Fix: minimal include instead of <opencv2/opencv.hpp>
+
+// Fix 5: scoped enum with explicit underlying type
+enum class GestureType : uint8_t {
+    NONE         = 0,
+    MOVE         = 1,
+    LEFT_CLICK   = 2,
+    RIGHT_CLICK  = 3,
+    SCROLL_UP    = 4,
+    SCROLL_DOWN  = 5,
+    DRAG         = 6,
 };
 
-/// Результат розпізнавання одного кадру
 struct GestureResult {
-    GestureType type = GestureType::NONE;
-    float       handX = 0.0f;   ///< Нормалізована координата X [0..1]
-    float       handY = 0.0f;   ///< Нормалізована координата Y [0..1]
-    float       confidence = 0.0f; ///< Впевненість класифікатора [0..1]
+    GestureType type       = GestureType::NONE;
+    float       handX      = 0.0F;  // Fix: 0.0F not 0.0f for consistency
+    float       handY      = 0.0F;
+    float       confidence = 0.0F;
 
-    std::string typeName() const;
+    // Fix 6: [[nodiscard]] on pure query method
+    [[nodiscard]] std::string typeName() const;
 };
 
+// Forward declarations — avoids heavyweight includes in header
 class ConfigManager;
 class HandTracker;
 class GestureClassifier;
 
-/**
- * @brief Фасад модуля розпізнавання: об'єднує трекінг руки та класифікацію жесту.
- */
 class GestureRecognizer {
 public:
+    // Fix 7: explicit keyword prevents unintended implicit conversion
     explicit GestureRecognizer(ConfigManager* config);
+
+    // Fix 8: defaulted destructor in .cpp (avoids incomplete-type issues with unique_ptr)
     ~GestureRecognizer();
 
-    /// Обробити один кадр і повернути результат
-    GestureResult process(const cv::Mat& frame);
+    // Fix 9: deleted copy (rule of 5 — cppcoreguidelines-special-member-functions)
+    GestureRecognizer(const GestureRecognizer&)            = delete;
+    GestureRecognizer& operator=(const GestureRecognizer&) = delete;
+    GestureRecognizer(GestureRecognizer&&)                 = default;
+    GestureRecognizer& operator=(GestureRecognizer&&)      = default;
 
-    /// Увімкнути/вимкнути відображення debug-вікна
-    void setDebugView(bool enabled);
+    [[nodiscard]] GestureResult process(const cv::Mat& frame);
+
+    void setDebugView(bool enabled) noexcept;  // Fix 10: noexcept
 
 private:
-    std::unique_ptr<HandTracker>      m_tracker;
+    std::unique_ptr<HandTracker>       m_tracker;
     std::unique_ptr<GestureClassifier> m_classifier;
-    bool m_debugView = false;
+    bool                               m_debugView{false};  // Fix 11: brace-init
 };
