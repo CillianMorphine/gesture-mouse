@@ -1,0 +1,22 @@
+scenario,operation,before_ms,after_ms,improvement_pct
+A_small (320×240),hsv_convert,0.2430,0.2392,1.5677
+A_small (320×240),inrange_mask,0.0857,0.0834,2.7295
+A_small (320×240),morphology,0.2775,0.0432,84.4493
+A_small (320×240),find_contours,0.0010,0.0010,3.9216
+A_small (320×240),convex_hull,0.0003,0.0002,40.0000
+A_small (320×240),gesture_classify,0.0000,0.0000,33.3333
+A_small (320×240),ema_smooth,0.0001,0.0000,66.6667
+B_medium (640×480),hsv_convert,1.0244,0.2349,77.0707
+B_medium (640×480),inrange_mask,0.3644,0.0982,73.0493
+B_medium (640×480),morphology,0.6986,0.0412,94.1069
+B_medium (640×480),find_contours,0.0014,0.0010,31.6761
+B_medium (640×480),convex_hull,0.0003,0.0002,7.8740
+B_medium (640×480),gesture_classify,0.0000,0.0000,-18.1818
+B_medium (640×480),ema_smooth,0.0000,0.0000,0.0000
+C_large (1280×720),hsv_convert,3.0180,0.2608,91.3581
+C_large (1280×720),inrange_mask,1.0587,0.0791,92.5265
+C_large (1280×720),morphology,2.0579,0.0425,97.9360
+C_large (1280×720),find_contours,0.0016,0.0009,44.3462
+C_large (1280×720),convex_hull,0.0002,0.0002,-7.3892
+C_large (1280×720),gesture_classify,0.0000,0.0000,18.1818
+C_large (1280×720),ema_smooth,0.0000,0.0000,30.5556
